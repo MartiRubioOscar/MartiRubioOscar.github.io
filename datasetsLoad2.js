@@ -3,7 +3,7 @@ function load(){ // <-E
 	//CARGA POBLACIÓN HABITANTES
 	//////////////////////////////////
 	//////////////////////////////////
-        	d3.csv("data/POBLACION.csv", function (error, dataset) {
+        	d3.csv("data/POBLACION.CSV", function (error, dataset) {
 		      if (error) {
 		          window.alert("No ha sido posible recuperar los datos de 01.");
 		          console.log(error);
@@ -67,7 +67,7 @@ function load(){ // <-E
 	//CARGA DATASET: PRUEBAS GRÁFICO VARIACIÓN ANUAL
 	//////////////////////////////////
 	//////////////////////////////
-	d3.csv("data/POBLACION.csv", function (error, dataset) {
+	d3.csv("data/POBLACION.CSV", function (error, dataset) {
 		      if (error) {
 		          window.alert("No ha sido posible recuperar los datos de 06.");
 		          console.log(error);
@@ -1000,7 +1000,7 @@ function load(){ // <-E
 			    }
 	})
 ////////////// TEST POBLACIÓN
-	d3.csv("data/POBLACION.csv", function (error, dataset) {
+	d3.csv("data/POBLACION.CSV", function (error, dataset) {
       if (error) {
           window.alert("No ha sido posible recuperar los datos de 45.");
           console.log(error);
