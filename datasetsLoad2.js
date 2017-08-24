@@ -5,7 +5,7 @@ function load(){ // <-E
 	//////////////////////////////////
         	d3.csv("data/POBLACION.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 01.");
 		          console.log(error);
 		      } else {
 
@@ -22,7 +22,7 @@ function load(){ // <-E
 
         	d3.csv("data/placesHotels2.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 02.");
 		          console.log(error);
 		      } else {
 		      	marca="fora"
@@ -38,7 +38,7 @@ function load(){ // <-E
 
 	d3.csv("data/poblacionSuperficie3.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 03.");
 		          console.log(error);
 		      } else {
 		      	
@@ -53,7 +53,7 @@ function load(){ // <-E
 
 	d3.csv("data/BcnPoblacionDensidad.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 04.");
 		          console.log(error);
 		      } else {
 		      	
@@ -69,7 +69,7 @@ function load(){ // <-E
 	//////////////////////////////
 	d3.csv("data/POBLACION.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 06.");
 		          console.log(error);
 		      } else {
 		      	
@@ -84,7 +84,7 @@ function load(){ // <-E
 	//////////////////////////////
 	d3.csv("data/dataProvesMultilinea2.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 05.");
 		          console.log(error);
 		      } else {
 		      	
@@ -99,7 +99,7 @@ function load(){ // <-E
 	// Vivienda nueva
 	d3.csv("data/BcnViviendaExcelCSV.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 07.");
 		          console.log(error);
 		      } else {
 		      	
@@ -111,7 +111,7 @@ function load(){ // <-E
 		// Vivienda nueva
 	d3.csv("data/BcnViviendaExcelCSV.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 08.");
 		          console.log(error);
 		      } else {
 		      	
@@ -123,7 +123,7 @@ function load(){ // <-E
 		// Vivienda Alquiler
 	d3.csv("data/BcnViviendaExcelCSV.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 09.");
 		          console.log(error);
 		      } else {
 		      	
@@ -138,7 +138,7 @@ function load(){ // <-E
 	// Puerto Evolución mensual
 	d3.csv("data/BcnInfraestructurasPuerto.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 10.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -159,7 +159,7 @@ function load(){ // <-E
 	})
 	d3.csv("data/BcnInfraestructurasAeropuerto.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 11.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -184,7 +184,7 @@ function load(){ // <-E
 	/// Temperaturas
 	d3.csv("data/BcnClimaTemperatura.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 12.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -207,7 +207,7 @@ function load(){ // <-E
 	/// Precipitaciones	
 	d3.csv("data/BcnClimaLluvia.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 13.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -234,7 +234,7 @@ function load(){ // <-E
 	/// Perfil SEXO
 	d3.csv("data/TurPerfilSexo.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 14.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -259,7 +259,7 @@ function load(){ // <-E
 		/// Perfil EDAD
 	d3.csv("data/TurPerfilEdad.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 15.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -283,7 +283,7 @@ function load(){ // <-E
 			/// Perfil EDAD
 	d3.csv("data/TurPerfilGasto.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 16.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -307,7 +307,7 @@ function load(){ // <-E
 			/// Perfil MOTIVOS
 	d3.csv("data/TurPerfilMotivos.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 17.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -331,7 +331,7 @@ function load(){ // <-E
 			/// Perfil días ALOJAMIENTO
 	d3.csv("data/TurPerfilTiempoAlojamiento.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 18.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -356,7 +356,7 @@ function load(){ // <-E
 	/// Perfil REPETIBILIDAD
 	d3.csv("data/TurPerfilRepetibilidad.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 19.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -380,7 +380,7 @@ function load(){ // <-E
 	/// Perfil TRANSPORTE
 	d3.csv("data/TurPerfilTransporte.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 20.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -404,7 +404,7 @@ function load(){ // <-E
 	/// Economía: Trabajadores Sector
 	d3.csv("data/BcnEcoTrabajadoresSector.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 21.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -428,7 +428,7 @@ function load(){ // <-E
 	/// Economía: situación laboral: LA TASA DE PARO ES LA DE LA EPA !!!!!!!!
 	d3.csv("data/BcnEcoSituacionLaboral.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 22.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -453,7 +453,7 @@ function load(){ // <-E
 	/// Economia: PIB Bcn
 		d3.csv("data/BcnEcoPIB.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 23.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -478,7 +478,7 @@ function load(){ // <-E
 	/// Economia: Salarios por sectores
 	d3.csv("data/BcnEcoSalarioSectores.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 24.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -503,7 +503,7 @@ function load(){ // <-E
 	/// Turismo Reuniones: Número
 	d3.csv("data/TurReunionNumero.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 25.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -527,7 +527,7 @@ function load(){ // <-E
 	/// Turismo Reuniones: Asistentes
 	d3.csv("data/TurReunionAsistencia.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 26.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -552,7 +552,7 @@ function load(){ // <-E
 	/// Turismo Alojamiento: HUT número
 	d3.csv("data/TurAloHUT.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 27.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -576,7 +576,7 @@ function load(){ // <-E
 	/// Turismo Alojamiento: HUT plazas
 	d3.csv("data/TurAloHUT.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 28.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -600,7 +600,7 @@ function load(){ // <-E
 	/// Turismo Alojamiento: Número hoteles
 	d3.csv("data/TurAloNumHP.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 29.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -624,7 +624,7 @@ function load(){ // <-E
 	/// Turismo Alojamiento: Plazas hoteles
 	d3.csv("data/TurAloPlazasHP.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 30.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -648,7 +648,7 @@ function load(){ // <-E
 	/// Turismo Cultural: TOP evolución
 	d3.csv("data/TurCultTopLugaresVisitas.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 31.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -672,7 +672,7 @@ function load(){ // <-E
 		/// Turismo Cultural: Espais de lleure
 	d3.csv("data/TurCultEspaisLleure.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 32.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -696,7 +696,7 @@ function load(){ // <-E
 		/// Turismo Cultural: Espais de interés arquitectónico
 	d3.csv("data/TurCultEspaisArquitectonic.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 33.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -721,7 +721,7 @@ function load(){ // <-E
 		/// Turismo Cultural: Centros Exposiciones
 	d3.csv("data/TurCultCentrosExposiciones.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 34.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -745,7 +745,7 @@ function load(){ // <-E
 			/// Turismo Cultural: Museos y colecciones
 	d3.csv("data/TurCultMuseosColecciones.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 35.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -769,7 +769,7 @@ function load(){ // <-E
 			/// Turismo Cultural: Transports singulars
 	d3.csv("data/TurCultTransportesSingulares.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 36.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -793,7 +793,7 @@ function load(){ // <-E
 			/// Turismo Cultural: Resumen lugares de interés
 	d3.csv("data/TurCultResumenLugaresInteres.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 37.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -818,7 +818,7 @@ function load(){ // <-E
 			/// Turismo Reuniones: Ferias vip
 	d3.csv("data/TurReunionFerias.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 38.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -843,7 +843,7 @@ function load(){ // <-E
 			/// Perfil Turista: Nacionalidad
 	d3.csv("data/TurPerfilNacionalidad.csv", function (error, dataset) {
 	      if (error) {
-	          window.alert("No ha sido posible recuperar los datos.");
+	          window.alert("No ha sido posible recuperar los datos de 39.");
 	          console.log(error);
 	      } else {
 	      		datos = dataset
@@ -867,7 +867,7 @@ function load(){ // <-E
 	/// TurismoAlojamiento: grado de ocupación hotelera
 	d3.csv("data/TurAloGradoOcupacionHotelera.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 40.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -894,7 +894,7 @@ function load(){ // <-E
 	/// TurismoAlojamiento: Personal empleado en hoteles
 	d3.csv("data/TurAloPersonalHoteles.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 41.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -921,7 +921,7 @@ function load(){ // <-E
 	/// TurismoAlojamiento: Precio hoteles
 	d3.csv("data/TurAloPrecioHoteles.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 42.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -948,7 +948,7 @@ function load(){ // <-E
 	/// Barcelona Población: según Edad
 	d3.csv("data/BcnPoblacionEdades.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 43.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -975,7 +975,7 @@ function load(){ // <-E
 	/// Barcelona Población: según Nacionalidad
 	d3.csv("data/BcnPoblacionNacionalidades.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 44.");
 		          console.log(error);
 		      } else {
 		      		datos = dataset
@@ -1002,7 +1002,7 @@ function load(){ // <-E
 ////////////// TEST POBLACIÓN
 	d3.csv("data/POBLACION.csv", function (error, dataset) {
       if (error) {
-          window.alert("No ha sido posible recuperar los datos.");
+          window.alert("No ha sido posible recuperar los datos de 45.");
           console.log(error);
       } else {
 
@@ -1028,7 +1028,7 @@ function load(){ // <-E
 
         	d3.csv("data/placesHotels2.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 46.");
 		          console.log(error);
 		      } else {
 
@@ -1054,7 +1054,7 @@ function load(){ // <-E
 
 	d3.csv("data/poblacionSuperficie3.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 47.");
 		          console.log(error);
 		      } else {
 		      	
@@ -1079,7 +1079,7 @@ function load(){ // <-E
 
 	d3.csv("data/BcnPoblacionDensidad.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 48.");
 		          console.log(error);
 		      } else {
 		      	
@@ -1105,7 +1105,7 @@ function load(){ // <-E
 	// Vivienda nueva
 	d3.csv("data/BcnViviendaExcelCSV.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 49.");
 		          console.log(error);
 		      } else {
 		      	
@@ -1127,7 +1127,7 @@ function load(){ // <-E
 		// Segunda mano
 	d3.csv("data/BcnViviendaExcelCSV.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 50.");
 		          console.log(error);
 		      } else {
 		      	
@@ -1149,7 +1149,7 @@ function load(){ // <-E
 		// Vivienda Alquiler
 	d3.csv("data/BcnViviendaExcelCSV.csv", function (error, dataset) {
 		      if (error) {
-		          window.alert("No ha sido posible recuperar los datos.");
+		          window.alert("No ha sido posible recuperar los datos de 51.");
 		          console.log(error);
 		      } else {
 		      	
