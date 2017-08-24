@@ -1,0 +1,638 @@
+/*empezamos por esto, para evitar resultados extraños en distintos navegadores, y algo de estilo al texto*/
+
+button.red span {padding: 5px; border: 1px solid #f00; background: #ffffff; display: block; width: 15px; height: 15px;}
+button.blue span {padding: 5px; border: 1px solid #848484; background: #848484; display: block; width: 15px; height: 15px;}
+button.green span {padding: 5px; border: 1px solid #000000; background: #f9eedc; display: block; width: 15px; height: 15px;}
+button.paleGreen span {padding: 5px; border: 1px solid #F6E3CE; background:#F6E3CE ; display: block; width: 15px; height: 15px;}
+button.greenMandon span {padding: 5px; border: 1px solid #f00; background: #f9eedc; display: block; width: 15px; height: 15px;}
+
+.ventanaVacia{
+    background-color: #ffffff;
+}
+
+.ventanaLlenaActivaSimple{
+    background-color: #F5DA81;
+}
+
+.ventanaLlenaNoActivaSimple{
+    background-color: #fff333;
+}
+
+.ventanaMasterVC_Activa{
+    background-color: #F5DA81;
+}
+
+.ventanaMasterVC_NoActiva{
+    background-color: #F5Dc81;
+}
+
+.ventanaSlaveVC_Activa{
+    background-color: #F6E3Ca;
+}
+
+.ventanaSlaveVC_NoActiva{
+    background-color: #F6E3CE;
+}
+
+
+
+.noSeleccionable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+
+rect:hover {
+    fill: orange;
+}
+
+circle:hover {
+    fill: orange;
+}
+path.lineGenEv:hover {
+    stroke: orange;
+    stroke-width:4px;
+}
+
+input.largerCheckbox
+{
+    display: inline-block;
+    float:left;
+    margin :0px 2% 0px 5px; /*top right bottom left*/
+    /*padding-left: 20px;*/
+    
+    width: 13px;
+    height: 13px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#tooltip {
+    position: absolute;
+    width: 350px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#tooltip.hidden {
+    display: none;
+}
+
+#tooltip p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: left;
+}
+
+.tooltipEncInfraestructuras {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#tooltipEncInfraestructuras {
+    position: absolute;
+    width: 350px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#tooltipEncInfraestructuras.hidden {
+    display: none;
+}
+
+#tooltipEncInfraestructuras p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: left;
+}
+
+.tooltipMapa {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#tooltipMapa {
+    position: absolute;
+    width: 350px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#tooltipMapa.hidden {
+    display: none;
+}
+
+#tooltipMapa p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: left;
+}
+
+
+.tooltipMenuPpal {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#tooltipMenuPpal {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#tooltipMenuPpal.hidden {
+    display: none;
+}
+
+#tooltipMenuPpal p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+}
+
+.tooltipBarra {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#tooltipBarra {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#tooltipBarra.hidden {
+    display: none;
+}
+
+#tooltipBarra p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 12px;
+    text-align: center;
+}
+
+.tooltipEvolucion {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#tooltipEvolucion {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#tooltipEvolucion.hidden {
+    display: none;
+}
+
+#tooltipEvolucion p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 12px;
+    text-align: center;
+}
+
+.tooltipVA {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+#tooltipVA {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#tooltipVA.hidden {
+    display: none;
+}
+
+#tooltipVA p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 12px;
+    text-align: center;
+}
+
+body {
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:12px;
+    color:#666666;
+    text-align:center; /*aqui mandamos a centrar todo el contenido*/ 
+}
+
+#contenedor {
+    width:100%; /*ancho total de la pagina*/ 
+    height:100%;
+    border:1px solid #333333; /*encadeno los 3 atributos claves del borde en una sola linea, ahorrando codigo XD*/ 
+    background-color:#FFF8F0;
+    /*padding: 1px;*/
+    margin:10px auto; /*10px arriba y abajo, y auto a los lados, para los navegadores nuevos es suficiente para centrar la pagina*/ 
+    text-align:left; /*aqui alineamos todo de nuevo a la izquierda, pero dentro del contenedor*/ 
+}
+
+#encabezado {
+    margin:0px; /*para que no se pegue al borde*/ 
+    padding:0px; /*algo de relleno*/
+    width:100%; /*este ancho es para que cuadre con el texto*/ 
+    height:10%; /*120px*idem*/ 
+    border:1px solid #333333; /*decoracion*/ 
+    background-color:#FFFFFF; /*more*/ 
+    float:left; /*lo flotamos a la izquierda*/ 
+    display:inline; /*(*)*/ 
+}
+#enc_bcn {
+    margin-left:5px; /*para que no se pegue al borde*/ 
+    padding-left:5px; /*algo de relleno*/
+    margin-top: 2px;
+
+    margin-bottom: 3px;
+    width:49%; /*este ancho es para que cuadre con el texto*/ 
+    height:100%; /*115pxidem*/ 
+    border:0px solid #333333; /*decoracion*/ 
+    background-color:#D8D8D8; /*more*/ 
+    float:left;  /*lo flotamos a la izquierda*/ 
+    display:inline; /*(*)*/ 
+}
+#enc_turismo {
+    margin-right: 5px; /*para que no se pegue al borde*/ 
+    margin-top: 2px;     
+    margin-bottom: 3px;
+    padding-right:5px; /*algo de relleno*/
+    width:49%; /*este ancho es para que cuadre con el texto*/ 
+    height:100%; /*115pxidem*/ 
+    border:0px solid #333333; /*decoracion*/ 
+    background-color:#D8D8D8; /*more*/ 
+    float:right ; /*lo flotamos a la izquierda*/ 
+    display:inline; /*(*)*/ 
+}
+#encabezado h1 { /*encadenamos el identificador del div, con la etiqueta par areferirnos solo al h1 dentro del div encabezado, asi no afectara otros h1 en el resto del documento.*/ 
+    font-size:20px;
+    font-weight:bold;
+    width:224px;
+    /*border-bottom:16px solid #FFFFFF;*/
+    color:#000000;
+    opacity:0.7;    
+    margin:0; /*los h1 vienen con margen, con esto se lo quito*/ 
+    text-transform:uppercase; /*convierte todas en mayusculas*/ 
+    padding-bottom:10px;
+}
+
+#menu {
+    float:left;
+    margin :5px 2px auto 0px; /*top right bottom left*/
+    border:1px solid #333333;
+    /*width:335px;*/
+    width:10%; /*24*/
+    height:480px;
+} 
+#areaGraficos {
+    float:left;
+    margin :5px 0px 0px 0px; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:1px solid #333333;
+    /*padding: 1px;*/
+    width:75%;
+    height:480px;
+    /*background-color:#789800;*/
+    /*background-color:#FECBDA;*/
+    background-color:#D8D8D8; /*more*/ 
+} 
+#menuFiltros{
+    float:left;
+    margin :5px 0px 0px 2px; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:1px solid #333333;
+    width:14%; /*99*/
+    height:480px;
+    /*background-color:#FECBDA;*/
+    background-color:#D8D8D8; /*more*/ 
+    }
+#navegadorDiv{
+    float:left;
+    margin :5px 0px 0px 0px; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:99%; /*99*/
+    height:60%;/*450px;*/
+    /*background-color:#FECBDA;*/
+    background-color:#D8D8D8; /*more*/ 
+    }
+.botonesNav{
+    float:left;
+    margin :5px 0px 0px 0px; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:1px solid #333333;
+    width:99%; /*99*/
+    height:auto;/*50px;/*auto;*/
+    background-color:#00FFFF;
+    }
+ul {
+    list-style-type:none; /*con esto quitamos las viñetas*/
+    margin:0; /*le quitamos el margen a la lista*/ 
+    padding:0; /*y el relleno*/
+}
+li {
+    margin:0; /*le quito el margen al elemento de la lista*/ 
+    float:left; /*y los floto a la izquierda para eliminar el salto de linea*/ 
+}
+li a {
+    display:block; /*con esto el vinculo tendra un area rectangular, asi no sera solo el texto*/ 
+    background-color:#CC3300; /*algo de color*/ 
+    color:#FFFFFF; /*mas*/ 
+    width:58px; /*defino el ancho del rectangulo del vinculo*/
+    padding:4px 0 5px 22px; /*sumamos el relleno al ancho y alto del rectangulo para obtener el div #menu completamente ocupado con los ítems del menú*/ 
+    text-decoration:none; /*elimino el subrayado del vínculo*/ 
+    font-weight:bold; /*decoración*/ 
+    text-transform:uppercase; /*decorare los vinculos en mayusculas*/
+}
+li a:hover {
+    background-color:#999900; /*decoración para el evento hover (mouse encima)*/ 
+}
+.mapaBack{
+    background-color: green;
+    position:relative;
+    /*width:100%; /*99*/
+    /*height:auto;*/
+    /*z-index: 2*/
+}
+.iconosTransporteFront{
+    background-color: red;
+    position:relative;
+    /*width:100%; /*99*/
+    /*height:auto;25px*/
+    margin-top: -15%;
+    margin-right: 10%;
+    /*z-index: 3*/
+}
+.encTemperatura{
+    float:left;
+    margin :0.5% 0px 0px 20%; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:10%; /*99*/
+    height:auto;
+    background-color: white;
+    /*color: #f0f8ff;*/
+}
+.encMapa{
+    float:left;
+    margin :-4.5% 0px 0px 1%; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:15%; /*99*/
+    height:auto;
+    background-color: white;
+    /*color: #f0f8ff;*/
+}
+.encInfra{
+    float:left;
+    margin :-4.5% 0px 0px 5%; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:5%; /*99*/
+    height:auto;
+    background-color: white;
+    /*color: #f0f8ff;*/
+}
+.encHabitant{
+    float:left;
+    margin :-3% 0px 0px 3%; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:20%; /*99*/
+    height:auto;
+    background-color: white;
+    /*color: #f0f8ff;*/
+}
+.encTurista{
+    float:left;
+    margin :-3% 0px 0px 20%; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:20%; /*99*/
+    height:auto;
+    background-color: white;
+    /*color: #f0f8ff;*/
+}
+.encAlojamiento{
+        float:left;
+    margin :-3% 0px 0px 2%; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:20%; /*99*/
+    height:auto;
+    background-color: white;
+    /*color: #f0f8ff;*/
+}
+.encSector{
+        float:left;
+    margin :-3% 0px 0px 2%; /*top right bottom left*/
+    /*margin :0; /*top right bottom left*/
+    border:0px solid #333333;
+    width:20%; /*99*/
+    height:auto;
+    background-color: white;
+    /*color: #f0f8ff;*/
+}
+.mainTitleMenu{
+    color:#000000; /*mas*/ 
+    margin-left: 4px;
+    opacity: 0.9;
+    font-weight:bold; /*decoración*/ 
+    text-transform:uppercase;   
+}
+.tituloGrafico{
+    color:#000000; /*mas*/ 
+    font-weight:bold; /*decoración*/ 
+    font-size: 12px;
+    /*text-transform:uppercase;   */
+}
+.subTitleMenu{
+    margin-left: 8%;
+    color:#424242; /*mas*/ 
+    /*opacity: 0.6;*/
+    font-weight:bold; /*decoración*/ 
+    font-size: 12px;
+    /*text-transform:uppercase;   */
+}
+.grafico1{
+    float:left;
+    /*margin :5px 5px auto 0; /*top right bottom left*/
+    margin-top :0.5%; /*top right bottom left*/
+    margin-left: 0.5%;
+    /*margin: 5;*/
+    border:1px solid #555555;
+    
+    /*border-color: #FF0000;*/
+    background-color:#848484;
+    /*width:328px;*/
+    width:99%;
+    height:98%;   
+}
+.grafico2{
+    float:left;
+    /*margin :5px 5px auto 0; /*top right bottom left*/
+    margin-top :0.5%; /*top right bottom left*/
+    margin-left: 0.5%;
+    /*margin: 5;*/
+    border:1px solid #555555;
+    background-color:#848484;
+    /*width:328px;*/
+    width:49%;
+    height:98%;   
+}
+
+.grafico4{
+    float:left;
+    /*margin :5px 5px auto 0; /*top right bottom left*/
+    margin-top :0.5%; /*top right bottom left*/
+    margin-left: 0.5%;
+    /*margin: 5;*/
+    border:1px solid #555555;
+    background-color:#848484;
+    
+
+    /*padding: 1px;*/
+    /*width:328px;*/
+    width:49%;
+    height:48%;   
+}
+.graficoTest{
+    float:center;
+    margin-left: 5%;
+    border:1px;
+    
+    align:center;
+}
+.menuDiv{
+    float:left;
+    margin :5px 5px auto 0; /*top right bottom left*/
+    border:1px solid #555555;
+    /*background-color:#C70039;*/
+    background-color:#D8D8D8; /*more*/ 
+
+    width:328px;
+    height:236px;   
+}
+.axis line,
+.axis path {
+            fill: none; /**/
+            stroke: #777;
+            shape-rendering: crispEdges;
+        }
+.axis text {
+            font-family: sans-serif;
+            font-size: 9px;
+        }
+
+#contenido {
+    width:580px; /*el ancho mas el padding me da 600px de ancho que es loque mide la pagina */
+    clear:both; /*con esto nos aseguramos de que no se ponga nada a los lados*/ 
+    padding:10px;
+} 
+
+#contenido h2 {
+    font-size:16px;
+    color:#CC3300;
+    width:246px;
+    text-transform:uppercase;
+    border-bottom:1px dotted #CC3300;
+}
+#contenido h3 {
+    width:246px;
+    font-size:14px;
+    color:#999900;
+    border-bottom:1px dotted #999900;
+}
+
+
+#footer {
+    width:1300px; /*menos porque debemos sumar el padding del div contenido*/ 
+    margin-top: 5;
+    text-align:right;
+    padding:5px;
+    font-size:80%; /*mas pequeño el texto*/ 
+    font-style:italic;
+    color:#999999;
+}
+
+

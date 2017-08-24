@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Load JSON Data Feed</title>
+    <link rel="stylesheet" type="text/css" href="css/styles2.css"/>
+    <!--<script type="text/javascript" src="../../lib/d3.js"></script>-->
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript">
+    // variables de control
+    var controlFiltro = "Gas";
+    // dono noms als diferents datasets
+    var data=[]; 
+    var data1=[];
+    var data2=[];
+
+    function render(data) {
+        // filtrar los datos según controles
+        // crear grafico
+        console.log(data)
+        console.log(controlFiltro)
+        var FILTRADO;
+        if (controlFiltro=="Todo"){FILTRADO=data}else{
+        FILTRADO = data.filter(function (el){ console.log(el.category); return el.category===controlFiltro})    
+        }
+        
+        console.log(FILTRADO)
+        d3.select("#chart").selectAll("div") // <-B
+                .remove()
+
+            d3.select("#chart").selectAll("div.h-bar") // <-B
+                .data(FILTRADO)
+            .enter().append("div")
+            .attr("class", "h-bar")
+            .append("span");
+
+        /*d3.select("#chart").selectAll("div.h-bar") // <-C
+                .data(data)
+            .exit().remove();*/
+
+        d3.select("#chart").selectAll("div.h-bar") // <-D
+                .data(FILTRADO)
+            .attr("class", "h-bar")
+            .style("width", function (d) {
+                return (d.expense * 5) + "px";
+            })
+            .select("span")
+                .text(function (d) {
+                    return d.category;
+                });
+    }
+
+    render(data);
+
+    function load(){ // <-E
+        d3.csv("data.csv", function(error, dataset){ // <-F
+            data = dataset; 
+            //var FILTRADO = data.filter(function (el){ console.log(el.category); return el.category==="Gas"})
+ 
+            render(data);
+        });
+    }
+
+    function control(filtro){console.log(filtro)
+        controlFiltro = filtro;
+        render(data)}
+</script>
+</head>
+
+<body>
+
+<div id="chart"></div>
+
+
+
+<div class="control-group">
+    <button onclick="load()">Load Data from JSON feed</button><br>
+    <input type="radio" name="colors" id="red" onclick="control('Gas')" checked>Gas<br>
+    <input type="radio" name="colors" id="blue" onclick="control('Retail')">Retail
+    <input type="radio" name="colors" id="green" onclick="control('Todo')">Todo
+</div>
+
+</body>
+
+</html>

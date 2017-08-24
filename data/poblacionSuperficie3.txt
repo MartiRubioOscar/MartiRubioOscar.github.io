@@ -1,0 +1,12 @@
+﻿localizacion,superficie,porcentaje
+Ciutat Vella,4.5,4.44
+Eixample,7.5,7.4
+Sants-Montjuïc,21.5,21.2
+Les Corts,6,5.92
+Sarrià-Sant Gervasi,20.1,19.82
+Gràcia,4.2,4.14
+Horta-Guinardó,12,11.83
+Nou Barris,8,7.89
+Sant Andreu,6.8,6.71
+Sant Martí,10.8,10.65
+Barcelona,101.4,100
