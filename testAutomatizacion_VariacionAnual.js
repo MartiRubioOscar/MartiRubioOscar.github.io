@@ -1,4 +1,9 @@
 function automatizacionRenderVariacionAnual(DATA){
+    var colorPunto="#737373"
+    var radioPunto="3px";
+    var anchoLinea="2px"
+    var radioTooltip="5px"
+
     ID_VIP = miIDVIP_fromWorkFrame(workFrame)
     var nomContenedor = "contenedorGr" + workFrame;
 
@@ -8,7 +13,8 @@ function automatizacionRenderVariacionAnual(DATA){
       //.attr("width", "100%")
 
 
-    var el = document.getElementById(nomContenedor); var mywidth = el.getBoundingClientRect().width;
+    var el = document.getElementById(nomContenedor); 
+    var mywidth = el.getBoundingClientRect().width;
     var myheight = el.getBoundingClientRect().height;
 
     var el = document.getElementById(ID_VIP); 
@@ -182,7 +188,7 @@ function automatizacionRenderVariacionAnual(DATA){
         d3.select("#" + NOMCONTENEDOR).append('svg:path')
             .attr('d', lineGen(datos_Filtrados))
             .attr('stroke', COLORES)
-            .attr('stroke-width', 2)
+            .attr('stroke-width', anchoLinea)
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datos_Filtrados[i]])
@@ -205,7 +211,7 @@ function automatizacionRenderVariacionAnual(DATA){
                 d3.select("#" + NOMCONTENEDOR).append('svg:path')
                     .attr('d', lineGen(datos_Filtrados[i]))
                     .attr('stroke', COLORES(i))
-                    .attr('stroke-width', 2)
+                    .attr('stroke-width', anchoLinea)
                     .attr('fill', 'none')
                     .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
                     .data([datos_Filtrados[i]])
@@ -251,11 +257,12 @@ function automatizacionRenderVariacionAnual(DATA){
                 .append("circle")
                     .attr("cx",xScale2(centroX))
                     .attr("cy",yScale2(centroY))
-                    .attr("r", "5px")
-                    .attr("fill","red")
+                    .attr("r", radioPunto)
+                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
                 .data([centroY])
                 .on("mouseover",function(d,i){
                             console.log(d)
+                            d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
                           var valorT = d;                         
@@ -263,6 +270,7 @@ function automatizacionRenderVariacionAnual(DATA){
                         })
                 .on("mouseout", function() {
                       //Hide the tooltip
+                      d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                       d3.select("#tooltipVA").classed("hidden", true);
                       })
             /*d3.select("#" + NOMCONTENEDOR)

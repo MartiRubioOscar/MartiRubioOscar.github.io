@@ -80,12 +80,16 @@
 function automatizacionRenderEvolution2(numeroGrafico,DATA,IDENTIFICADOR,NOMCONTENEDOR,COLORES,height,margins){
     /////////////////// OJO QUE xScale y yScale son globales. Esto podría fastidiar el uso en otros lados de la función
     var CHECKBOX = automaticInput(numeroGrafico)
+    var colorPunto="#737373"
+    var radioPunto="3px";
+    var anchoLinea="2px"
+    var radioTooltip="5px"
+
     //alert(eval("DATA[0]." + CHECKBOX.filtroDatos))
     console.log(DATA)
     var POSICION = miPosicionResumenMAT(IDENTIFICADOR)
     var maximoEjeY=[]
     var MAXIMO_Y_total = []
-
 
 
     if (resumenFiltros(numeroGrafico).mensualTest=="SI") {
@@ -174,7 +178,7 @@ function automatizacionRenderEvolution2(numeroGrafico,DATA,IDENTIFICADOR,NOMCONT
         d3.select("#" + NOMCONTENEDOR).append('svg:path')
             .attr('d', lineGen(datos_Filtrados))
             .attr('stroke', COLORES)
-            .attr('stroke-width', 2)
+            .attr('stroke-width', anchoLinea)
             //.attr('fill', 'black')
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
@@ -199,7 +203,7 @@ function automatizacionRenderEvolution2(numeroGrafico,DATA,IDENTIFICADOR,NOMCONT
                 d3.select("#" + NOMCONTENEDOR).append('svg:path')
                     .attr('d', lineGen(datos_Filtrados[i]))
                     .attr('stroke', COLORES[i])
-                    .attr('stroke-width', 2)
+                    .attr('stroke-width', anchoLinea)
                     .attr('fill', 'none')
                     .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
                     .data([datos_Filtrados[i]])
@@ -207,7 +211,11 @@ function automatizacionRenderEvolution2(numeroGrafico,DATA,IDENTIFICADOR,NOMCONT
                             console.log(d)
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = eval("d[i]." + CHECKBOX.filtroDatos);                         
+                          var valorT = eval("d[i]." + CHECKBOX.filtroDatos); 
+                        ////////////////
+                        //d3.select(this).attr("stroke","orange").attr("stroke-width","5px")
+                        ///////////////
+
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {
@@ -247,17 +255,20 @@ function automatizacionRenderEvolution2(numeroGrafico,DATA,IDENTIFICADOR,NOMCONT
                 .append("circle")
                     .attr("cx",xScale(centroX))
                     .attr("cy",yScale(centroY))
-                    .attr("r", "4px")
-                    .attr("fill","red")
+                    .attr("r", radioPunto)
+                    .attr("fill",colorPunto)
+                    .attr("fill-opacity","0.2")
                 .data([centroY])
                 .on("mouseover",function(d,i){
                             console.log(d)
+                            d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
                           var valorT = d;                         
                           return tooltipEvolucion(valorT,pos)
                         })
                 .on("mouseout", function() {
+                      d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                       //Hide the tooltip
                       d3.select("#tooltipEvolucion").classed("hidden", true);
                       })

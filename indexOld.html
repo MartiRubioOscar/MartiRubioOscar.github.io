@@ -46,6 +46,7 @@
 	<script src="functions/infoGraficos.js"></script>
 	<script src="functions/functionsTooltips.js"></script>
 	<script src="functions/textosTooltips.js"></script>
+	
 
 <script type="text/javascript">
 // colores
@@ -974,27 +975,17 @@ var graphic02;
 		          		d3.select("#enc_bcn").append("div").classed("encTemperatura",true)
 		          		d3.select(".encTemperatura").append("g").attr("id","TempGrupo")
 		          			.append("img").attr("src","img/icona_temperatura-01.svg")
-		          				.attr("width","17%")
 		          				.attr("align","right")
-		          		
-		          		
 						d3.select("#TempGrupo").append("text").text("9-12 ºC").attr("align","left")
-						d3.select("#TempGrupo").append("br")
-						
 
-
-						d3.select("#TempGrupo").selectAll("br").data([1,2,3]).enter().append("br")
+						d3.select("#TempGrupo").selectAll("br").data([1,2]).enter().append("br")
 						d3.select("#TempGrupo").append("img")
 							.attr("src","img/icona_temperatura-02-01.svg")
-		          				.attr("width","17%")
 		          				.attr("align","right")
-
 		          		d3.select("#TempGrupo").append("text").text("23-30 ºC").attr("align","left")
-		          		d3.select("#TempGrupo").selectAll("br").data([1,2,3,4,5,6]).enter().append("br")
-		          		
+		          		d3.select("#TempGrupo").selectAll("br").data([1,2,3,4]).enter().append("br")
 						d3.select("#TempGrupo").append("img")
 							.attr("src","img/icona_pluja-01.svg")
-		          				.attr("width","25%")
 		          				.attr("align","right")		          			
 		          		d3.select("#TempGrupo").append("text").text("55 días").attr("align","left")
 		          		
@@ -1068,7 +1059,7 @@ var graphic02;
 		          		d3.select("#HabitantGrupo").append("br")
 		          		d3.select("#HabitantGrupo").append("text").text("53% Mujeres")
 		          		d3.select("#HabitantGrupo").append("br")
-		          		d3.select("#HabitantGrupo").append("text").text("29% 40-59 años")
+		          		d3.select("#HabitantGrupo").append("text").text("40-45 años")
 		          		d3.select("#HabitantGrupo").append("br")
 		          		d3.select("#HabitantGrupo").append("text").text("83% españoles")
 		          		d3.select("#HabitantGrupo").append("br")
@@ -1176,14 +1167,6 @@ var graphic02;
 						
 		</div>	
 			<div id="menuFiltros" class="navDiv" >
-				<div id="instruccionesDiv" align="center">
-					<script type="text/javascript">
-						d3.select("#instruccionesDiv").style("background-color","#848484").append("button")
-							.style("margin","2px").style("font-size","10px")
-							.text("Instrucciones de funcionamiento")
-					</script>
-					
-				</div>	
 				<div id="controlVentanas" align="center"> 
 				<script type="text/javascript">
 						d3.select("#controlVentanas").append("br")

@@ -98,17 +98,17 @@ function misDatos(id_grafico){
               "Precio de la Vivienda de Segunda mano (€/m^2)",//08
               "Precio de la Vivienda de Alquiler (€ mensuales/m^2)",//09
               "Pasajeros Puerto de Barcelona", //10
-              "Pasajeros Aeropuerto de Barcelona", //11
+              "Evolución. Pasajeros Aeropuerto de Barcelona", //11
               "Temperaturas",//12
               "Días con precipitaciones",//13
               "Porcentaje de turistas según género (%)",//14
-              "Edad de los turistas",//15
+              "Evolución. Edad de los turistas (años)",//15
               "Principales gastos (€)",//16
               "Motivos del viaje",//17
               "Días de estancia",//18
               "Grado de repetibilidad de la visita (%)",//19
               "Medio de transporte (%)",//20
-              "Trabajadores por Sector",//21
+              "Evolución. Trabajadores por Sector",//21
               "Situación Laboral",//22
               "Producto Interior Bruto (millones de euros)", //23
               "Salario anual por sectores de actividad (€)",//24
@@ -126,19 +126,19 @@ function misDatos(id_grafico){
               "Transportes singulares (ususarios 2015)",//36
               "Resumen lugares de interés (2015)",//37
               "Principales Ferias (visitantes 2015)",//38
-              "Viajeros en hoteles según nacionalidad (personas)",//39
+              "Evolución. Viajeros en hoteles según nacionalidad (personas)",//39
               "Ocupación hotelera (%)",//40
               "Personal ocupado en hoteles (personas)",//41
               "Precio medio de los hoteles (€)",//42
               "Población por Edades",//43
               "Población por Nacionalidad",//44
-              "TEST DE POBLACIÓN DE BARCELONA",//45
+              "Población de Barcelona (personas)",//45
               "Plazas Hotel por distrito",//46
               "Superficie (km^2)",//47
               "Densidad de población (hab/km^2)",//48
-              "Precio de Vivienda Nueva (€/m^2)",//49
+              "Variación Anual. Precio de Vivienda Nueva (%)",//49
               "Precio de la Vivienda de Segunda mano (€/m^2)",//50
-              "Precio de la Vivienda de Alquiler (€ mensuales/m^2)"//51
+              "Evolución. Precio de la Vivienda de Alquiler (€ mensuales/m^2)"//51
               ])
 
       return tituloGrafico(nomrbreIdgrafico)

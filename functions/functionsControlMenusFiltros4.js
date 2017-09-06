@@ -12,7 +12,7 @@
            }
        }
 
-        if ((posicionNum)==1)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="01"; datos = graphic01;loadMenu("01");
+        if ((posicionNum)==1)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="45"; datos = graphic01;loadMenu("45");
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)

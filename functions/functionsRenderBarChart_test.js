@@ -474,7 +474,7 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
   var data = DATA;
   ID_VIP = miIDVIP_fromWorkFrame(workFrame) // ESTO LO HAGO PARA EL CASO DE VENTANAS COORDINADAS
   var numeroGrafico = resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico 
-  var COLORporDefecto="#2d3894"
+  var COLORporDefecto="#225ea8"//"#2d3894"
   var COLORES=[]
   var COLORES2=[]
   var graficoConDistritos="NO"

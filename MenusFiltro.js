@@ -28,23 +28,23 @@ function MenuRanking(){
 	//d3.select("#navegadorDiv").append("button").attr("class","buttonSort").attr("id","buttonOriginal").attr("onclick","myFunctionSort('NO')").text("original")
 	//d3.select("#navegadorDiv").append("button").attr("class","buttonSort").attr("id","buttonRanking").attr("onclick","myFunctionSort('SI')").text("ranking")
 
-	d3.select("#espacioBotones").append("button").attr("id","rankingOff").attr("onclick","myFunctionSort('NO')").text("original")
-	d3.select("#espacioBotones").append("button").attr("id","rankingOn").attr("onclick","myFunctionSort('SI')").text("ranking")
+	d3.select("#espacioBotones").append("button").attr("id","rankingOff").attr("onclick","myFunctionSort('NO')").text("Defecto")
+	d3.select("#espacioBotones").append("button").attr("id","rankingOn").attr("onclick","myFunctionSort('SI')").text("Ordenado")
 	//d3.select("#espacioBotones").append("br")
 }
 function MenuVariacionAnual(){
 	d3.select("#variacionAnualOff").remove()
     d3.select("#variacionAnualOn").remove()
 	d3.select("#espacioBotones").append("button")
-	.attr("onclick","myFunctionVariacionAnual('NO')").text("valores")
+	.attr("onclick","myFunctionVariacionAnual('NO')").text("Evolución")
 	.attr("id","variacionAnualOff")
 	
 	d3.select("#espacioBotones").append("button")
-	.attr("onclick","myFunctionVariacionAnual('SI')").text("variacion anual")
+	.attr("onclick","myFunctionVariacionAnual('SI')").text("Variacion anual")
 	.attr("id","variacionAnualOn")
 }
 function MenuPorcentaje(){
-	d3.select("#espacioBotones").append("button").attr("onclick","myFunctionPorcentaje('NO')").text("abs")
+	d3.select("#espacioBotones").append("button").attr("onclick","myFunctionPorcentaje('NO')").text("Valores")
 	d3.select("#espacioBotones").append("button").attr("onclick","myFunctionPorcentaje('SI')").text("%")
 	d3.select("#espacioBotones").append("br")
 }
