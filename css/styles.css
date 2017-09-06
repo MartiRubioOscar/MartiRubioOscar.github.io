@@ -50,10 +50,11 @@ rect:hover {
 
 circle:hover {
     fill: orange;
+    /*border-radius: 50px;*/
 }
 path.lineGenEv:hover {
     stroke: orange;
-    stroke-width:4px;
+    stroke-width:5px;
 }
 
 input.largerCheckbox
@@ -325,7 +326,7 @@ body {
     margin-top: 2px;
 
     margin-bottom: 3px;
-    width:49%; /*este ancho es para que cuadre con el texto*/ 
+    width:46.7%; /*este ancho es para que cuadre con el texto*/ 
     height:100%; /*115pxidem*/ 
     border:0px solid #333333; /*decoracion*/ 
     background-color:#D8D8D8; /*more*/ 
@@ -337,7 +338,7 @@ body {
     margin-top: 2px;     
     margin-bottom: 3px;
     padding-right:5px; /*algo de relleno*/
-    width:49%; /*este ancho es para que cuadre con el texto*/ 
+    width:51.3%; /*este ancho es para que cuadre con el texto*/ 
     height:100%; /*115pxidem*/ 
     border:0px solid #333333; /*decoracion*/ 
     background-color:#D8D8D8; /*more*/ 
@@ -350,8 +351,9 @@ body {
     width:224px;
     /*border-bottom:16px solid #FFFFFF;*/
     color:#000000;
-    opacity:0.7;    
-    margin:0; /*los h1 vienen con margen, con esto se lo quito*/ 
+    opacity:0.7;
+    margin: 0;    
+    margin-left:5px; /*los h1 vienen con margen, con esto se lo quito*/ 
     text-transform:uppercase; /*convierte todas en mayusculas*/ 
     padding-bottom:10px;
 }
@@ -400,10 +402,10 @@ body {
     float:left;
     margin :5px 0px 0px 0px; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
-    border:1px solid #333333;
+    border:0px solid #333333;
     width:99%; /*99*/
     height:auto;/*50px;/*auto;*/
-    background-color:#00FFFF;
+    background-color:#D8D8D8;
     }
 ul {
     list-style-type:none; /*con esto quitamos las viñetas*/
@@ -428,7 +430,7 @@ li a:hover {
     background-color:#999900; /*decoración para el evento hover (mouse encima)*/ 
 }
 .mapaBack{
-    background-color: green;
+    background-color: #D8D8D8;
     position:relative;
     /*width:100%; /*99*/
     /*height:auto;*/
@@ -445,72 +447,72 @@ li a:hover {
 }
 .encTemperatura{
     float:left;
-    margin :0.5% 0px 0px 20%; /*top right bottom left*/
+    margin :-2% 0px 0px 25%; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
     border:0px solid #333333;
     width:10%; /*99*/
     height:auto;
-    background-color: white;
+    background-color: #D8D8D8;
     /*color: #f0f8ff;*/
 }
 .encMapa{
     float:left;
-    margin :-4.5% 0px 0px 1%; /*top right bottom left*/
+    margin :-4.5% 0px 0px 7%; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
     border:0px solid #333333;
-    width:15%; /*99*/
+    width:17%; /*99*/
     height:auto;
-    background-color: white;
+    background-color: #D8D8D8;
     /*color: #f0f8ff;*/
 }
 .encInfra{
     float:left;
-    margin :-4.5% 0px 0px 5%; /*top right bottom left*/
+    margin :-4% 0px 0px 7%; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
     border:0px solid #333333;
     width:5%; /*99*/
     height:auto;
-    background-color: white;
+    background-color: #D8D8D8;
     /*color: #f0f8ff;*/
 }
 .encHabitant{
     float:left;
-    margin :-3% 0px 0px 3%; /*top right bottom left*/
+    margin :-3% 0px 0px 8%; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
     border:0px solid #333333;
     width:20%; /*99*/
     height:auto;
-    background-color: white;
+    background-color: #D8D8D8;
     /*color: #f0f8ff;*/
 }
 .encTurista{
     float:left;
-    margin :-3% 0px 0px 20%; /*top right bottom left*/
+    margin :-3% 0px 1.5% 22%; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
     border:0px solid #333333;
     width:20%; /*99*/
     height:auto;
-    background-color: white;
+    background-color: #D8D8D8;
     /*color: #f0f8ff;*/
 }
 .encAlojamiento{
         float:left;
-    margin :-3% 0px 0px 2%; /*top right bottom left*/
+    margin :-3% 0px 0px 8%; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
     border:0px solid #333333;
     width:20%; /*99*/
     height:auto;
-    background-color: white;
+    background-color: #D8D8D8;
     /*color: #f0f8ff;*/
 }
 .encSector{
         float:left;
-    margin :-3% 0px 0px 2%; /*top right bottom left*/
+    margin :-3% 0px 0px 8%; /*top right bottom left*/
     /*margin :0; /*top right bottom left*/
     border:0px solid #333333;
     width:20%; /*99*/
     height:auto;
-    background-color: white;
+    background-color: #D8D8D8;
     /*color: #f0f8ff;*/
 }
 .mainTitleMenu{
