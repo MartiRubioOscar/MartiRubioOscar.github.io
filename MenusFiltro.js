@@ -571,6 +571,9 @@ function myFunctionEvolution(){
 }
 ////////////////// DATASET 01
 function loadMenu(datasetActivo){ 
+	var identificadorGr = miVentanaActiva()
+	//alert(identificadorGr)
+
 	switch(datasetActivo) {
 	    case "01": // graphic01 POBLACIÓN HABITANTES
 	        document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -584,7 +587,7 @@ function loadMenu(datasetActivo){
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
 
 			// botones de valor absoluto o porcentaje
-			var identificadorGr = miVentanaActiva()
+			//var identificadorGr = miVentanaActiva()
 			
 			/*if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuRanking()}*/
@@ -692,7 +695,7 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxLocalizacion()
 			MenuVariacionAnual()
 	        break;*/
-	    case "07": // graphic06 VARIACIÓN ANUAL POBLACIÓN
+	    case "07": // Precio Vivienda nueva
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "Vivienda"
@@ -711,7 +714,7 @@ function loadMenu(datasetActivo){
 			MenuHasta(2006, 2016)
 			// Check box localización
 			MenuCheckBoxLocalizacion()
-			var identificadorGr = miVentanaActiva()
+			//var identificadorGr = miVentanaActiva()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
 	        break;
@@ -734,7 +737,7 @@ function loadMenu(datasetActivo){
 			MenuHasta(2006, 2016)
 			// Check box localización
 			MenuCheckBoxLocalizacion()
-			var identificadorGr = miVentanaActiva()
+			//var identificadorGr = miVentanaActiva()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
 	        break;
@@ -756,11 +759,11 @@ function loadMenu(datasetActivo){
 			MenuHasta(2006, 2016)
 			// Check box localización
 			MenuCheckBoxLocalizacion()
-			var identificadorGr = miVentanaActiva()
+			//var identificadorGr = miVentanaActiva()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
 	        break;
-	    case "10": // graphic06 VARIACIÓN ANUAL POBLACIÓN
+	    case "10": // graphic10 Puerto
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "Infraestructuras"
@@ -1368,9 +1371,17 @@ function loadMenu(datasetActivo){
 			MenuDesde(2009, 2015)
 			MenuHasta(2009, 2015)
 			
+			//alert("desde " + resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear)
+			//alert("hasta " + resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
 			// Check box sexo
 			MenuCheckBoxTurPerfilNacionalidad()
-			MenuVariacionAnual()
+
+			if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2009"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2009";fromYear="2009"}
+            if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear > "2015" ){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2015";untilYear="2015"}
+
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	
 	    case "40": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1410,6 +1421,7 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			//MenuCheckBoxTurAloOcupacion()
+			//alert("en 41")
 	        MenuVariacionAnual()
 	        break;	        
 	    case "42": 

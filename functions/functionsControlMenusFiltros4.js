@@ -434,6 +434,10 @@ function myFunctionWDesplegablePoblacionDistrito(){
 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic39;loadMenu("39");
                                 console.log(datos)
+
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2009"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2009";fromYear="2009"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear > "2015" ){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2015";untilYear="2015"}
+
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
@@ -904,6 +908,20 @@ for(var i=0; inputElements[i]; ++i){
     
 
     // cargar datos que no sean variación anual.
+
+        if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="10" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="11" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="12" ||
+            //resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="13" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="40" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="41" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="42") {
+          // para que aparezca el menú de VA en datasets mensuales
+            MenuVariacionAnual()
+              //alert("dentro " + resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
+                
+        }
+
         if (miExisteVariacionAnual(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)=="SI"){
 
           datos = misDatos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
@@ -969,16 +987,31 @@ for(var i=0; inputElements[i]; ++i){
    var activar;
    if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
       {
-        controlEVOLUTION=false
-        d3.select("#variacionAnualOff").remove()
-        d3.select("#variacionAnualOn").remove()
-        activar="si"
-        // cargar datos que no sean variación anual.
-        if (miExisteVariacionAnual(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)=="SI"){
-          datos = misDatos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
-          resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual="NO"
-          VARIACIONANUAL = resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual 
+        if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="10" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="11" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="12" ||
+            //resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="13" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="40" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="41" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="42") {
+            MenuVariacionAnual()
+              //alert("dentro " + resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
+                
         }
+        else{
+            //alert("no es mensual")
+            controlEVOLUTION=false
+              d3.select("#variacionAnualOff").remove()
+              d3.select("#variacionAnualOn").remove()
+              activar="si"
+              // cargar datos que no sean variación anual.
+              if (miExisteVariacionAnual(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)=="SI"){
+                datos = misDatos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
+                resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual="NO"
+                VARIACIONANUAL = resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual 
+              }
+        }
+        
 
       }else{
             if(resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear>resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)

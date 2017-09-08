@@ -2,6 +2,9 @@ function renderEVOLUCION(datos,AMBITGEO) {
     var colores = ["#35978f","#80cdc1","#7fbc41","#b8e186","#5aae61","#a6dba0","#8073ac",
                         "#b2abd2","#bf812d","#dfc27d","#de77ae","#f1b6da","#9970ab","#c2a5cf","#d6604d",
                         "#f45a82","#f46d43","#6799cf"]
+    var colores = ["#3288bd","#d53e4f","#99d594","#fc8d59","#01665e","#8c510a","#5ab4ac",
+                        "#d8b365","#1b7837","#c51b7d","#4d9221","#e9a3c9","#2166ac","#b2182b","#67a9cf",
+                        "#ef8a62","#999999","#6799cf"]
 
     ID_VIP = miIDVIP_fromWorkFrame(workFrame)
     

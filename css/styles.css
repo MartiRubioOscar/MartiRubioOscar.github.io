@@ -75,7 +75,7 @@ input.largerCheckbox
 }
 #tooltip {
     position: absolute;
-    width: 350px;
+    width: auto;/*350px*/
     height: auto;
     padding: 10px;
     background-color: white;
@@ -107,7 +107,7 @@ input.largerCheckbox
 }
 #tooltipEncInfraestructuras {
     position: absolute;
-    width: 350px;
+    width: auto;/*350*/
     height: auto;
     padding: 10px;
     background-color: white;
@@ -139,7 +139,7 @@ input.largerCheckbox
 }
 #tooltipMapa {
     position: absolute;
-    width: 350px;
+    width: auto;/*350*/
     height: auto;
     padding: 10px;
     background-color: white;
@@ -172,7 +172,7 @@ input.largerCheckbox
 }
 #tooltipMenuPpal {
     position: absolute;
-    width: 250px;
+    width: auto;/*250px*/
     height: auto;
     padding: 10px;
     background-color: white;
@@ -204,7 +204,7 @@ input.largerCheckbox
 }
 #tooltipBarra {
     position: absolute;
-    width: 50px;
+    width: auto;/*50px*/
     height: auto;
     padding: 10px;
     background-color: white;
@@ -236,7 +236,7 @@ input.largerCheckbox
 }
 #tooltipEvolucion {
     position: absolute;
-    width: 50px;
+    width: auto; /*50px*/
     height: auto;
     padding: 10px;
     background-color: white;
@@ -268,7 +268,7 @@ input.largerCheckbox
 }
 #tooltipVA {
     position: absolute;
-    width: 50px;
+    width: auto; /*50px*/
     height: auto;
     padding: 10px;
     background-color: white;
