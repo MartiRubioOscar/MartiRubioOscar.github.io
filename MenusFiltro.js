@@ -1663,7 +1663,7 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			MenuCheckBoxBcnVivNuevaTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
-                    {MenuVariacionAnual()}
+                    {MenuVariacionAnual(); alert("dentro")}
 			//MenuVariacionAnual()
 	        
 	        break;

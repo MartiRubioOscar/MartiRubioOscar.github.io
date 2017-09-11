@@ -2,6 +2,9 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
     var colores = ["#35978f","#80cdc1","#7fbc41","#b8e186","#5aae61","#","#a6dba0","#8073ac",
                         "#b2abd2","#bf812d","#dfc27d","#de77ae","#f1b6da","#9970ab","#c2a5cf","#d6604d",
                         "#f45a82","#f46d43","#6799cf"]
+    var colores = ["#3288bd","#d53e4f","#99d594","#fc8d59","#01665e","#8c510a","#5ab4ac",
+                        "#d8b365","#1b7837","#c51b7d","#4d9221","#e9a3c9","#2166ac","#b2182b","#67a9cf",
+                        "#ef8a62","#999999","#6799cf"]
     var anchoLinea="2px"
     var radioPunto="3px";
     var colorPunto="#737373"
@@ -70,6 +73,8 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
       var MinNacional=9999
       var MinInternacional=9999
       var MinimoAeropuerto=[]
+      var formatoFechas = d3.time.format("%b")
+      var valorTooltipFechas=[]
       
       if (resumenMAT[POSICION].FAeropuerto[0] == "Total")
         {
@@ -122,7 +127,7 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
 
         var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
         var xAxis = d3.svg.axis()
-        .scale(xScale).tickFormat(d3.time.format("%b %y"))
+        .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
         var yAxis = d3.svg.axis()
         .scale(yScale)
         .orient("left");
@@ -171,20 +176,26 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
               d3.select("#tooltipEvolucion").classed("hidden", true);
               });
         var valorTooltip="9999"
+//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
+//.data([valorTooltipFechas])
+//var valorT = d[0] + " "+ d[1] + "%";         
             for (var i = 0; i < datosAeropuertoInternacional.length; i++) {
               valorTooltip= datosAeropuertoInternacional[i].resultado
+              valorTooltipFechas = [formatoFechas(datosAeropuertoInternacional[i].fecha),datosAeropuertoInternacional[i].resultado]
               d3.select("#" + nomContenedor)
                 .append("circle")
                     .attr("cx",xScale(datosAeropuertoInternacional[i].fecha))
                     .attr("cy",yScale(datosAeropuertoInternacional[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    .data([valorTooltip])
+                    //.data([valorTooltip])
+                    .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
+                          //var valorT = d;  
+                          var valorT = d[0] + " "+ d[1] + "%";                          
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {
@@ -230,20 +241,26 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
               });
             ;
           var valorTooltip="9999"
+//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
+//.data([valorTooltipFechas])
+//var valorT = d[0] + " "+ d[1] + "%";             
             for (var i = 0; i < datosAeropuertoTotal.length; i++) {
               valorTooltip= datosAeropuertoTotal[i].resultado
+              valorTooltipFechas = [formatoFechas(datosAeropuertoTotal[i].fecha),datosAeropuertoTotal[i].resultado]
               d3.select("#" + nomContenedor)
                 .append("circle")
                     .attr("cx",xScale(datosAeropuertoTotal[i].fecha))
                     .attr("cy",yScale(datosAeropuertoTotal[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    .data([valorTooltip])
+                    //.data([valorTooltip])
+                    .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
+                          //var valorT = d; 
+                          var valorT = d[0] + " "+ d[1] + "%";                        
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {
@@ -289,20 +306,26 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
               d3.select("#tooltipEvolucion").classed("hidden", true);
               });;
           var valorTooltip="9999"
+//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
+//.data([valorTooltipFechas])
+//var valorT = d[0] + " "+ d[1] + "%";           
             for (var i = 0; i < datosAeropuertoNacional.length; i++) {
               valorTooltip= datosAeropuertoNacional[i].resultado
+              valorTooltipFechas = [formatoFechas(datosAeropuertoNacional[i].fecha),datosAeropuertoNacional[i].resultado]
               d3.select("#" + nomContenedor)
                 .append("circle")
                     .attr("cx",xScale(datosAeropuertoNacional[i].fecha))
                     .attr("cy",yScale(datosAeropuertoNacional[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    .data([valorTooltip])
+                    //.data([valorTooltip])
+                    .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
+                          //var valorT = d; 
+                          var valorT = d[0] + " "+ d[1] + "%";                         
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {
@@ -342,6 +365,8 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
       var MinMinima=9999
       var MinMaxima=9999
       var MinimoTemperaturas=[]
+      var formatoFechas = d3.time.format("%b")
+      var valorTooltipFechas=[]
       
       if (resumenMAT[POSICION].FTemperatura[0] == "media")
         {
@@ -394,7 +419,7 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
         var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
         
         var xAxis = d3.svg.axis()
-        .scale(xScale).tickFormat(d3.time.format("%b %y"))
+        .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
         var yAxis = d3.svg.axis()
         .scale(yScale)
         .orient("left");
@@ -443,20 +468,26 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
               });
 
         var valorTooltip="9999"
+//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
+//.data([valorTooltipFechas])
+//var valorT = d[0] + " "+ d[1] + "%";                   
             for (var i = 0; i < datosTemperaturaMinima.length; i++) {
               valorTooltip= datosTemperaturaMinima[i].resultado
+              valorTooltipFechas = [formatoFechas(datosTemperaturaMinima[i].fecha),datosTemperaturaMinima[i].resultado]
               d3.select("#" + nomContenedor)
                 .append("circle")
                     .attr("cx",xScale(datosTemperaturaMinima[i].fecha))
                     .attr("cy",yScale(datosTemperaturaMinima[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    .data([valorTooltip])
+                    //.data([valorTooltip])
+                    .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
+                          //var valorT = d;
+                          var valorT = d[0] + " "+ d[1] + "%";                          
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {
@@ -500,20 +531,26 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
               });
 
         var valorTooltip="9999"
+//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
+//.data([valorTooltipFechas])
+//var valorT = d[0] + " "+ d[1] + "%";        
             for (var i = 0; i < datosTemperaturaMaxima.length; i++) {
               valorTooltip= datosTemperaturaMaxima[i].resultado
+              valorTooltipFechas = [formatoFechas(datosTemperaturaMaxima[i].fecha),datosTemperaturaMaxima[i].resultado]
               d3.select("#" + nomContenedor)
                 .append("circle")
                     .attr("cx",xScale(datosTemperaturaMaxima[i].fecha))
                     .attr("cy",yScale(datosTemperaturaMaxima[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    .data([valorTooltip])
+                    //.data([valorTooltip])
+                    .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
+                          //var valorT = d;     
+                          var valorT = d[0] + " "+ d[1] + "%";                            
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {
@@ -558,20 +595,26 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
               });
 
         var valorTooltip="9999"
+//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
+//.data([valorTooltipFechas])
+//var valorT = d[0] + " "+ d[1] + "%";                
             for (var i = 0; i < datosTemperaturaMedia.length; i++) {
               valorTooltip= datosTemperaturaMedia[i].resultado
+              valorTooltipFechas = [formatoFechas(datosTemperaturaMedia[i].fecha),datosTemperaturaMedia[i].resultado]
               d3.select("#" + nomContenedor)
                 .append("circle")
                     .attr("cx",xScale(datosTemperaturaMedia[i].fecha))
                     .attr("cy",yScale(datosTemperaturaMedia[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    .data([valorTooltip])
+                    //.data([valorTooltip])
+                    .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
+                          //var valorT = d;             
+                          var valorT = d[0] + " "+ d[1] + "%";                            
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {
@@ -600,6 +643,9 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
 
     case grafico=="10" || grafico=="42" || grafico=="41" || grafico=="40":
       //alert("dataset 10")
+        var formatoFechas = d3.time.format("%b")
+        var valorTooltipFechas=[]
+
         var tituloSerie = d3.scale.ordinal()
           .domain(["10","13","40","42"])
           .range(["Puerto","Precipitaciones","Ocupación hotelera","Precio Hoteles"])
@@ -616,7 +662,7 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
         var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
         
         var xAxis = d3.svg.axis()
-        .scale(xScale)
+        .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
         var yAxis = d3.svg.axis()
         .scale(yScale)
         .orient("left");
@@ -627,6 +673,9 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
             //.attr("transform", "translate(0," + posicionEjeCero + ")")
             .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
             .call(xAxis);
+        
+        //d3.select("#" + nomContenedor).selectAll("g").selectAll("text").style("font-size","7px")
+
         d3.select("#" + nomContenedor).append("g")
             .attr("class", " y axis")
             //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
@@ -662,8 +711,12 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
               d3.select("#tooltipEvolucion").classed("hidden", true);
               });
         var valorTooltip="9999"
+//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
+//.data([valorTooltipFechas])
+//var valorT = d[0] + " "+ d[1] + "%"; 
             for (var i = 0; i < datos.length; i++) {
               valorTooltip= datos[i].resultado
+              valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
               d3.select("#" + nomContenedor)
                 .append("circle")
                     .attr("cx",xScale(datos[i].fecha))
@@ -671,12 +724,14 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
                     //.attr("fill","red")
-                    .data([valorTooltip])
+                    //.data([valorTooltip])
+                    .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
+                          //var valorT = d;  
+                          var valorT = d[0] + " "+ d[1] + "%";                       
                           return tooltipEvolucion(valorT,pos)
                         })
                     .on("mouseout", function() {

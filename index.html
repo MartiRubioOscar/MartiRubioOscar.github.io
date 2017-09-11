@@ -544,10 +544,9 @@ var graphic02;
 			    
 			    case "menuVivienda":
 		        		document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-		        		//loadMenu("07")
-		        		//datos = graphic07;
-		        		loadMenu("49")
-		        		datos = graphic49;
+		        		//loadMenu("49")
+		        		//datos = graphic49;
+		        		
 
 			    		ambitoGeo = ambitoGeoIni;
 			    		
@@ -563,6 +562,9 @@ var graphic02;
 
    			resumenMAT = updateSeguimientoUnaLinea(ID_VIP,resumenMAT,workFrame,ambitoGeo,fromYear,untilYear,
    							PrimeraVez,SORT,TANTOPORCIEN,VARIACIONANUAL,{})
+
+   						loadMenu("49")
+		        		datos = graphic49;
 						////////////////////////////////////////////////////////////////////							
 						ctrlPrimera = "SI"
 						ventanaPrimera = workFrame

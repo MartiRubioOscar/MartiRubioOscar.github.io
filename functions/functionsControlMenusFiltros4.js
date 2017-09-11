@@ -923,9 +923,20 @@ for(var i=0; inputElements[i]; ++i){
         }
 
         if (miExisteVariacionAnual(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)=="SI"){
-
+          //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
+          //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual)
+          if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico!="10" &
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico!="11" &
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico!="12" &
+            //resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="13" ||
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico!="40" &
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico!="41" &
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico!="42") {
+          
+            resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual="NO"      
+          }
           datos = misDatos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
-          resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual="NO"
+          
           VARIACIONANUAL = resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual 
         }
     
@@ -987,6 +998,7 @@ for(var i=0; inputElements[i]; ++i){
    var activar;
    if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
       {
+        //alert("iguales")
         if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="10" ||
             resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="11" ||
             resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="12" ||
@@ -995,7 +1007,10 @@ for(var i=0; inputElements[i]; ++i){
             resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="41" ||
             resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="42") {
             MenuVariacionAnual()
-              //alert("dentro " + resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
+            activar="si"
+            //alert("VA " + resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual)
+            VARIACIONANUAL = resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual 
+            datos = misDatos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
                 
         }
         else{

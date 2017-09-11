@@ -38,6 +38,11 @@ function automatizacionRenderVariacionAnual(DATA){
     /////////////////// OJO QUE xScale2 y yScale2 son globales. Esto podría fastidiar el uso en otros lados de la función
     var COLORES = d3.scale.category20b()
     console.log(COLORES(0))
+
+    var COLORES = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18])
+                    .range(["#3288bd","#d53e4f","#99d594","#fc8d59","#01665e","#8c510a","#5ab4ac",
+                            "#d8b365","#1b7837","#c51b7d","#4d9221","#e9a3c9","#2166ac","#b2182b","#67a9cf",
+                            "#ef8a62","#999999","#6799cf"])
     var posicionMatrizResumenMat = miPosicionResumenMAT(ID_VIP)
     numeroGrafico = resumenMAT[posicionMatrizResumenMat].Idgrafico
     if (numeroGrafico=="45"||numeroGrafico=="46"||numeroGrafico=="47"||numeroGrafico=="48"||numeroGrafico=="49"||numeroGrafico=="50"||numeroGrafico=="51") 
@@ -108,6 +113,8 @@ function automatizacionRenderVariacionAnual(DATA){
         yScale2 = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom])
                     .domain([MINIMO_Y_total, MAXIMO_Y_total])
 
+        
+
         d3.select("#" + IDENTIFICADOR).select(".y.axis").remove()
         yAxis = d3.svg.axis()
             .scale(yScale2)
@@ -117,6 +124,42 @@ function automatizacionRenderVariacionAnual(DATA){
             .attr("class", "y axis")
             .attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .call(yAxis);
+/////////////////////
+        xScale2 = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]) // mirar nota!!!!!
+                    .domain([MINIMOyear, MAXIMOyear])
+        xAxis = d3.svg.axis()
+                    .scale(xScale2)
+                    .tickFormat(d3.format(".4r"))
+                    .ticks(MAXIMOyear-MINIMOyear)
+                
+        d3.select("#" + nomContenedor).append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+            .call(xAxis);
+////////////////////////////
+        var datos_Filtrados = DATA 
+        d3.select("#" + NOMCONTENEDOR).append('svg:path')
+            .attr('d', lineGen(datos_Filtrados))
+            .attr('stroke', COLORES(0))
+            .attr('stroke-width', anchoLinea)
+            .attr('fill', 'none')
+            .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
+            .data([datos_Filtrados[i]])
+            .on("mouseover",function(d,i){
+                    console.log(d)
+                  var coords = d3.mouse(this);
+                  var pos = [event.pageX,event.pageY]
+                  var valorT;   
+                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==27) {valorT = "Licencias VUT"};
+                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==28) {valorT = "Plazas en VUT"};
+                  //var valorT = eval("d[i]." + CHECKBOX.filtroDatos); 
+                  //var valorT = d
+                  return tooltipEvolucion(valorT,pos)
+                })
+            .on("mouseout", function() {
+              //Hide the tooltip
+              d3.select("#tooltipEvolucion").classed("hidden", true);
+              })
 
     }
     if (CHECKBOX.titulosSquaresCB.length!=0){
@@ -138,7 +181,7 @@ function automatizacionRenderVariacionAnual(DATA){
             minimoYear[i] = d3.min(datos_Filtrados[i], function(d) {
                  return parseFloat(d.year) //References first value in each sub-array
             });
-        }
+        };
         MAXIMO_Y_total = d3.max(maximoEjeY, function(d) {
                      return parseFloat(d) //References first value in each sub-array
                 });   
@@ -168,7 +211,9 @@ function automatizacionRenderVariacionAnual(DATA){
             .attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .call(yAxis);
 
-    }
+
+
+    
 
     xScale2 = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]) // mirar nota!!!!!
                 .domain([MINIMOyear, MAXIMOyear])
@@ -182,29 +227,6 @@ function automatizacionRenderVariacionAnual(DATA){
         .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
         .call(xAxis);
 
-    if (CHECKBOX.titulosSquaresCB.length==0){
-        //console.log(DATA)
-        var datos_Filtrados = DATA 
-        d3.select("#" + NOMCONTENEDOR).append('svg:path')
-            .attr('d', lineGen(datos_Filtrados))
-            .attr('stroke', COLORES)
-            .attr('stroke-width', anchoLinea)
-            .attr('fill', 'none')
-            .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
-            .data([datos_Filtrados[i]])
-            .on("mouseover",function(d,i){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[i]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
-            .on("mouseout", function() {
-              //Hide the tooltip
-              d3.select("#tooltipEvolucion").classed("hidden", true);
-              })
-    }
-    else{
         for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {            
 
                 
@@ -227,18 +249,172 @@ function automatizacionRenderVariacionAnual(DATA){
                       d3.select("#tooltipEvolucion").classed("hidden", true);
                       })
             };
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+            var sliceDatosFiltrados=[]
+            var centroX =[]
+            var centroY =[]
+            var LegendCentroX = []
+            var LegendCentroY = []
+
+            for (var j = 0; j < datos_Filtrados.length; j++) {
+                centroX = 999
+                centroY = 999
+                //alert(datos_Filtrados[j].length)
+                sliceDatosFiltrados=datos_Filtrados[j].slice()
+                console.log(sliceDatosFiltrados)
+                //alert(sliceDatosFiltrados.length==0)
+                for (var jj = 0; jj < sliceDatosFiltrados.length; jj++) {
+                    //console.log(sliceDatosFiltrados)
+                    //console.log(sliceDatosFiltrados[jj].resultado)
+                    centroX = sliceDatosFiltrados[jj].year
+                    centroY = sliceDatosFiltrados[jj].resultado
+                    //CENTRO_Y.push(sliceDatosFiltrados[jj].resultado)
+
+                    d3.select("#" + NOMCONTENEDOR)
+                        .append("circle")
+                            .attr("cx",xScale2(centroX))
+                            .attr("cy",yScale2(centroY))
+                            .attr("r", radioPunto)
+                            .attr("fill",colorPunto).attr("fill-opacity","0.2")
+                        .data([centroY])
+                        .on("mouseover",function(d,i){
+                                    console.log(d)
+                                    d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                                  var coords = d3.mouse(this);
+                                  var pos = [event.pageX,event.pageY]
+                                  var valorT = d + "%";                         
+                                  return tooltipVA(valorT,pos)
+                                })
+                        .on("mouseout", function() {
+                              //Hide the tooltip
+                              d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+                              d3.select("#tooltipVA").classed("hidden", true);
+                              })
+
+                };
+                if(centroX!=999 & centroY!=999){
+                    //alert("debería escribir leyenda")
+                    var TextoLegend = eval("sliceDatosFiltrados[0]." + CHECKBOX.filtroDatos);
+                    var maxLegend = d3.max(sliceDatosFiltrados, function(d) {
+                             return parseFloat(d.year) //References first value in each sub-array
+                        });
+                    var ultimoValorSerie = sliceDatosFiltrados.filter(function (el){
+                        return el.year == maxLegend})
+                    console.log(ultimoValorSerie[0].resultado)
+                    console.log(maxLegend)
+                //}
+                    //alert("debería escribir leyenda " + TextoLegend)
+                    d3.select("#" + NOMCONTENEDOR)
+                            .append("text")
+                            .attr("x", xScale2(ultimoValorSerie[0].year)+7)
+                            .attr("y", yScale2(ultimoValorSerie[0].resultado))
+                            .attr("fill", "black")
+                            .attr("font-size","0.8em")
+                            .attr("dy", ".35em")
+                            //.text(TextoLegend)
+                            .text(TextoLegend);
+                }
+
+            };   
+
+
     }
-    var sliceDatosFiltrados=[]
+    if (CHECKBOX.titulosSquaresCB.length==0){
+        var sliceDatosFiltrados=[]
+        var centroX =[]
+        var centroY =[]
+        var LegendCentroX = []
+        var LegendCentroY = []
+        console.log(datos_Filtrados)
+        for (var j = 0; j < datos_Filtrados.length; j++) {
+            centroX = 999
+            centroY = 999
+            //alert(datos_Filtrados[j].length)
+            sliceDatosFiltrados=datos_Filtrados[j]
+            console.log(sliceDatosFiltrados)
+            //alert(sliceDatosFiltrados.length==0)
+            //for (var jj = 0; jj < sliceDatosFiltrados.length; jj++) {
+                //console.log(sliceDatosFiltrados)
+                //console.log(sliceDatosFiltrados[jj].resultado)
+                centroX = sliceDatosFiltrados.year
+                centroY = sliceDatosFiltrados.resultado
+                console.log(xScale2(centroX))
+                //CENTRO_Y.push(sliceDatosFiltrados[jj].resultado)
+
+                d3.select("#" + NOMCONTENEDOR)
+                    .append("circle")
+                        .attr("cx",xScale2(centroX))
+                        .attr("cy",yScale2(centroY))
+                        .attr("r", radioPunto)
+                        .attr("fill",colorPunto).attr("fill-opacity","0.2")
+                    .data([centroY])
+                    .on("mouseover",function(d,i){
+                                console.log(d)
+                                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                              var coords = d3.mouse(this);
+                              var pos = [event.pageX,event.pageY]
+                              var valorT = d + "%";                         
+                              return tooltipVA(valorT,pos)
+                            })
+                    .on("mouseout", function() {
+                          //Hide the tooltip
+                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+                          d3.select("#tooltipVA").classed("hidden", true);
+                          })
+
+            };
+        //console.log(DATA)
+ /*       var datos_Filtrados = DATA 
+        d3.select("#" + NOMCONTENEDOR).append('svg:path')
+            .attr('d', lineGen(datos_Filtrados))
+            .attr('stroke', COLORES)
+            .attr('stroke-width', anchoLinea)
+            .attr('fill', 'none')
+            .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
+            .data([datos_Filtrados[i]])
+            .on("mouseover",function(d,i){
+                    console.log(d)
+                  var coords = d3.mouse(this);
+                  var pos = [event.pageX,event.pageY]
+                  var valorT = eval("d[i]." + CHECKBOX.filtroDatos);                         
+                  return tooltipEvolucion(valorT,pos)
+                })
+            .on("mouseout", function() {
+              //Hide the tooltip
+              d3.select("#tooltipEvolucion").classed("hidden", true);
+              })*/
+    }
+    else{
+/*        for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {            
+
+                
+                d3.select("#" + NOMCONTENEDOR).append('svg:path')
+                    .attr('d', lineGen(datos_Filtrados[i]))
+                    .attr('stroke', COLORES(i))
+                    .attr('stroke-width', anchoLinea)
+                    .attr('fill', 'none')
+                    .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
+                    .data([datos_Filtrados[i]])
+                    .on("mouseover",function(d,i){
+                            console.log(d)
+                          var coords = d3.mouse(this);
+                          var pos = [event.pageX,event.pageY]
+                          var valorT = eval("d[i]." + CHECKBOX.filtroDatos);                         
+                          return tooltipEvolucion(valorT,pos)
+                        })
+                    .on("mouseout", function() {
+                      //Hide the tooltip
+                      d3.select("#tooltipEvolucion").classed("hidden", true);
+                      })
+            };*/
+    }
+/*    var sliceDatosFiltrados=[]
     var centroX =[]
     var centroY =[]
     var LegendCentroX = []
     var LegendCentroY = []
-    //var CENTRO_Y = []
-    //var CENTRO_X = []
-    //var objetoDatos={resultado:"",year:""}
-    //var datosSimples=[]
-    //console.log(datos_Filtrados)
-    //var contador = 0
+
     for (var j = 0; j < datos_Filtrados.length; j++) {
         centroX = 999
         centroY = 999
@@ -273,30 +449,7 @@ function automatizacionRenderVariacionAnual(DATA){
                       d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                       d3.select("#tooltipVA").classed("hidden", true);
                       })
-            /*d3.select("#" + NOMCONTENEDOR)
-                .append("text")
-                .attr("x", xScale2(centroX))
-                .attr("y", yScale2(centroY))
-                .attr("fill", "black")
-                .attr("font-size","0.8em")
-                .attr("dy", ".35em")
-                .text("hola");*/
-                //LegendCentroX = sliceDatosFiltrados[sliceDatosFiltrados.length-1].year
-                //LegendCentroY = sliceDatosFiltrados[sliceDatosFiltrados.length-1].resultado
-                //console.log(datos_Filtrados[jj][0])
-                //
-                //var TextoLegend = eval("datos_Filtrados[jj][0]." + CHECKBOX.filtroDatos);
-                
-                //console.log(TextoLegend)
-                /*d3.select("#" + NOMCONTENEDOR)
-                    .append("text")
-                    .attr("x", xScale2(LegendCentroX))
-                    .attr("y", yScale2(LegendCentroY))
-                    .attr("fill", "black")
-                    .attr("font-size","0.8em")
-                    .attr("dy", ".35em")
-                    //.text(TextoLegend)
-                    .text("hola");*/
+
         };
         if(centroX!=999 & centroY!=999){
             //alert("debería escribir leyenda")
@@ -320,17 +473,8 @@ function automatizacionRenderVariacionAnual(DATA){
                     //.text(TextoLegend)
                     .text(TextoLegend);
         }
-        /*LegendCentroX = sliceDatosFiltrados[sliceDatosFiltrados.length-1].year
-        LegendCentroY = sliceDatosFiltrados[sliceDatosFiltrados.length-1].resultado
-        d3.select("#" + NOMCONTENEDOR)
-                .append("text")
-                .attr("x", xScale2(LegendCentroX))
-                .attr("y", yScale2(LegendCentroY))
-                .attr("fill", "black")
-                .attr("font-size","0.8em")
-                .attr("dy", ".35em")
-                .text("pepe");*/
-    };   
+
+    };   */
     //console.log(CHECKBOX)
 } 
 
