@@ -98,7 +98,7 @@ function tooltipsPictografia (infraestructura){
     //alert("en función tooltipsInfraestructuras")
       var textoTooltip = d3.scale.ordinal()
         .domain(["PicMaxima","PicMinima","PicLluvia","PicPerfilHabitante","PicPerfilTurista","PicAlojamiento","PicSectorHostelería"])
-        .range(["Promedio de Temperaturas máximas en el 2016","Promedio de Temperaturas mínimas en el 2016","Días con lluvia en el 2016","Perfil del habitante de Barcelona","Perfil de turista de Barcelona  2016","Oferta de alojamiento de Barcelona  2016","Datos del sector de la Hostelería en Barcelona 2016"])
+        .range(["Promedio de Temperaturas máximas en el 2016","Promedio de Temperaturas mínimas en el 2016","Días con lluvia en el 2016","Perfil del habitante de Barcelona 2016","Perfil de turista de Barcelona  2016","Oferta de alojamiento de Barcelona  2016","Datos del sector de la Hostelería en Barcelona 2016"])
       var explicacion = textoTooltip(infraestructura)
 
       var X = findPos(eval(infraestructura))[0] + 10
