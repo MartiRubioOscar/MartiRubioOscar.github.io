@@ -471,37 +471,56 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="21"; 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; 
                                 datos = graphic21;
+                                //if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2009"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2009";fromYear="2009"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear < resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear )
+                                  {resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear = resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear;
+                                    untilYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear
+                                    fromYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear
+                                  }
+                                //loadMenu("21");
+                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                
+                                
                                 loadMenu("21");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                               };
         if ((posicionNum)==2)   {
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="22";
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; 
                                 datos = graphic22;
                                 loadMenu("22");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2009"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2009";fromYear="2009"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear > "2015"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2015";fromYear="2015"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear > "2015" ){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2015";untilYear="2015"}
+
+                                
+                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                
+                                
                               };
         if ((posicionNum)==3)   {
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="23";
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; 
                                 datos = graphic23;
+
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2007"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2007";fromYear="2007"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear > "2015"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2015";fromYear="2015"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear > "2015" ){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2015";untilYear="2015"}
+                                
+                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                                 loadMenu("23");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                
                               };
         if ((posicionNum)==4)   {
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="24";
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; 
                                 datos = graphic24;
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2010"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2010";fromYear="2010"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear > "2015"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2015";fromYear="2015"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear > "2015" ){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2015";untilYear="2015"}
+                                
+                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                                 loadMenu("24");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                
                               };                                    
         
         if (workFrame=="41"||workFrame=="42"||

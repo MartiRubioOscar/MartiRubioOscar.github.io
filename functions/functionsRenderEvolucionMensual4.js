@@ -111,7 +111,7 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
         var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, MAXIMO]),
         
         xAxis = d3.svg.axis()
-        .scale(xScale),
+        .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6),
         yAxis = d3.svg.axis()
         .scale(yScale)
         .orient("left");

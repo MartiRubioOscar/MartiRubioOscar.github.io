@@ -192,7 +192,6 @@ function miVentanaActiva(){
           datos = window["graphic" + resMAT.Idgrafico];
   }
 function updateFiltroNavegador(AMBITOGEO, FROMYEAR, UNTILYEAR){
-
           Identificador = ID_VIP 
           if (document.getElementById("window41")!=null){  
             var element41 = document.getElementById("window41").className

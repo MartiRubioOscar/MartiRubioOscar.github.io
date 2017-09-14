@@ -5,50 +5,50 @@ var fromIdventanaToMatrixPosition = d3.scale.ordinal()
       .range(["3","4","5","6","1","2","0"])    
 
     var ExplicacionGrafico = d3.scale.ordinal()
-      .domain(["01","02","03","04","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28",
+      .domain(["45","46","47","48","49","50","51","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28",
                 "29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"])
-      .range(["Explicación: Habitantes en Barcelona. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,", //01                             
-              "Explicación: Plazas de hoteles",//02 
-              "Explicación: Superficie (km^2)",//03
-              "Explicación: Densidad de población (hab/km^2)",//04
-              "Explicación: Precio de Vivienda Nueva (€/m^2)",//07
-              "Explicación: Precio de la Vivienda de Segunda mano (€/m^2)",//08
-              "Explicación: Precio de la Vivienda de Alquiler (€ mensuales/m^2)",//09
-              "Explicación: Pasajeros Puerto de Barcelona", //10
-              "Explicación: Pasajeros Aeropuerto de Barcelona", //11
-              "Explicación: Temperaturas",//12
-              "Explicación: Días con precipitaciones",//13
-              "Explicación: Porcentaje de turistas según género (%)",//14
-              "Explicación: Edad de los turistas",//15
-              "Explicación: Principales gastos (€)",//16
-              "Explicación: Motivos del viaje",//17
-              "Explicación: Días de estancia",//18
-              "Explicación: Grado de repetibilidad de la visita (%)",//19
-              "Explicación: Medio de transporte (%)",//20
-              "Explicación: Trabajadores por Sector",//21
-              "Explicación: Situación Laboral",//22
-              "Explicación: Producto Interior Bruto (millones de euros)", //23
-              "Explicación: Salario anual por sectores de actividad (€)",//24
-              "Explicación: Número de Reuniones",//25
-              "Explicación: Asistentes a Reuniones",//26
-              "Explicación: Licencias de Viviendas de uso turístico",//27
-              "Explicación: Plazas en Viviendas de uso turístico",//28
-              "Explicación: Número de Hoteles, Hostales y Pensiones",//29
-              "Explicación: Plazas en Hoteles, Hostales y Pensiones",//30
-              "Explicación: Visitas a los lugares más visitados de Barcelona",//31
-              "Explicación: Espacios de Ocio (visitantes 2015)",//32
-              "Explicación: Espacios de interés arquitectónico (visitantes 2015)",//33
-              "Explicación: Centros Exposiciones (visitantes 2015)",//34
-              "Explicación: Museos y Colecciones (visitantes 2015)",//35
-              "Explicación: Transportes singulares (ususarios 2015)",//36
-              "Explicación: Resumen lugares de interés (2015)",//37
-              "Explicación: Principales Ferias (visitantes 2015)",//38
-              "Explicación: Viajeros alojados en hoteles según nacionalidad (personas)",//39
-              "Explicación: Ocupación hotelera (%)",//40
-              "Explicación: Personal ocupado en hoteles (personas)",//41
-              "Explicación: Precio medio de los hoteles (€)",//42
-              "Explicación: Población por Edades",//43
-              "Explicación: Población por Nacionalidad"//44
+      .range([/*45*/"Nombre del Conjunto de datos: Habitantes<br/><br/>Descripción: Población de Barcelona y sus distritos<br/><br/>Unidades: habitantes<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores de población o porcentaje sobre el total de Barcelona, evolución anual con valores o porcentaje sobre el total de Barcelona y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017", //01                             
+              /*46*/"Nombre del Conjunto de datos: Plazas de hotel por distrito<br/><br/>Descripción: Número de plazas de hotel de la oferta hotelera de Barcelona según el distrito<br/><br/>Unidades: número de plazas<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores del número de plazas de hotel o porcentaje sobre el total de las plazas de hoteles en Barcelona según distrito, evolución anual con valores o porcentaje sobre el total de  plazas de hotel en Barcelona según distrito y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//02 
+              /*47*/"Nombre del Conjunto de datos: Superficie<br/><br/>Descripción: Superficie del territorio que ocupa Barcelona y sus distritos<br/><br/>Unidades: km^2<br/><br/>Periodo de datos disponibles: 2015<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores de superfície o porcentaje sobre el total de Barcelona<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//03
+              /*48*/"Nombre del Conjunto de datos: Densidad de población<br/><br/>Descripción: Cantidad de población en área de superficie de Barcelona y sus distritos<br/><br/>Unidades: habitantes/km^2<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores de densidad de superficie, evolución anual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//04
+              /*49*/"Nombre del Conjunto de datos: Vivienda nueva<br/><br/>Descripción: Precio de la vivienda nueva en Barcelona y sus distritos<br/><br/>Unidades: €/m^2<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//07
+              /*50*/"Nombre del Conjunto de datos: Vivienda segunda mano<br/><br/>Descripción: Precio de la vivienda de segunda mano en Barcelona y sus distritos<br/><br/>Unidades: €/m^2<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//08
+              /*51*/"Nombre del Conjunto de datos: Vivienda de alquiler<br/><br/>Descripción: Precio de la vivienda de alquiler en Barcelona y sus distritos<br/><br/>Unidades: €/m^2<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//09
+              /*10*/"Nombre del Conjunto de datos: Pasajeros Puerto<br/><br/>Descripción: Número de pasajeros mensuales que llegan al puerto de Barcelona<br/><br/>Unidades: pasajeros<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Evolución temporal mensual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017", //10
+              /*11*/"Nombre del Conjunto de datos: Pasajeros Aeropuerto<br/><br/>Descripción: Número de pasajeros mensuales que llegan al aeropuerto de Barcelona<br/><br/>Unidades: pasajeros<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Evolución temporal mensual de pasajeros, evolución temporal del porcentaje de pasajeros que llegan cada mes en un año (pej. en el mes de abril de 2010 llegaron el 7.63% del total de los pasajeros de todo el 2010) y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017", //11
+              /*12*/"Nombre del Conjunto de datos: Temperaturas<br/><br/>Descripción: Temperaturas mensuales máximas, mínimas y medias<br/><br/>Unidades: ºC<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Evolución temporal mensual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//12
+              /*13*/"Nombre del Conjunto de datos: Precipitaciones<br/><br/>Descripción: Número de días con precipitaciones al mes<br/><br/>Unidades: días<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Evolución temporal mensual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//13
+              /*14*/"Nombre del Conjunto de datos: Turistas por género<br/><br/>Descripción: Porcentaje de los turistas que pernoctan en Barcelona según su género<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//14
+              /*15*/"Nombre del Conjunto de datos: Turistas por edad<br/><br/>Descripción: Porcentaje de los turistas que pernoctan en Barcelona según su edad<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//15
+              /*16*/"Nombre del Conjunto de datos: Gasto del turista<br/><br/>Descripción: Principales gastos de los turistas que pernoctan en Barcelona<br/><br/>Unidades: €<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//16
+              /*17*/"Nombre del Conjunto de datos: Motivos del viaje<br/><br/>Descripción: Motivos del viaje de los turistas que pernoctan en Barcelona<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//17
+              /*18*/"Nombre del Conjunto de datos: Días de alojamiento<br/><br/>Descripción: Número de pernoctaciones de los turistas que pernoctan en Barcelona<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//18
+              /*19*/"Nombre del Conjunto de datos: Repetitividad del viaje<br/><br/>Descripción: Cantidad de veces que han viajado antes a Barcelona los turistas que pernoctan en Barcelona<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//19
+              /*20*/"Nombre del Conjunto de datos: Transporte utilizado<br/><br/>Descripción: Tipo de transporte utilizado para llegar a Barcelona de los turistas que pernoctan en Barcelona<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//20
+              /*21*/"Nombre del Conjunto de datos: Trabajadores por sector<br/><br/>Descripción: Distribución de los trabajadores de Barcelona según grandes sectores<br/><br/>Unidades: trabajadores<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores de la cantidad de trabajadores o porcentaje sobre el total de Barcelona, evolución anual con valores o porcentaje sobre el total de Barcelona y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//21
+              /*22*/"Nombre del Conjunto de datos: Situación laboral<br/><br/>Descripción: Distribución de los trabajadores de Barcelona según su situación laboral<br/><br/>Unidades: trabajadores<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores de la cantidad de trabajadores o porcentaje sobre el total de Barcelona, evolución anual con valores o porcentaje sobre el total de Barcelona y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//22
+              /*23*/"Nombre del Conjunto de datos: Producto Interior Bruto<br/><br/>Descripción: Producto Interior Bruto de Barcelona<br/><br/>Unidades: millones de €<br/><br/>Periodo de datos disponibles: 2007-2016<br/><br/>Variantes de gráficos que se pueden ver: Barra con valor del PIB, evolución del PIB y porcentaje de la variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017", //23
+              /*24*/"Nombre del Conjunto de datos: Salario por sectores<br/><br/>Descripción: Promedio de los salarios de los trabajadores de Barcelona según el sector de actividad en el que trabajan<br/><br/>Unidades: € brutos/año<br/><br/>Periodo de datos disponibles: 2010-2015<br/><br/>Variantes de gráficos que se pueden ver: Barra con valor del PIB, evolución del PIB y porcentaje de la variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//24
+              /*25*/"Nombre del Conjunto de datos: Número de reuniones<br/><br/>Descripción: Número de convenciones y congresos que se celebran en Barcelona<br/><br/>Unidades: reuniones<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//25
+              /*26*/"Nombre del Conjunto de datos: Asistentes a reuniones<br/><br/>Descripción: Número de asistentes a las convenciones y congresos que se celebran en Barcelona<br/><br/>Unidades: asistentes<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//26
+              /*27*/"Nombre del Conjunto de datos: Licencias de Viviendas de Uso Turístico<br/><br/>Descripción: Licencias de Viviendas de Uso Turístico en Barcelona<br/><br/>Unidades: número de licencias<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Barra con el número de licencias VUT, evolución de las licencias VUT y porcentaje de la variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//27
+              /*28*/"Nombre del Conjunto de datos: Plazas en Viviendas de Uso Turístico<br/><br/>Descripción: Plazas en Viviendas de Uso Turístico en Barcelona<br/><br/>Unidades: número de plazas<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Barra con el número de plazas VUT, evolución de las plazas VUT y porcentaje de la variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//28
+              /*29*/"Nombre del Conjunto de datos: Número de hoteles<br/><br/>Descripción: Número de hoteles de la oferta hotelera de Barcelona<br/><br/>Unidades: número de hoteles<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores del número de hoteles o porcentaje sobre el total de hoteles en Barcelona, evolución anual con valores o porcentaje sobre el total de  hoteles en Barcelona y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//29
+              /*30*/"Nombre del Conjunto de datos: Plazas de hotel<br/><br/>Descripción: Número de plazas de hotel de la oferta hotelera de Barcelona<br/><br/>Unidades: número de plazas<br/><br/>Periodo de datos disponibles: 2006-2015<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores del número de hoteles o porcentaje sobre el total de hoteles en Barcelona, evolución anual con valores o porcentaje sobre el total de  hoteles en Barcelona y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//30
+              /*31*/"Nombre del Conjunto de datos: Top visitas a lugares de interés<br/><br/>Descripción: Lugares de interés turístico más visitados de Barcelona<br/><br/>Unidades: visitas<br/><br/>Periodo de datos disponibles: 2010-2015<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//31
+              /*32*/"Nombre del Conjunto de datos: Espacios de ocio<br/><br/>Descripción: Top 3 espacios de ocio más visitados<br/><br/>Unidades: visitas<br/><br/>Periodo de datos disponibles: 2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//32
+              /*33*/"Nombre del Conjunto de datos: Lugares de interés arquitectónico<br/><br/>Descripción: Top 13 lugares de interés arquitectónico más visitados de Barcelona<br/><br/>Unidades: visitas<br/><br/>Periodo de datos disponibles: 2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//33
+              /*34*/"Nombre del Conjunto de datos: Centros de exposiciones<br/><br/>Descripción: Top 10 centros de exposiciones  más visitados de Barcelona<br/><br/>Unidades: visitas<br/><br/>Periodo de datos disponibles: 2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//34
+              /*35*/"Nombre del Conjunto de datos: Museos y colecciones<br/><br/>Descripción: Top 20 centros de museos y colecciones más visitados de Barcelona<br/><br/>Unidades: visitas<br/><br/>Periodo de datos disponibles: 2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//35
+              /*36*/"Nombre del Conjunto de datos: Trasnportes singulares<br/><br/>Descripción: Top 6 transportes singulares de la ciudad<br/><br/>Unidades: visitas<br/><br/>Periodo de datos disponibles: 2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//36
+              /*37*/"Nombre del Conjunto de datos: Resumen lugares de interés<br/><br/>Descripción: Resumen lugares de interés de Barcelona<br/><br/>Unidades: visitas<br/><br/>Periodo de datos disponibles: 2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//37
+              /*38*/"Nombre del Conjunto de datos: Ferias principales<br/><br/>Descripción: Ferias principales que se celebran en Barcelona y número de visitantes<br/><br/>Unidades: asistentes<br/><br/>Periodo de datos disponibles: 2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//38
+              /*39*/"Nombre del Conjunto de datos: Nacionalidad del turista<br/><br/>Descripción: Nacionalidad del turista que pernocta en Barcelona<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras, evolución anual y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//39
+              /*40*/"Nombre del Conjunto de datos: Ocupación hotelera<br/><br/>Descripción: Porcentaje mensual de ocupación hotelera<br/><br/>Unidades: %<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Evolución temporal mensual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//40
+              /*41*/"Nombre del Conjunto de datos: Empleados en hoteles<br/><br/>Descripción: Cantidad de empleados en los hoteles de Barcelona<br/><br/>Unidades: trabajadores<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Evolución temporal mensual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//41
+              /*42*/"Nombre del Conjunto de datos: Precio hoteles<br/><br/>Descripción: Precio medio de una habitación doble<br/><br/>Unidades: €/habitación y noche<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Evolución temporal mensual y evolución del porcentaje de variación anual<br/><br/>Fuente de datos: trivago Hotel Price Index<br/><br/>Última actualización: Mayo 2017",//42
+              /*43*/"Nombre del Conjunto de datos: Población por edades<br/><br/>Descripción: Distribución de edades de la población de Barcelona y sus distritos<br/><br/>Unidades: habitantes<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores de población o porcentaje sobre el total de Barcelona, evolución anual con valores o porcentaje sobre el total de Barcelona y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017",//43
+              /*44*/"Nombre del Conjunto de datos: Población por nacionalidades<br/><br/>Descripción: Distribución de nacionalidades de la población de Barcelona y sus distritos<br/><br/>Unidades: habitantes<br/><br/>Periodo de datos disponibles: 2006-2016<br/><br/>Variantes de gráficos que se pueden ver: Gráfico de barras con valores de población o porcentaje sobre el total de Barcelona, evolución anual con valores o porcentaje sobre el total de Barcelona y  evolución del porcentaje de variación anual<br/><br/>Fuente de datos: Departamento de estadística del Ayuntamiento de Barcelona<br/><br/>Última actualización: Mayo 2017"//44
               ])
 
 var explicacion = ExplicacionGrafico(resumenMAT[fromIdventanaToMatrixPosition(id_ventana)].Idgrafico)
@@ -56,65 +56,18 @@ var explicacion = ExplicacionGrafico(resumenMAT[fromIdventanaToMatrixPosition(id
 
 var X = findPos(eval(id_ventana))[0]
 var Y = findPos(eval(id_ventana))[1]
-var x = X-130
-var y = Y
+var x = X-180
+var y = Y + 10
 //alert(x)
 d3.select("#tooltip")
 	.style("left", x + "px")
 	.style("top", y + "px")						
 	.select("#value")
-	.text(explicacion);
+  .html(explicacion)
+	//.text(explicacion);
 
 //Show the tooltip
 d3.select("#tooltip").classed("hidden", false);
 
-
-}
-
-function findPos(obj) {
-	// función que devuelve la posición absoluta x, y de un DOM elemento 
-	var curleft = curtop = 0;
-	if (obj.offsetParent) {
-		do {
-			curleft += obj.offsetLeft;
-			curtop += obj.offsetTop;
-			} while (obj = obj.offsetParent);
-			return [curleft,curtop];
-	}
-}
-
-function tooltipsInfraestructuras (infraestructura){
-    //alert("en función tooltipsInfraestructuras")
-      var textoTooltip = d3.scale.ordinal()
-        .domain(["iAeropuerto","iPuerto","iFerrocarril","iAutobus"])
-        .range(["aeropuerto del prat",
-                "puerto de barcelona",
-                "sants estació",
-                "entradas por carretera"])
-      var explicacion = textoTooltip(infraestructura)
-
-      var X = findPos(eval(infraestructura))[0]
-      var Y = findPos(eval(infraestructura))[1]
-      d3.select("#tooltipEncInfraestructuras")
-        .style("left", X + "px")
-        .style("top", Y + "px")           
-        //.select("#value")
-        .text(explicacion);
-      //Show the tooltip
-      d3.select("#tooltipEncInfraestructuras").classed("hidden", false);
-
-}
-
-function tooltipMapaBarcelona (infraestructura){
-    
-      var X = findPos(eval(infraestructura))[0]
-      var Y = findPos(eval(infraestructura))[1]
-      d3.select("#tooltipEncInfraestructuras")
-        .style("left", X + "px")
-        .style("top", Y + "px")           
-        //.select("#value")
-        //.text(explicacion);
-      //Show the tooltip
-      d3.select("#tooltipMapa").classed("hidden", false);
 
 }

@@ -842,8 +842,8 @@ function loadMenu(datasetActivo){
 			// botones de ranking y original
 			//MenuRanking();
 			// DESDE y hasta
-			MenuDesde(2006, 2016)
-			MenuHasta(2006, 2016)
+			MenuDesde(2006, 2015)
+			MenuHasta(2006, 2015)
 			
 			// Check box localización
 			//MenuCheckBoxLocalizacion()
@@ -868,7 +868,10 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxSexo()
 			MenuCheckBoxTurTuriGenero()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+            
+			//MenuVariacionAnual()
 	        break;
 	    case "15": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -890,7 +893,9 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxEdadTurista()
 			MenuCheckBoxTurTuriEdad()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	     
 	    case "16": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -912,7 +917,9 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxGasto()
 			MenuCheckBoxTurTuriGasto()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;
 	    case "17": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -933,7 +940,9 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxMotivos()
 			MenuCheckBoxTurTuriMotivo()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	        	       
 	    case "18": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -954,7 +963,9 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxDiasAlojamiento()
 			MenuCheckBoxTurTuriDiasAlo()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	        
 	    case "19": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -975,7 +986,9 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxRepeT()
 			MenuCheckBoxTurTuriRepe()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	        
 	    case "20": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -996,7 +1009,9 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxTransporteT()
 			MenuCheckBoxTurTuriTransport()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	        
 	    case "21": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1016,8 +1031,10 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxTrabajadoresSector()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
 
-			MenuVariacionAnual()
+			//MenuVariacionAnual()
 	        break;	        
 	    case "22": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1032,12 +1049,15 @@ function loadMenu(datasetActivo){
 			// botones de ranking y original
 			MenuRanking();
 			// DESDE y hasta
-			MenuDesde(2006, 2016)
-			MenuHasta(2006, 2016)
+			MenuDesde(2006, 2015)
+			MenuHasta(2006, 2015)
 			
 			// Check box sexo
 			MenuCheckBoxSituacionLaboral()
-	        MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+
+	        //MenuVariacionAnual()
 	        break;
 	    case "23": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1057,7 +1077,10 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxBcnEcoPIB()
-	        MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+
+	        //MenuVariacionAnual()
 	        break;
 	    case "24": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1077,7 +1100,10 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxBcnEcoSalariosSector()
-	        MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+
+	        //MenuVariacionAnual()
 	        break;	
 	    case "25": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1097,7 +1123,9 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxTurRNumReunion()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	 
 	    case "26": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1117,7 +1145,9 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxTurRAsisReunion()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	 	                       
 	   	case "27": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1137,7 +1167,9 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			//MenuCheckBoxBcnEcoSalariosSector()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	       
 	   	case "28": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1157,7 +1189,9 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			//MenuCheckBoxBcnEcoSalariosSector()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	
 	    case "29": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1178,7 +1212,9 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxTurAloNumHP()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	
 	    case "30": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1200,7 +1236,9 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxTurAloPlazasHP()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+			//MenuVariacionAnual()
 	        break;	  
 	    case "31": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
