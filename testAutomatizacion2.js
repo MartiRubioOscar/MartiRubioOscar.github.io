@@ -1,6 +1,6 @@
 function automaticInput(id_grafico){
   var resFiltros = d3.scale.ordinal()
-                  .domain(["11","12","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51"])
+                  .domain(["11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51"])
                   .range([
                   { //11
                     nomMenuCB:["MenuCheckBoxBcnInfAero"],
@@ -11,7 +11,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Total","Nacional","Internacional"],                  
                     filtroResumenMAT:"FAeropuerto",
                     filtroDatos: "filtroAeropuerto",
-                    subfiltrosDatos:["Total","Nacional","Internacional"]
+                    subfiltrosDatos:["Total","Nacional","Internacional"],
+                    BARRAS:"uds barras",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"testEA",
+                    EVOL_mensual:"pasajeros"
                   },
                   { //12
                     nomMenuCB:["MenuCheckBoxBcnClimaTemp"],
@@ -22,7 +27,28 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Media","Minima","Maxima"],                  
                     filtroResumenMAT:"FTemperatura",
                     filtroDatos: "filtroTempertatura",
-                    subfiltrosDatos:["media","minima","maxima"]
+                    subfiltrosDatos:["media","minima","maxima"],
+                    BARRAS:"uds barras",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"testEA",
+                    EVOL_mensual:"ºC"
+                  },
+                  { //13
+                    nomMenuCB:[],
+                    nomMyFunctionCB: [],
+                    nomClaseCB: [],
+                    nomIdSquaresCB:[],
+                    titulosEjeY:[],                  
+                    titulosSquaresCB:[],                  
+                    filtroResumenMAT:[],
+                    filtroDatos: [],
+                    subfiltrosDatos:[],
+                    BARRAS:"uds barras",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"",
+                    EVOL_mensual:"días"
                   },
                   { //14
                     nomMenuCB:["MenuCheckBoxTurTuriGenero"],
@@ -33,7 +59,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Hombres","Mujeres"],                  
                     filtroResumenMAT:"FTurSexo",
                     filtroDatos: "filtroSexo",
-                    subfiltrosDatos:["hombres","mujeres"]
+                    subfiltrosDatos:["hombres","mujeres"],
+                    BARRAS:"%",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"%",
+                    EVOL_mensual:"testEM"
                   },
                   { //15
                     nomMenuCB:["MenuCheckBoxTurTuriEdad"],
@@ -44,7 +75,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["15-17 años","18-24 años","25-34 años","35-44 años","45-54 años","más de 55 años"],                  
                     filtroResumenMAT:"FTurEdad",
                     filtroDatos: "filtroEdadT",
-                    subfiltrosDatos:["de 15 a 17","de 18 a 24","de 25 a 34","de 35 a 44","de 45 a 54","55 o mas"]
+                    subfiltrosDatos:["de 15 a 17","de 18 a 24","de 25 a 34","de 35 a 44","de 45 a 54","55 o mas"],
+                    BARRAS:"%",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"%",
+                    EVOL_mensual:"testEM"
                   },
                   { //16
                     nomMenuCB:["MenuCheckBoxTurTuriGasto"],
@@ -55,7 +91,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Transporte","Alojamiento","Estancia"],
                     filtroResumenMAT:"FTurGasto",
                     filtroDatos: "filtroGastoT",
-                    subfiltrosDatos:["transporte","alojamiento","estancia"]
+                    subfiltrosDatos:["transporte","alojamiento","estancia"],
+                    BARRAS:"€",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"€",
+                    EVOL_mensual:"testEM"
                   },
                   { //17
                     nomMenuCB:["MenuCheckBoxTurTuriMotivo"],
@@ -66,7 +107,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Vacacional","Profesional","Personal y otros"],                  
                     filtroResumenMAT:"FTurMotivo",
                     filtroDatos: "filtroMotivosT",
-                    subfiltrosDatos:["Vacacional-Ocio","Profesional","Personal y otros"]
+                    subfiltrosDatos:["Vacacional-Ocio","Profesional","Personal y otros"],
+                    BARRAS:"%",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"%",
+                    EVOL_mensual:"testEM"
                   },
                   { //18
                     nomMenuCB:["MenuCheckBoxTurTuriDiasAlo"],
@@ -77,7 +123,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Hoteles","Pensiones y hostales"],                  
                     filtroResumenMAT:"FTurAlojamiento",
                     filtroDatos: "filtroAlojamientoT",
-                    subfiltrosDatos:["Hoteles","Pensiones y hostales"]
+                    subfiltrosDatos:["Hoteles","Pensiones y hostales"],
+                    BARRAS:"días",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"días",
+                    EVOL_mensual:"testEM"
                   },
                   { //19
                     nomMenuCB:["MenuCheckBoxTurTuriRepe"],
@@ -88,7 +139,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Primera visita","Segunda visita","Tercera o más","NS NC"],                  
                     filtroResumenMAT:"FTurRepe",
                     filtroDatos: "filtroRepeT",
-                    subfiltrosDatos:["primeraVisita","segundaVisita","teceraOmas","NSNC"]
+                    subfiltrosDatos:["primeraVisita","segundaVisita","teceraOmas","NSNC"],
+                    BARRAS:"%",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"%",
+                    EVOL_mensual:"testEM"
                   },
                   { //20
                     nomMenuCB:["MenuCheckBoxTurTuriTransport"],
@@ -99,7 +155,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Avión","Coche","Ferrocarril","Autocar","Otros"],                  
                     filtroResumenMAT:"FTurTransporte",
                     filtroDatos: "filtroTransporteT",
-                    subfiltrosDatos:["avion","coche","ferrocarril","autocar","otros"]
+                    subfiltrosDatos:["avion","coche","ferrocarril","autocar","otros"],
+                    BARRAS:"%",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"%",
+                    EVOL_mensual:"testEM"
                   },
                   { //21
                     nomMenuCB:"MenuCheckBoxBcnTrabajadoresSector",
@@ -110,7 +171,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Afiliados","Agricultura","Industria","Construcción","Servicios"],                  
                     filtroResumenMAT:"FBcnEcoTrabajadoresSector",
                     filtroDatos: "filtroBcnEcoTrabajadoresSector",
-                    subfiltrosDatos:["afiliados","agricultura","industria","construccion","servicios"]
+                    subfiltrosDatos:["afiliados","agricultura","industria","construccion","servicios"],
+                    BARRAS:"trabajadores",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"trabajadores",
+                    EVOL_mensual:"testEM"
                   }, 
                   { //22
                     nomMenuCB:"MenuCheckBoxBcnSituacionLaboral",
@@ -121,7 +187,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Asalariados","Autónomos","Paro Registrado"],                    
                     filtroResumenMAT:"FBcnEcoSituacionLaboral",
                     filtroDatos: "filtroBcnEcoSituacionLaboral",
-                    subfiltrosDatos:["asalariados","autonomos","paroRegistrado"]
+                    subfiltrosDatos:["asalariados","autonomos","paroRegistrado"],
+                    BARRAS:"pob. activa",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"pob. activa",
+                    EVOL_mensual:"testEM"
                   },
                   { //23
                     nomMenuCB:"MenuCheckBoxBcnEcoPIB",
@@ -132,7 +203,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["PIB"],                    
                     filtroResumenMAT:"FBcnEcoPIB",
                     filtroDatos: "filtroBcnEcoPIB",
-                    subfiltrosDatos:["barcelona"]
+                    subfiltrosDatos:["barcelona"],
+                    BARRAS:"millones €",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"millones €",
+                    EVOL_mensual:"testEM"
                   },
                   { //24
                     nomMenuCB:"MenuCheckBoxBcnEcoSalariosSector",
@@ -143,7 +219,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Salario Medio","Industria","Consturcción","Venta y reparación vehículos","Comercio al por mayor","Transporte","Hostelería","Información y comunicaciones","Financieras y aseguradoras","Actividades immobiliarias","Científicas y técnicas","Administrativo auxiliar","Educación","Administración pública","Sanidad","Servicios Sociales","Actividades artísticas"],                    
                     filtroResumenMAT:"FBcnEcoSalariosSector",
                     filtroDatos: "filtroBcnEcoSalariosSector",
-                    subfiltrosDatos:["salarioMedio","industria","construccion","ventaReparaciones","comercioPorMayor","transporte","hosteleria","informacionComunicaciones","financierasAseguradoras","actividadesInmobiliarias","actividadesProfesionalesCientificasTecnicas","administrativasAuxiliares","educacion","administracionPublica","sanidad","serviciosSociales","artisticasServicioPersonas"]
+                    subfiltrosDatos:["salarioMedio","industria","construccion","ventaReparaciones","comercioPorMayor","transporte","hosteleria","informacionComunicaciones","financierasAseguradoras","actividadesInmobiliarias","actividadesProfesionalesCientificasTecnicas","administrativasAuxiliares","educacion","administracionPublica","sanidad","serviciosSociales","artisticasServicioPersonas"],
+                    BARRAS:"€ br/anuales",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"€ br/anuales",
+                    EVOL_mensual:"testEM"
                   },
                   { //25
                     nomMenuCB:"MenuCheckBoxTurRNumReunion",
@@ -154,7 +235,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Congresos","Convenciones"],                    
                     filtroResumenMAT:"FTurRNumReunion",
                     filtroDatos: "filtroTurRNumReunion",
-                    subfiltrosDatos:["congresos","convenciones"]
+                    subfiltrosDatos:["congresos","convenciones"],
+                    BARRAS:"reuniones",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"reuniones",
+                    EVOL_mensual:"testEM"
                   },                  
                   { //26
                     nomMenuCB:"MenuCheckBoxTurRAsisReunion",
@@ -165,7 +251,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Congresos","Convenciones"],                    
                     filtroResumenMAT:"FTurRAsisReunion",
                     filtroDatos: "filtroTurRAsisReunion",
-                    subfiltrosDatos:["congresos","convenciones"]
+                    subfiltrosDatos:["congresos","convenciones"],
+                    BARRAS:"asistentes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"asistentes",
+                    EVOL_mensual:"testEM"
                   },                  
                   { //27
                     nomMenuCB:"MenuCheckBoxTurAloHUTLicencias",
@@ -176,7 +267,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:[],                    
                     filtroResumenMAT:"FTurAloHUTLicencias",
                     filtroDatos: "filtroTurAloHUTLicencias",
-                    subfiltrosDatos:[]
+                    subfiltrosDatos:[],
+                    BARRAS:"licencias",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"licencias",
+                    EVOL_mensual:"testEM"
                   },
                   { //28
                     nomMenuCB:"MenuCheckBoxTurAloHUTPlazas",
@@ -187,7 +283,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:[],                    
                     filtroResumenMAT:"FTurAloHUTPlazas",
                     filtroDatos: "filtroTurAloHUTPlazas",
-                    subfiltrosDatos:[]
+                    subfiltrosDatos:[],
+                    BARRAS:"plazas",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"plazas",
+                    EVOL_mensual:"testEM"
                   },
                   { //29
                     nomMenuCB:"MenuCheckBoxTurAloNumHP",
@@ -198,7 +299,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Hoteles de 1,2,3 estrellas","Hoteles de 4 o 5 estrellas","Pensiones y hostales"],                    
                     filtroResumenMAT:"FTurAloHNumHP",
                     filtroDatos: "filtroTurNumHP",
-                    subfiltrosDatos:["total_1a3","total_4y5","pensionesHostales"]
+                    subfiltrosDatos:["total_1a3","total_4y5","pensionesHostales"],
+                    BARRAS:"establecimientos",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"establecimientos",
+                    EVOL_mensual:"testEM"
                   },
                   { //30
                     nomMenuCB:"MenuCheckBoxTurAloPlazasHP",
@@ -209,7 +315,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Hoteles de 1,2,3 estrellas","Hoteles de 4 o 5 estrellas","Pensiones y hostales"],                    
                     filtroResumenMAT:"FTurAloHPlazasHP",
                     filtroDatos: "filtroTurPlazasHP",
-                    subfiltrosDatos:["total_1a3","total_4y5","pensionesHostales"]
+                    subfiltrosDatos:["total_1a3","total_4y5","pensionesHostales"],
+                    BARRAS:"plazas",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"plazas",
+                    EVOL_mensual:"testEM"
                   },
                   { //31
                     nomMenuCB:"MenuCheckBoxTurCultTop",
@@ -220,7 +331,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Sagrada Familia","Parc Güell","Museo de FC Barcelona","Acuario","Centro Cultural del Born","Pueblo Español","Museo Picaso","Zoo", "Casa Batlló","La Pedrera","Museo de Historia","CaixaFourm","CosmoCaixa","Castillo de Montjuïc"],                    
                     filtroResumenMAT:"FTurCultTop",
                     filtroDatos: "filtroTurCultTop",
-                    subfiltrosDatos:["sagradaFamilia","parqueGuell","museuFCB","acuario","bornCentreCultural","pobleEspanyol","picaso","zoo","casaBatllo","pedrera","museoHistoria","caixaForum","cosmoCaixa","castilloMontjuic"]
+                    subfiltrosDatos:["sagradaFamilia","parqueGuell","museuFCB","acuario","bornCentreCultural","pobleEspanyol","picaso","zoo","casaBatllo","pedrera","museoHistoria","caixaForum","cosmoCaixa","castilloMontjuic"],
+                    BARRAS:"visitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"visitantes",
+                    EVOL_mensual:"testEM"
                   },                 
                   { //32
                     nomMenuCB:"MenuCheckBoxTurCultELleure",
@@ -231,7 +347,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Tibidabo","Laberinto de Horta","Mirador de Colón"],                    
                     filtroResumenMAT:"FTurCultELleure",
                     filtroDatos: "filtroTurCultELleure",
-                    subfiltrosDatos:["parqueAtraccionesTibidabo","parqueLaberintHorta","miradorColon"]
+                    subfiltrosDatos:["parqueAtraccionesTibidabo","parqueLaberintHorta","miradorColon"],
+                    BARRAS:"visitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"visitantes",
+                    EVOL_mensual:"testEM"
                   },                 
                   { //33
                     nomMenuCB:"MenuCheckBoxTurCultArquitectura",
@@ -242,7 +363,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Sagrada Familia","Parc Güell","Pueblo Español","Casa Batlló","La Pedrera","Castillo de Montjuïc","Espacios MUHBA","Casa-Museo Gaudí","Palacio Güell", "Sant Pau","Palau de la Música","Pavellón Mies van der Rohe","Liceu"],                    
                     filtroResumenMAT:"FTurCultArquitectura",
                     filtroDatos: "filtroTurCultArquitectura",
-                    subfiltrosDatos:["Basílica de la Sagrada Familia","Park Güell","Poble Espanyol de Barcelona","Casa Batlló","La Pedrera","Castell de Montjuïc","Espais Patrimonials de MUHBA","Casa-Museu Gaudí (Park Güell)","Palau Güell","Recinte Modernista de Sant Pau","Palau de la Música Catalana","Pavelló Mies van der Rohe","Gran Teatre del Liceu (rutes guiades)"]
+                    subfiltrosDatos:["Basílica de la Sagrada Familia","Park Güell","Poble Espanyol de Barcelona","Casa Batlló","La Pedrera","Castell de Montjuïc","Espais Patrimonials de MUHBA","Casa-Museu Gaudí (Park Güell)","Palau Güell","Recinte Modernista de Sant Pau","Palau de la Música Catalana","Pavelló Mies van der Rohe","Gran Teatre del Liceu (rutes guiades)"],
+                    BARRAS:"visitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"visitantes",
+                    EVOL_mensual:"testEM"
                   },
                   { //34
                     nomMenuCB:[],
@@ -253,7 +379,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["CaixaForum","Palau Robert","CCCB","Arts Santa Mònica","Fundación MAPFRE","La Virreina","La Capella","Archivo Histórico","Archivo Fotográfico","CAC Fabra y Coats","Funcación Vila Casas"],                    
                     filtroResumenMAT:"FTurCultExpo",
                     filtroDatos: "filtroTurCultExpo",
-                    subfiltrosDatos:["CaixaForum","Palau Robert","CCCB","Arts Santa Mònica","Fundación MAPFRE","La Virreina","La Capella","Arxiu Històric","Arxiu Fotogràfic","CAC Fabra i Coats","Funcació Vila Casas"]
+                    subfiltrosDatos:["CaixaForum","Palau Robert","CCCB","Arts Santa Mònica","Fundación MAPFRE","La Virreina","La Capella","Arxiu Històric","Arxiu Fotogràfic","CAC Fabra i Coats","Funcació Vila Casas"],
+                    BARRAS:"visitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"visitantes",
+                    EVOL_mensual:"testEM"
                   },
                   { //35
                     nomMenuCB:[],
@@ -264,7 +395,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Museu FC Barcelona","Acuario","Centro Cultural Born","Museu Picasso","Zoo","MUHBA","CosmoCaixa","MNAC","Fundación Joan Miró","MACBA","Museo Egipcio","Museo Marítimo","Museo del Diseño","Fundació Daurel","Museo de Cera","Museu Blau", "Museo de Historia","Museo Autómatas","Museo del Chocolate"],                    
                     filtroResumenMAT:"FTurCultMuseos",
                     filtroDatos: "filtroTurCultMuseos",
-                    subfiltrosDatos:["Museu FC Barcelona","L'Aquàrium de Barcelona","El Born Centre Cultural","Museu Picasso","Parc Zoològic de Barcelona","Museu d'Història de Barcelona MUHBA","CosmoCaixa Barcelona","Museu Nacional d'Art de Catalunya MNAC","Fundació Joan Miró","Museu d'Art Contemporani de Barcelona MACBA","Museu Egipci de Barcelona","Museu Marítim de Barcelona MMB","Museu del Disseny de Barcelona","Fundació Fran Daurel","Museu de Cera de Barcelona","Museu Blau","Museu d'Història de Catalunya","Museu dels Autòmats del Tibidabo","Museu de la Xocolata"]
+                    subfiltrosDatos:["Museu FC Barcelona","L'Aquàrium de Barcelona","El Born Centre Cultural","Museu Picasso","Parc Zoològic de Barcelona","Museu d'Història de Barcelona MUHBA","CosmoCaixa Barcelona","Museu Nacional d'Art de Catalunya MNAC","Fundació Joan Miró","Museu d'Art Contemporani de Barcelona MACBA","Museu Egipci de Barcelona","Museu Marítim de Barcelona MMB","Museu del Disseny de Barcelona","Fundació Fran Daurel","Museu de Cera de Barcelona","Museu Blau","Museu d'Història de Catalunya","Museu dels Autòmats del Tibidabo","Museu de la Xocolata"],
+                    BARRAS:"visitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"visitantes",
+                    EVOL_mensual:"testEM"
                   },
                   { //36
                     nomMenuCB:[],
@@ -275,7 +411,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Bus Turístico","Teleférico Montjuïc","Barcelona City Tour","Funicular Tibidabo","Las Golondrinas","Tranvía Blau"],                    
                     filtroResumenMAT:"FTurCultTransportes",
                     filtroDatos: "filtroTurCultTransportes",
-                    subfiltrosDatos:["Bus Turístico","Teleférico Montjuïc","Barcelona City Tour","Funicular Tibidabo","Las Golondrinas","Tranvía Blau"]
+                    subfiltrosDatos:["Bus Turístico","Teleférico Montjuïc","Barcelona City Tour","Funicular Tibidabo","Las Golondrinas","Tranvía Blau"],
+                    BARRAS:"usuarios",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"usuarios",
+                    EVOL_mensual:"testEM"
                   },
                   { //37
                     nomMenuCB:[],
@@ -286,7 +427,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Museos y Colecciones","Centros Exposiciones","Lugares Ocio","Interés arquitectónico","Transportes Singulares"],                    
                     filtroResumenMAT:"FTurCultResumen",
                     filtroDatos: "filtroTurCultResumenLugares",
-                    subfiltrosDatos:["Total Museus i Col.leccions (MC)","Total Centres d´exposicions (CE)","Total Espais de lleure (ELL)","Total Espais d´interès Arquitectònic (EIA)","Total Transports singulars (TS)"]
+                    subfiltrosDatos:["Total Museus i Col.leccions (MC)","Total Centres d´exposicions (CE)","Total Espais de lleure (ELL)","Total Espais d´interès Arquitectònic (EIA)","Total Transports singulars (TS)"],
+                    BARRAS:"visitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"visitantes",
+                    EVOL_mensual:"testEM"
                   },                                                                        
                   { //38
                     nomMenuCB:[],
@@ -297,7 +443,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Salón Automóvil","Harley Days","Mango","Cómic","Sónar","Oktoberfest","Cosmobelleza & Wellness","Mobile World Congress","Salón Enseñanza","Festival Infancia"],                    
                     filtroResumenMAT:"FTurRFerias",
                     filtroDatos: "filtroTurRFerias",
-                    subfiltrosDatos:["Saló Internacional De L'Automóbil","Barcelona Harley Days","Saló Del Manga","Saló Internacional del Còmic de Barcelona","Sónar","Oktoberfest Bcn","Cosmobelleza & Wellness","Mobile World Congress","Saló de L'Ensenyament","Festival De La Infància"]
+                    subfiltrosDatos:["Saló Internacional De L'Automóbil","Barcelona Harley Days","Saló Del Manga","Saló Internacional del Còmic de Barcelona","Sónar","Oktoberfest Bcn","Cosmobelleza & Wellness","Mobile World Congress","Saló de L'Ensenyament","Festival De La Infància"],
+                    BARRAS:"visitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"visitantes",
+                    EVOL_mensual:"testEM"
                   },   
                   { //39
                     nomMenuCB:"MenuCheckBoxTurPerfilNacionalidad",
@@ -308,7 +459,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["TOTAL","España","Alemania","Bélgica","Francia","Italia","Países Bajos","Reino Unido","Suecia","Resto CEE","Rusia","Suiza","Resto de Europa","Japón","EEUU","Resto de América","Países africanos","Resto del mundo"],                    
                     filtroResumenMAT:"FTurPNacionalidad",
                     filtroDatos: "filtroTurPNacionalidad",
-                    subfiltrosDatos:["TOTAL","España","Alemania","Bélgica","Francia","Italia","Países Bajos","Reino Unido","Suecia","Resto Unión Europea","Rusia","Suiza","Resto de Europa","Japón","Estados Unidos de América","Resto de América","Países africanos","Resto del mundo"]
+                    subfiltrosDatos:["TOTAL","España","Alemania","Bélgica","Francia","Italia","Países Bajos","Reino Unido","Suecia","Resto Unión Europea","Rusia","Suiza","Resto de Europa","Japón","Estados Unidos de América","Resto de América","Países africanos","Resto del mundo"],
+                    BARRAS:"turistas",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"turistas",
+                    EVOL_mensual:"testEM"
                   },
                   { //40
                     nomMenuCB:[],
@@ -319,7 +475,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:[],                    
                     filtroResumenMAT:"FTurTurAloOcupacion",
                     filtroDatos: "filtroTurAloOcupacion",
-                    subfiltrosDatos:[]
+                    subfiltrosDatos:[],
+                    BARRAS:"uds barras",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"testEA",
+                    EVOL_mensual:"%"
                   },
                   { //41
                     nomMenuCB:[],
@@ -330,7 +491,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:[],                    
                     filtroResumenMAT:"FTurTurAloPersonal",
                     filtroDatos: "filtroTurAloPersonal",
-                    subfiltrosDatos:[]
+                    subfiltrosDatos:[],
+                    BARRAS:"uds barras",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"testEA",
+                    EVOL_mensual:"empleados"
                   },
                   { //42
                     nomMenuCB:[],
@@ -341,7 +507,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:[],                    
                     filtroResumenMAT:"FTurTurAloPrecio",
                     filtroDatos: "filtroTurAloPrecio",
-                    subfiltrosDatos:[]
+                    subfiltrosDatos:[],
+                    BARRAS:"uds barras",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"testEA",
+                    EVOL_mensual:"€/noche"
                   },
                   { //43 Edades
                     nomMenuCB:"MenuCheckBoxBcnPobEdades",
@@ -352,7 +523,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["de 0 a 19", "de 20 a 39", "de 40 a 59","de 60 a 79","más de 80"],                    
                     filtroResumenMAT:"FBcnPobEdades",
                     filtroDatos: "filtroBcnPobEdades",
-                    subfiltrosDatos:["de 0 a 20","de 20-39","de 40-59","de 60-79","más de 80"]
+                    subfiltrosDatos:["de 0 a 20","de 20-39","de 40-59","de 60-79","más de 80"],
+                    BARRAS:"habitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"habitantes",
+                    EVOL_mensual:"testEM"
                   },           
                   { //44 Nacionalidad
                     nomMenuCB:"MenuCheckBoxBcnPobNacionalidad",
@@ -363,7 +539,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["España","Italia","Francia","Reino Unido","Marruecos","Bolivia","Ecuador","Perú","Colombia","Pakistán","China","Filipinas","Rumanía"],                    
                     filtroResumenMAT:"FBcnPobNacion",
                     filtroDatos: "filtroBcnPobNacion",
-                    subfiltrosDatos:["España","Italia","francia","Reino Unido","Marruecos","Bolivia","Ecuador","Perú","Colombia","Pakistán","China","Filipinas","Rumanía"]
+                    subfiltrosDatos:["España","Italia","francia","Reino Unido","Marruecos","Bolivia","Ecuador","Perú","Colombia","Pakistán","China","Filipinas","Rumanía"],
+                    BARRAS:"habitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"habitantes",
+                    EVOL_mensual:"testEM"
                   },
                   { //45 TEST PARA DATASETS CON AMBITOGEO
                     nomMenuCB:"MenuCheckBoxBcnPobTest",
@@ -374,7 +555,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
                     filtroResumenMAT:"FBcnPobTest",
                     filtroDatos: "filtroBcnPobLocalizacion",
-                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"]
+                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
+                    BARRAS:"habitantes",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"habitantes",
+                    EVOL_mensual:"testEM"
                   },
                   { //46 TEST PARA DATASETS CON AMBITOGEO
                     nomMenuCB:"MenuCheckBoxTurAloPlazasDistrTest",
@@ -385,7 +571,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
                     filtroResumenMAT:"FBcnPobTest",
                     filtroDatos: "filtroBcnPobLocalizacion",
-                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"]
+                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
+                    BARRAS:"plazas",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"plazas",
+                    EVOL_mensual:"testEM"
                   },
                   { //47 TEST PARA DATASETS CON AMBITOGEO
                     nomMenuCB:"MenuCheckBoxBcnSuperficie",
@@ -396,7 +587,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
                     filtroResumenMAT:"FBcnPobTest",
                     filtroDatos: "filtroBcnPobLocalizacion",
-                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"]
+                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
+                    BARRAS:"km^2",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"testEA",
+                    EVOL_mensual:"testEM"
                   },
                   { //48 TEST PARA DATASETS CON AMBITOGEO
                     nomMenuCB:"MenuCheckBoxBcnPobDensidadTest",
@@ -407,7 +603,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
                     filtroResumenMAT:"FBcnPobTest",
                     filtroDatos: "filtroBcnPobLocalizacion",
-                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"]
+                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
+                    BARRAS:"km^2/hab.",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"km^2/hab.",
+                    EVOL_mensual:"testEM"
                   },
                     { //49 TEST PARA DATASETS CON AMBITOGEO
                     nomMenuCB:"MenuCheckBoxBcnVivNuevaTest",
@@ -418,7 +619,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
                     filtroResumenMAT:"FBcnPobTest",
                     filtroDatos: "filtroBcnPobLocalizacion",
-                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"]
+                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
+                    BARRAS:"€/m^2",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"€/m^2",
+                    EVOL_mensual:"testEM"
                   },
                     { //50 TEST PARA DATASETS CON AMBITOGEO
                     nomMenuCB:"MenuCheckBoxBcnVivSegundaManoTest",
@@ -429,7 +635,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
                     filtroResumenMAT:"FBcnPobTest",
                     filtroDatos: "filtroBcnPobLocalizacion",
-                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"]
+                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
+                    BARRAS:"€/m^2",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"€/m^2",
+                    EVOL_mensual:"testEM"
                   },
                     { //51 TEST PARA DATASETS CON AMBITOGEO
                     nomMenuCB:"MenuCheckBoxBcnVivAlquilerTest",
@@ -440,7 +651,12 @@ function automaticInput(id_grafico){
                     titulosSquaresCB:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
                     filtroResumenMAT:"FBcnPobTest",
                     filtroDatos: "filtroBcnPobLocalizacion",
-                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"]
+                    subfiltrosDatos:["Barcelona","Ciutat Vella","Eixample","Sants-Montjuïc","Les Corts","Sarrià-Sant Gervasi","Gràcia","Horta-Guinardó","Nou Barris","Sant Andreu","Sant Martí"],
+                    BARRAS:"€ mes/m^2",
+                    VA_anual: "%",
+                    VA_mensual:"%",
+                    EVOL_anual:"€ mes/m^2",
+                    EVOL_mensual:"testEM"
                   }
                   ])
   return resFiltros(id_grafico)

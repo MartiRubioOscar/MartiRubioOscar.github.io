@@ -49,6 +49,7 @@
 	
 
 <script type="text/javascript">
+var TIPO_GRAFICO = "NUL"
 // colores
 var colorNoActiva = "E0E0E0"//"f2f2f2"
 var colorActiva = "ffffff"//"f4c56d"
@@ -546,10 +547,9 @@ var graphic02;
 			    
 			    case "menuVivienda":
 		        		document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-		        		//loadMenu("07")
-		        		//datos = graphic07;
-		        		loadMenu("49")
-		        		datos = graphic49;
+		        		//loadMenu("49")
+		        		//datos = graphic49;
+		        		
 
 			    		ambitoGeo = ambitoGeoIni;
 			    		
@@ -565,6 +565,9 @@ var graphic02;
 
    			resumenMAT = updateSeguimientoUnaLinea(ID_VIP,resumenMAT,workFrame,ambitoGeo,fromYear,untilYear,
    							PrimeraVez,SORT,TANTOPORCIEN,VARIACIONANUAL,{})
+
+   						loadMenu("49")
+		        		datos = graphic49;
 						////////////////////////////////////////////////////////////////////							
 						ctrlPrimera = "SI"
 						ventanaPrimera = workFrame
@@ -930,8 +933,12 @@ var graphic02;
 
 </head>
 
-<body onload="load()">
+<body onload="load(instruccionesUso())">
 <div id="tooltipEncInfraestructuras" class="hidden"> <!-- para el tooltip del encabezado infraestructuras
+	<!--<p><strong>Important Label Heading</strong></p>-->
+	<p><span id="value"></span></p>
+</div>
+<div id="tooltipEncPictografia" class="hidden"> <!-- para el tooltip del encabezado infraestructuras
 	<!--<p><strong>Important Label Heading</strong></p>-->
 	<p><span id="value"></span></p>
 </div>
@@ -977,6 +984,16 @@ var graphic02;
 		          			.append("img").attr("src","img/icona_temperatura-01.svg")
 		          				.attr("width","17%")
 		          				.attr("align","right")
+		          				.attr("id","PicMinima")
+		          				.on("mouseover", function() {
+									//Hide the tooltip
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipsPictografia ("PicMinima")
+			   						})
+		          				.on("mouseout", function() {
+									//Hide the tooltip
+										d3.select("#tooltipEncPictografia").classed("hidden", true);
+			   						})
 		          		
 		          		
 						d3.select("#TempGrupo").append("text").text("9-12 ºC").attr("align","left")
@@ -989,6 +1006,16 @@ var graphic02;
 							.attr("src","img/icona_temperatura-02-01.svg")
 		          				.attr("width","17%")
 		          				.attr("align","right")
+		          				.attr("id","PicMaxima")
+		          				.on("mouseover", function() {
+									//Hide the tooltip
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipsPictografia ("PicMaxima")
+			   						})
+		          				.on("mouseout", function() {
+									//Hide the tooltip
+										d3.select("#tooltipEncPictografia").classed("hidden", true);
+			   						})
 
 		          		d3.select("#TempGrupo").append("text").text("23-30 ºC").attr("align","left")
 		          		d3.select("#TempGrupo").selectAll("br").data([1,2,3,4,5,6]).enter().append("br")
@@ -996,7 +1023,17 @@ var graphic02;
 						d3.select("#TempGrupo").append("img")
 							.attr("src","img/icona_pluja-01.svg")
 		          				.attr("width","25%")
-		          				.attr("align","right")		          			
+		          				.attr("align","right")
+		          				.attr("id","PicLluvia")
+		          				.on("mouseover", function() {
+									//Hide the tooltip
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipsPictografia ("PicLluvia")
+			   						})
+		          				.on("mouseout", function() {
+									//Hide the tooltip
+										d3.select("#tooltipEncPictografia").classed("hidden", true);
+			   						})		          			
 		          		d3.select("#TempGrupo").append("text").text("55 días").attr("align","left")
 		          		
 		          		///// Barcelona
@@ -1004,10 +1041,11 @@ var graphic02;
 						d3.select(".encMapa").append("g").attr("id","MapaGrupo")
 		          			.append("img").attr("src","img/icona_mapa_bcn-01.svg")
 		          				//.attr("align","left")
-		          				.attr("width","99%").classed("mapaBack","true")
+		          				.attr("width","99%")//.classed("mapaBack","true")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										d3.select("#tooltipMapa").classed("hidden", false);
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipMapaBarcelona ("MapaGrupo")
 			   						})
 		          				.on("mouseout", function() {
 									//Hide the tooltip
@@ -1066,6 +1104,17 @@ var graphic02;
 		          		d3.select("#HabitantGrupo").append("img")
 		          			.attr("src","img/icona_homa_dona-01.svg")
 		          				.attr("width","25%")
+		          				.attr("id","PicPerfilHabitante")
+		          				.on("mouseover", function() {
+									//Hide the tooltip
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipsPictografia ("PicPerfilHabitante")
+			   						})
+		          				.on("mouseout", function() {
+									//Hide the tooltip
+										d3.select("#tooltipEncPictografia").classed("hidden", true);
+			   						})
+
 		          		d3.select("#HabitantGrupo").append("br")
 		          		d3.select("#HabitantGrupo").append("text").text("53% Mujeres")
 		          		d3.select("#HabitantGrupo").append("br")
@@ -1095,6 +1144,16 @@ var graphic02;
 		          		d3.select("#TuristaGrupo").append("img")
 		          			.attr("src","img/icona_turista-01.svg")
 		          				.attr("width","35%")
+		          				.attr("id","PicPerfilTurista")
+		          				.on("mouseover", function() {
+									//Hide the tooltip
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipsPictografia ("PicPerfilTurista")
+			   						})
+		          				.on("mouseout", function() {
+									//Hide the tooltip
+										d3.select("#tooltipEncPictografia").classed("hidden", true);
+			   						})
 		          		d3.select("#TuristaGrupo").append("br")
 		          		d3.select("#TuristaGrupo").append("text").text("8.988.038 Turistas")
 		          		d3.select("#TuristaGrupo").append("br")
@@ -1109,6 +1168,16 @@ var graphic02;
 		          		d3.select("#AlojamientoGrupo").append("img")
 		          			.attr("src","img/icona_llit-01.svg")
 		          				.attr("width","35%")
+		          				.attr("id","PicAlojamiento")
+		          				.on("mouseover", function() {
+									//Hide the tooltip
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipsPictografia ("PicAlojamiento")
+			   						})
+		          				.on("mouseout", function() {
+									//Hide the tooltip
+										d3.select("#tooltipEncPictografia").classed("hidden", true);
+			   						})
 		          		d3.select("#AlojamientoGrupo").selectAll("br")
 		          			.data([1,2]).enter().append("br")
 		          		d3.select("#AlojamientoGrupo").append("text").text("125.472 plazas")
@@ -1123,6 +1192,16 @@ var graphic02;
 		          		d3.select("#SectorGrupo").append("img")
 		          			.attr("src","img/icona_hosteleria-01.svg")
 		          				.attr("width","17%")
+		          				.attr("id","PicSectorHostelería")
+		          				.on("mouseover", function() {
+									//Hide the tooltip
+										//d3.select("#tooltipMapa").classed("hidden", false);
+										tooltipsPictografia ("PicSectorHostelería")
+			   						})
+		          				.on("mouseout", function() {
+									//Hide the tooltip
+										d3.select("#tooltipEncPictografia").classed("hidden", true);
+			   						})
 		          		d3.select("#SectorGrupo").append("br")
 		          		d3.select("#SectorGrupo").append("text").text("13% PIB Barcelona")
 		          		d3.select("#SectorGrupo").append("br")
@@ -1182,6 +1261,7 @@ var graphic02;
 						d3.select("#instruccionesDiv").style("background-color","#848484").append("button")
 							.style("margin","2px").style("font-size","10px")
 							.text("Instrucciones de funcionamiento")
+							.attr("onmousedown","instruccionesUso()")
 					</script>
 					
 				</div>	

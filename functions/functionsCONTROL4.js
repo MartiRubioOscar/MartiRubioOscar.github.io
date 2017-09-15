@@ -7,21 +7,21 @@ function decisionTipoGrafico(RES_CONTROL){
       //d3.select("#rankingOn").remove()
       //d3.select("#rankingOff").remove()
       if (RES_CONTROL.EVOLmensual=="SI"){ 
-        if (RES_CONTROL.VA=="SI") {renderVariacionAnual_Mensual(RES_CONTROL.datos,RES_CONTROL.desde,RES_CONTROL.hasta,RES_CONTROL.posicion)}
-        else{renderEvolucionMensual(RES_CONTROL.datos,RES_CONTROL.desde,RES_CONTROL.hasta,RES_CONTROL.posicion)}
+        if (RES_CONTROL.VA=="SI") {TIPO_GRAFICO = "VA_mensual";renderVariacionAnual_Mensual(RES_CONTROL.datos,RES_CONTROL.desde,RES_CONTROL.hasta,RES_CONTROL.posicion)}
+        else{TIPO_GRAFICO = "EVOL_mensual";renderEvolucionMensual(RES_CONTROL.datos,RES_CONTROL.desde,RES_CONTROL.hasta,RES_CONTROL.posicion)}
       }
       else{// no he puesto nada de RES_CONTROL.EVOLmensualTest pq de momento funciona así!!!!
         //if (RES_CONTROL.VA=="SI") {InitChartVariacionAnual(RES_CONTROL.datos, RES_CONTROL.localizacion)}
         if (RES_CONTROL.VA=="SI") {
           if(resumenFiltros(resumenMAT[RES_CONTROL.posicion].Idgrafico).VA_auto =="SI"){
-            automatizacionRenderVariacionAnual(RES_CONTROL.datos)
-          }else{InitChartVariacionAnual(RES_CONTROL.datos, RES_CONTROL.localizacion)}}
-        else{renderEVOLUCION(RES_CONTROL.datos, RES_CONTROL.localizacion)};  
+            TIPO_GRAFICO = "VA_anual";automatizacionRenderVariacionAnual(RES_CONTROL.datos)
+          }else{TIPO_GRAFICO = "VA_anual"; InitChartVariacionAnual(RES_CONTROL.datos, RES_CONTROL.localizacion)}}
+        else{TIPO_GRAFICO = "EVOL_anual";renderEVOLUCION(RES_CONTROL.datos, RES_CONTROL.localizacion)};  
       }         
     }
-    if (RES_CONTROL.BARRAS =="SI"){renderBARRAS(RES_CONTROL.datos, RES_CONTROL.localizacion)}
+    if (RES_CONTROL.BARRAS =="SI"){TIPO_GRAFICO = "BARRAS";renderBARRAS(RES_CONTROL.datos, RES_CONTROL.localizacion)}
     //if (RES_CONTROL.BARRASnuevas =="SI"){renderBARRAS_test(RES_CONTROL.datos)}
-    if (RES_CONTROL.BARRASnuevas =="SI"){renderBARRAS_test2(RES_CONTROL.datos,RES_CONTROL.textoY)}
+    if (RES_CONTROL.BARRASnuevas =="SI"){TIPO_GRAFICO = "BARRAS";renderBARRAS_test2(RES_CONTROL.datos,RES_CONTROL.textoY)}
 
     var NumGraficoActivo = graficoActivo()
     if ( NumGraficoActivo!="noG") {
@@ -186,6 +186,7 @@ function activarLayout4(layout,nomIdContenedorVC_ON, nomIdContenedorVC_OFF,SEGUI
           var identificadorGr = miIDgrafico(nomIdContenedorVC_OFF)
           myFunctionBotonesCuadradosSimple(ventanaActivaAnterior, activarVentana)
           
+          //var titulo = titulosGraficos(identificadorGr)
           var titulo = titulosGraficos(identificadorGr)
         
 

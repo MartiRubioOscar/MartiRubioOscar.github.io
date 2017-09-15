@@ -59,7 +59,7 @@
 function myFunctionWDesplegablePoblacionDistrito(){
     ID_VIP = miVentanaActiva() // cambiará el valor de ID_VIP en caso que sean vistas coordinadas
     workFrame = miWorkFrame_fromIDVIP(ID_VIP) // workFrame acorde al nuevo ID_VIP
-    
+    //alert("dentro despl. población distrito")
     //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
     var inputElements = document.getElementsByClassName('desp2');  
     var posicionNum;

@@ -137,11 +137,14 @@ function automatizacionRenderEvolution2(numeroGrafico,DATA,IDENTIFICADOR,NOMCONT
         .scale(yScale)
         .orient("left");
                 
-                
+        
+
         d3.select("#contenedorGr" +  miWorkFrame_fromIDVIP(IDENTIFICADOR)).append("g")
             .attr("class", "y axis")
             .attr("transform", "translate(" + (margins.left) + ",0)")
             .call(yAxis);
+        
+
 
         console.log(datos_Filtrados)
 
@@ -333,7 +336,52 @@ function automatizacionRenderEvolution2(numeroGrafico,DATA,IDENTIFICADOR,NOMCONT
 
 
     }
-         
-       
+
+
+    d3.select("#contenedorGr" +  miWorkFrame_fromIDVIP(IDENTIFICADOR)).append("text")      // text label for the x axis
+            .attr("x", margins.left/2 )
+            .attr("y",  height/10 )
+            .style("text-anchor", "middle")
+            //.text("%")
+            .text(function(){return misUnidades(TIPO_GRAFICO,resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)}); // debería llamar a la función para poner las unidades
+            //alert("top" + margins.top)
+            //alert("left" + margins.left) 
+//    alert(ID_VIP)
+    var aditionalText=""
+    if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==43||resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==44) {
+            aditionalText = " " + resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr
+        };
+    d3.select("#" + ID_VIP).select(".tituloGrafico")
+        .text(function(){return titulosGraficos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico) + " (" + equivalenciaTipoGrafico(TIPO_GRAFICO) + ")" + aditionalText})
+    
 }
 
+
+//////////////////// FUNCIÓN PARA COLOCAR LAS UNIDADES EN EJE Y
+
+function misUnidades(tipoGrafico,id_grafico){/*,tipo_de_grafico*/
+    // esta función es la que decide las unidades que debe tener un eje según configuración y gráfico
+    var salidaMisUnidades;
+    //alert(id_grafico)
+    //alert(tipoGrafico)
+    //alert(eval("automaticInput(id_grafico)." + tipoGrafico))
+    //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje=="SI")
+
+    // chapucero pero funcionará de momento:
+    if (id_grafico==49||id_grafico==50||id_grafico==51) {resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"};
+    ///////////////////////// fin chapuza ////////////////
+
+    
+    if (resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje=="SI") {salidaMisUnidades="%"}
+        else{salidaMisUnidades = eval("automaticInput(id_grafico)." + tipoGrafico)};
+    return salidaMisUnidades
+  }
+
+function equivalenciaTipoGrafico(tipoGrafico){
+
+    // le entra ID_VIP y entrega la posición en resumenMAT
+      var convertTipo = d3.scale.ordinal()
+        .domain(["VA_anual","VA_mensual","EVOL_anual","EVOL_mensual"])
+        .range(["Variación anual","Variación anual","Evolución","Evolución"])
+      return convertTipo(tipoGrafico)
+}

@@ -1244,7 +1244,7 @@ function loadMenu(datasetActivo){
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "TurCultura"
-			var opDesplegable = ["Top visitas lugares de interés","Espacios de ocio","Lugares de interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
+			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 0
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1264,7 +1264,7 @@ function loadMenu(datasetActivo){
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "TurCultura"
-			var opDesplegable = ["Top visitas lugares de interés","Espacios de ocio","Lugares de interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
+			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 1
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1283,7 +1283,7 @@ function loadMenu(datasetActivo){
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "TurCultura"
-			var opDesplegable = ["Top visitas lugares de interés","Espacios de ocio","Lugares de interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
+			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 2
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1302,7 +1302,7 @@ function loadMenu(datasetActivo){
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "TurCultura"
-			var opDesplegable = ["Top visitas lugares de interés","Espacios de ocio","Lugares de interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
+			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 3
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1321,7 +1321,7 @@ function loadMenu(datasetActivo){
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "TurCultura"
-			var opDesplegable = ["Top visitas lugares de interés","Espacios de ocio","Lugares de interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
+			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 4
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1340,7 +1340,7 @@ function loadMenu(datasetActivo){
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "TurCultura"
-			var opDesplegable = ["Top visitas lugares de interés","Espacios de ocio","Lugares de interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
+			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 5
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1359,7 +1359,7 @@ function loadMenu(datasetActivo){
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 			// Ventana desplegable Población
 			var nomDesplegable = "TurCultura"
-			var opDesplegable = ["Top visitas lugares de interés","Espacios de ocio","Lugares de interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
+			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 6
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1701,7 +1701,7 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			MenuCheckBoxBcnVivNuevaTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
-                    {MenuVariacionAnual(); alert("dentro")}
+                    {MenuVariacionAnual()}
 			//MenuVariacionAnual()
 	        
 	        break;

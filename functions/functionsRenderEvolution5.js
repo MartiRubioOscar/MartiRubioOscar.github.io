@@ -27,13 +27,14 @@ function renderEVOLUCION(datos,AMBITGEO) {
     var myheightDIV = el.getBoundingClientRect().height; // TENGO EL TAMAÑO DEL DIV
     
     d3.select("#"+ ID_VIP).selectAll("svg").attr("width",mywidthDIV-mywidthDIV/10)
-    d3.select("#"+ ID_VIP).selectAll("svg").attr("height",myheightDIV-myheightDIV/5)
-   var  WIDTH = mywidthDIV-85,
-        HEIGHT = myheightDIV-myheightDIV/5,
+    d3.select("#"+ ID_VIP).selectAll("svg").attr("height",myheightDIV-myheightDIV/10)
+    //alert("hey")
+   var  WIDTH = mywidthDIV-mywidthDIV/10,//WIDTH = mywidthDIV-85,
+        HEIGHT = myheightDIV-myheightDIV/10,
         MARGINS = {
             top: myheightDIV/10,//10,
             right: mywidthDIV/7,
-            bottom: myheightDIV/10,
+            bottom: myheightDIV/10, //myheightDIV/10,
             left: mywidthDIV/8
         }
     //////////////////////////////////////////////////////////////////////

@@ -32,9 +32,9 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
     var myheightDIV = el.getBoundingClientRect().height; // TENGO EL TAMAÑO DEL DIV
 
     d3.select("#"+ ID_VIP).selectAll("svg").attr("width",mywidthDIV-mywidthDIV/10)
-    d3.select("#"+ ID_VIP).selectAll("svg").attr("height",myheightDIV-myheightDIV/5)
-   var  WIDTH = mywidthDIV-85,
-        HEIGHT = myheightDIV-myheightDIV/5,
+    d3.select("#"+ ID_VIP).selectAll("svg").attr("height",myheightDIV-myheightDIV/10)
+   var  WIDTH = mywidthDIV-mywidthDIV/10,
+        HEIGHT = myheightDIV-myheightDIV/10,
         MARGINS = {
             top: myheightDIV/10,//10,
             right: mywidthDIV/7,
@@ -711,5 +711,12 @@ else {
 
 
 }
-
+  d3.select("#" + nomContenedor).append("text")      // text label for the x axis
+              .attr("x", MARGINS.left/2 )
+              .attr("y",  HEIGHT/10 )
+              .style("text-anchor", "middle")
+              .text(function(){return misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)});
+              //.text("%");
+  d3.select("#" + ID_VIP).select(".tituloGrafico")
+      .text(function(){return titulosGraficos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico) + " (" + equivalenciaTipoGrafico(TIPO_GRAFICO) + ")"})
 }

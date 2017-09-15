@@ -1,5 +1,5 @@
 function render(datos){
-
+          alert("dentro de render")
           DATOS = datos;
 
           var DATOSfiltrados = DATOS.filter(function (el) {
@@ -48,7 +48,7 @@ function render(datos){
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 function renderPoblacion (data, ambitoGeografico){
-
+    alert("dentro de renderPoblacion")
     d3.select(".chart"+ workFrame).selectAll("g").remove()
     var nomContenedor = "contenedorGr" + workFrame;
     var el = document.getElementById(nomContenedor); var mywidth = el.getBoundingClientRect().width;
@@ -56,8 +56,7 @@ function renderPoblacion (data, ambitoGeografico){
 
     var el = document.getElementById(ID_VIP); var mywidthDIV = el.getBoundingClientRect().width;
     var myheightDIV = el.getBoundingClientRect().height; // TENGO EL TAMAÑO DEL DIV
-
-    var variacionSize = 0.6; // controla el tamaño de todo
+    var variacionSize = 0.6; //0.6 controla el tamaño de todo
     var chartWidth       = mywidth*variacionSize,
     barHeight        = myheightDIV/(ambitoGeografico.length+4),
 
@@ -178,7 +177,7 @@ chart.append("g")
 
 
 function renderBARRAS (data, ambitoGeografico){ // ESTA FUNCIÓN ES LA QUE SE USA PARA BARRAS POBLACIÓN CON DISTRITO
-  //alert("DENTRO DE renderBARRAS")
+    alert("DENTRO DE renderBARRAS")
     //d3.selectAll(".buttonSort").remove()
     d3.select(".chart"+ workFrame).selectAll("g").remove()
     var nomContenedor = "contenedorGr" + workFrame;
@@ -311,7 +310,7 @@ chart.append("g")
 
 
 function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
-
+  alert("dentro de renderBARRAS_test")
   console.log(DATA)
 
   //alert(ID_VIP)
@@ -381,7 +380,7 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
   //heightContenedor = document.getElementById(nomContenedor).offsetHeight
   
   
-  var escalaGraficoHeight = 0.95
+  var escalaGraficoHeight = 0.95//0.95
   var escalaGraficoWidth = 0.8
   widthGrafico = Math.round(widthContenedor*escalaGraficoWidth) 
   heightGrafico = Math.round(heightContenedor*escalaGraficoHeight)
@@ -470,6 +469,8 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
 
 
 function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
+  //alert("dentro de renderBARRAS_test2")
+
   console.log(textosY)
   var data = DATA;
   ID_VIP = miIDVIP_fromWorkFrame(workFrame) // ESTO LO HAGO PARA EL CASO DE VENTANAS COORDINADAS
@@ -559,9 +560,9 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
   //alert(widthContenedor)
   //heightContenedor = document.getElementById(nomContenedor).offsetHeight
   
-  
-  var escalaGraficoHeight = 0.95
-  var escalaGraficoWidth = 0.97
+  //alert("hey")
+  var escalaGraficoHeight = 0.9 //0.95
+  var escalaGraficoWidth = 0.85 //0.97
   var margenDerecho = 0.1
   widthGrafico = Math.round(widthContenedor*escalaGraficoWidth)
   heightGrafico = Math.round(heightContenedor*escalaGraficoHeight)
@@ -682,6 +683,26 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
   var ejeX = d3.svg.axis().orient("bottom").ticks(4).scale(escalaEjeX)
   
   mySvg.append("g").attr("class","axis Xaxis").attr("transform","translate(0," + (heightGrafico-offsetParaNumerosEjeX) + ")").call(ejeX)
+//////////////// unidades eje x
 
 
+
+
+    d3.select("#" + nomContenedor).append("text")      // text label for the x axis
+            //.attr("x", MARGINS.left/2 )
+            .attr("x", widthContenedor-60)//widthContenedor*0
+            //.attr("y",  HEIGHT/10 )
+            .attr("y",  heightContenedor - 15 )
+            .style("text-anchor", "middle")
+            .text(function(){return misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)});
+            //.text("uds eje X");
+
+//título gráfico
+    var aditionalText=""
+    if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==43||resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==44) {
+            aditionalText = "- " + resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr
+        };
+    if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==47 || (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico>31 & resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico<39)) {resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2016};
+    d3.select("#" + ID_VIP).select(".tituloGrafico")
+        .text(function(){return titulosGraficos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico) + " " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear + aditionalText})
 }

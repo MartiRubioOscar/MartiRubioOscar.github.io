@@ -90,55 +90,55 @@ function misDatos(id_grafico){
     var tituloGrafico = d3.scale.ordinal()
       .domain(["01","02","03","04","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28",
                 "29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51"])
-      .range(["Habitantes en Barcelona", //01                             
-              "Plazas de hoteles por distrito",//02 
-              "Superficie (km^2)",//03
-              "Densidad de población (hab/km^2)",//04
-              "Precio de Vivienda Nueva (€/m^2)",//07
-              "Precio de la Vivienda de Segunda mano (€/m^2)",//08
-              "Precio de la Vivienda de Alquiler (€ mensuales/m^2)",//09
-              "Pasajeros Puerto de Barcelona", //10
-              "Evolución. Pasajeros Aeropuerto de Barcelona", //11
-              "Temperaturas",//12
-              "Días con precipitaciones",//13
-              "Porcentaje de turistas según género (%)",//14
-              "Evolución. Edad de los turistas (años)",//15
-              "Principales gastos (€)",//16
-              "Motivos del viaje",//17
-              "Días de estancia",//18
-              "Grado de repetibilidad de la visita (%)",//19
-              "Medio de transporte (%)",//20
-              "Evolución. Trabajadores por Sector",//21
-              "Situación Laboral",//22
-              "Producto Interior Bruto (millones de euros)", //23
-              "Salario anual por sectores de actividad (€)",//24
-              "Número de Reuniones",//25
-              "Asistentes a Reuniones",//26
-              "Licencias de Viviendas de uso turístico",//27
-              "Plazas en Viviendas de uso turístico",//28
-              "Número de Hoteles, Hostales y Pensiones",//29
-              "Plazas en Hoteles, Hostales y Pensiones",//30
-              "Visitas a los lugares más visitados de Barcelona",//31
-              "Espacios de Ocio (visitantes 2015)",//32
-              "Espacios de interés arquitectónico (visitantes 2015)",//33
-              "Centros Exposiciones (visitantes 2015)",//34
-              "Museos y Colecciones (visitantes 2015)",//35
-              "Transportes singulares (ususarios 2015)",//36
-              "Resumen lugares de interés (2015)",//37
-              "Principales Ferias (visitantes 2015)",//38
-              "Evolución. Viajeros en hoteles según nacionalidad (personas)",//39
-              "Ocupación hotelera (%)",//40
-              "Personal ocupado en hoteles (personas)",//41
-              "Precio medio de los hoteles (€)",//42
-              "Población por Edades",//43
-              "Población por Nacionalidad",//44
-              "Población de Barcelona (personas)",//45
-              "Plazas Hotel por distrito",//46
-              "Superficie (km^2)",//47
-              "Densidad de población (hab/km^2)",//48
-              "Variación Anual. Precio de Vivienda Nueva (%)",//49
-              "Precio de la Vivienda de Segunda mano (€/m^2)",//50
-              "Evolución. Precio de la Vivienda de Alquiler (€ mensuales/m^2)"//51
+      .range(["HABITANTES EN BARCELONA", //01                             
+              "PLAZAS DE HOTELES POR DISTRITO",//02 
+              "SUPERFICIE",//03
+              "DENSIDAD DE POBLACIÓN",//04
+              "PRECIO DE VIVIENDA NUEVA",//07
+              "PRECIO DE LA VIVIENDA DE SEGUNDA MANO",//08
+              "PRECIO DE LA VIVIENDA DE ALQUILER",//09
+              "PASAJEROS PUERTO DE BARCELONA", //10
+              "PASAJEROS AEROPUERTO DE BARCELONA", //11
+              "TEMPERATURAS",//12
+              "DÍAS CON PRECIPITACIONES",//13
+              "PORCENTAJE DE TURISTAS SEGÚN GÉNERO",//14
+              "EDAD DE LOS TURISTAS",//15
+              "PRINCIPALES GASTOS",//16
+              "MOTIVOS DEL VIAJE",//17
+              "DÍAS DE ESTANCIA",//18
+              "GRADO DE REPETIBILIDAD DE LA VISITA",//19
+              "MEDIO DE TRANSPORTE",//20
+              "TRABAJADORES POR SECTOR",//21
+              "SITUACIÓN LABORAL",//22
+              "PRODUCTO INTERIOR BRUTO", //23
+              "SALARIO ANUAL POR SECTORES DE ACTIVIDAD",//24
+              "NÚMERO DE REUNIONES",//25
+              "ASISTENTES A REUNIONES",//26
+              "LICENCIAS DE VIVIENDAS DE USO TURÍSTICO",//27
+              "PLAZAS EN VIVIENDAS DE USO TURÍSTICO",//28
+              "NÚMERO DE HOTELES, HOSTALES Y PENSIONES",//29
+              "PLAZAS EN HOTELES, HOSTALES Y PENSIONES",//30
+              "VISITAS A LOS LUGARES MÁS VISITADOS",//31
+              "ESPACIOS DE OCIO",//32
+              "ESPACIOS DE INTERÉS ARQUITECTÓNICO",//33
+              "CENTROS EXPOSICIONES",//34
+              "MUSEOS Y COLECCIONES",//35
+              "TRANSPORTES SINGULARES",//36
+              "RESUMEN LUGARES DE INTERÉS",//37
+              "PRINCIPALES FERIAS",//38
+              "TURISTAS EN HOTELES SEGÚN NACIONALIDAD",//39
+              "OCUPACIÓN HOTELERA",//40
+              "PERSONAL OCUPADO EN HOTELES",//41
+              "PRECIO MEDIO HABITACIÓN DOBLE EN HOTEL",//42
+              "POBLACIÓN POR EDADES",//43
+              "POBLACIÓN POR NACIONALIDAD",//44
+              "POBLACIÓN DE BARCELONA",//45
+              "PLAZAS HOTEL POR DISTRITO",//46
+              "SUPERFICIE",//47
+              "DENSIDAD DE POBLACIÓN",//48
+              "PRECIO DE VIVIENDA NUEVA",//49
+              "PRECIO DE LA VIVIENDA DE SEGUNDA MANO",//50
+              "PRECIO DE LA VIVIENDA DE ALQUILER"//51
               ])
 
       return tituloGrafico(nomrbreIdgrafico)
