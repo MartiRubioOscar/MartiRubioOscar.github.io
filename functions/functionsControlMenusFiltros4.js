@@ -2250,7 +2250,7 @@ function instruccionesUso(){
   //window.location="http://www.google.com"
   //window.open("https://www.youtube.com/watch?v=KQCnj7CGU5U", "Instrucciones", "top=500,left=500,resizable=yes,width=500,height=500")
   //alert("instrucciones")
-  window.open("https://youtu.be/KQCnj7CGU5U", "Instrucciones", "top=100,left=400,resizable=yes,width=500,height=380")
+  window.open("https://youtu.be/WqvoKMgitDc", "Instrucciones", "top=100,left=400,resizable=yes,width=500,height=380")
   
 }
 
