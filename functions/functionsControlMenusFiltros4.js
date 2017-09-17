@@ -337,21 +337,30 @@ function myFunctionWDesplegablePoblacionDistrito(){
     
            }
        }
-        if ((posicionNum)==1)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="12"; datos = graphic12;loadMenu("12");
-                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015}
-                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015}
-                                  
+        if ((posicionNum)==1)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="12"; datos = graphic12;
+                                  //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear)
+                                  //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015;resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015;untilYear=2015;fromYear=2015}
+                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015;resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015;;untilYear=2015;fromYear=2015}
+                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear>resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear;untilYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear;fromYear=untilYear}
+                                  //alert("después desde " + resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear)
+                                  //alert("después hasta " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                  loadMenu("12");
                                   updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                  
                               };
         if ((posicionNum)==2)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="13";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic13;loadMenu("13");
-                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015}
-                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015}
+                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic13;
+                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015;resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015;untilYear=2015;fromYear=2015}
+                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015;resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015;;untilYear=2015;fromYear=2015}
+                                  if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear>resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear;untilYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear;fromYear=untilYear}                                 
+                                  loadMenu("13");
                                   updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+
                               };
         if ((posicionNum)==3)   {
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="47";

@@ -711,6 +711,10 @@ else {
 
 
 }
+  
+//alert(TIPO_GRAFICO)
+//alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
+//alert(misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico))
   d3.select("#" + nomContenedor).append("text")      // text label for the x axis
               .attr("x", MARGINS.left/2 )
               .attr("y",  HEIGHT/10 )
