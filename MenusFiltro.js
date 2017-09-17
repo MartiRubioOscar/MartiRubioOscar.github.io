@@ -868,7 +868,12 @@ function loadMenu(datasetActivo){
 			// Check box sexo
 			//MenuCheckBoxSexo()
 			MenuCheckBoxTurTuriGenero()
-			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+			//alert("desde " + resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear)
+			//alert("hasta " + resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+			var lanzado="no sé"
+			if(resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==6666 & resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear==3333){lanzado=true}
+			else{lanzado=false}			
+			if (lanzado==true || resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
             
 			//MenuVariacionAnual()
@@ -1118,11 +1123,13 @@ function loadMenu(datasetActivo){
 			// botones de ranking y original
 			//MenuRanking();
 			// DESDE y hasta
+			//alert("hasta antes desde hasta: " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
-			
+			//alert("después antes desde hasta: " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
 			// Check box sexo
 			MenuCheckBoxTurRNumReunion()
+			//alert("después checkbox: " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
 			//MenuVariacionAnual()
