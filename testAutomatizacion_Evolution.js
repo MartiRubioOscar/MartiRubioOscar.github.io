@@ -368,7 +368,7 @@ function misUnidades(tipoGrafico,id_grafico){/*,tipo_de_grafico*/
     //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje=="SI")
 
     // chapucero pero funcionará de momento:
-    if (id_grafico==49||id_grafico==50||id_grafico==51) {resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"};
+    if (id_grafico==49||id_grafico==50||id_grafico==51||id_grafico==12) {resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"};
     ///////////////////////// fin chapuza ////////////////
 
     
