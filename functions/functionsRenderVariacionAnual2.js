@@ -6,7 +6,6 @@ function InitChartVariacionAnual(datos,AMBITGEO) {
     d3.select("#"+ ID_VIP).selectAll("svg").data([1]).enter().append("svg")
       .attr("id",nomContenedor)
       .attr("class","chart" + workFrame)
-      //.attr("width", "100%")
 
 
     var el = document.getElementById(nomContenedor); var mywidth = el.getBoundingClientRect().width;
@@ -59,7 +58,6 @@ function InitChartVariacionAnual(datos,AMBITGEO) {
 
     d3.select("#" + nomContenedor).append("g")
         .attr("class", "x axis")
-        //.attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
         .attr("transform", "translate(0," + posicionEjeCero + ")")
         .call(xAxis);
     d3.select("#" + nomContenedor).append("g")
@@ -80,10 +78,8 @@ function InitChartVariacionAnual(datos,AMBITGEO) {
             return yScale(DATOSfiltrados.resultado);
         })
          colorCode = coloresDistritos(AMBITGEO[i])
-        //.interpolate("linear");
         d3.select("#" + nomContenedor).append('path')
             .attr('d', lineGen(DATOSfiltrados))
-            //.attr("id", )
             .attr('stroke', colorCode)
             .attr('stroke-width', 2)
             .attr('fill', 'none');

@@ -9,7 +9,7 @@ function load(){ // <-E
 		          console.log(error);
 		      } else {
 
-		          //datosIni = 
+		          
 		          graphic01 = dataset.map(function(el){
 		 	             return {localizacion: el.localizacion, year: el.year, resultado: el.poblacion,absoluto:el.poblacion,porcentaje:el.porcentaje,variacionAnual:el.variacionAnualPoblacion}
 		              });
@@ -957,11 +957,9 @@ function load(){ // <-E
                         datosA = datos.map(function(el){
 		 	             return {year:el.year, filtroBcnPobDistrito:el.localizacion,filtroBcnPobEdades:el.rango ,resultado: el.poblacion,absoluto:el.poblacion,variacionAnual:el.variacionAnual,porcentaje:el.porcentaje}
                         });
-                       
-                    //var parser = d3.timeParse("%Y");
+                                           
                     
                     for (var i = 0; i < datos.length; i++) {
-                    //    datosA[i].year = parser(datosA[i].year)
                     
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -985,10 +983,8 @@ function load(){ // <-E
 		 	             return {year:el.year, filtroBcnPobDistrito:el.localizacion,filtroBcnPobNacion:el.nacionalidad ,resultado: el.personas,absoluto:el.personas,variacionAnual:el.variacionAnual,porcentaje:el.porcentaje}
                         });
                        
-                    //var parser = d3.timeParse("%Y");
                     
                     for (var i = 0; i < datos.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -1011,7 +1007,6 @@ function load(){ // <-E
  	             return {filtroBcnPobLocalizacion: el.localizacion, year: el.year, resultado: el.poblacion,absoluto:el.poblacion,porcentaje:el.porcentaje,variacionAnual:el.variacionAnualPoblacion}
               });
           for (var i = 0; i < datosA.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -1036,7 +1031,6 @@ function load(){ // <-E
 		 	             return {filtroBcnPobLocalizacion: el.localizacion, year: el.year, resultado: el.plazasHotel,absoluto:el.plazasHotel,porcentaje:el.porcentaje,variacionAnual:el.variacionAnual}
 		              });
 		          for (var i = 0; i < datosA.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -1062,7 +1056,6 @@ function load(){ // <-E
 		 	             return {filtroBcnPobLocalizacion: el.localizacion, resultado: el.superficie, absoluto:el.superficie,porcentaje:el.porcentaje}
 		              });
 		        	for (var i = 0; i < datosA.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -1088,7 +1081,6 @@ function load(){ // <-E
 		 	             return {filtroBcnPobLocalizacion: el.localizacion, year: el.year, resultado: el.densidad, absoluto:el.densidad,variacionAnual:el.VAdensidad}
 		              });
 		        	for (var i = 0; i < datosA.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -1113,7 +1105,6 @@ function load(){ // <-E
 		 	             return {filtroBcnPobLocalizacion: el.localizacion, year: el.year, resultado: el.precioViviendaNueva, absoluto:el.precioViviendaNueva,variacionAnual:el.VAViviendaNueva}
 		              });
 		          for (var i = 0; i < datosA.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -1135,7 +1126,6 @@ function load(){ // <-E
 		 	             return {filtroBcnPobLocalizacion: el.localizacion, year: el.year, resultado: el.precioViviendaSegundaMano,absoluto:el.precioViviendaSegundaMano,variacionAnual:el.VASegundaMano}
 		              });
 		          for (var i = 0; i < datosA.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)
@@ -1157,7 +1147,6 @@ function load(){ // <-E
 		 	             return {filtroBcnPobLocalizacion: el.localizacion, year: el.year, resultado: el.PrecioViviendaAlquiler, absoluto:el.PrecioViviendaAlquiler,variacionAnual:el.VAAlquiler}
 		              });
 		          for (var i = 0; i < datosA.length; i++) {
-                      //  datosA[i].year = parser(datosA[i].year)
                         
                         datosA[i].resultado = Number(datosA[i].resultado)
                         datosA[i].absoluto = Number(datosA[i].absoluto)

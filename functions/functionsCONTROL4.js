@@ -1,17 +1,12 @@
 function decisionTipoGrafico(RES_CONTROL){
-    console.log(RES_CONTROL)
-    //alert(resumenFiltros(resumenMAT[RES_CONTROL.posicion].Idgrafico).VA_auto =="SI")
-    //console.log(RES_CONTROL)
+    
     if (RES_CONTROL.EVOL=="SI"){ 
-      // quito el botón de ranking/original
-      //d3.select("#rankingOn").remove()
-      //d3.select("#rankingOff").remove()
+      
       if (RES_CONTROL.EVOLmensual=="SI"){ 
         if (RES_CONTROL.VA=="SI") {TIPO_GRAFICO = "VA_mensual";renderVariacionAnual_Mensual(RES_CONTROL.datos,RES_CONTROL.desde,RES_CONTROL.hasta,RES_CONTROL.posicion)}
         else{TIPO_GRAFICO = "EVOL_mensual";renderEvolucionMensual(RES_CONTROL.datos,RES_CONTROL.desde,RES_CONTROL.hasta,RES_CONTROL.posicion)}
       }
-      else{// no he puesto nada de RES_CONTROL.EVOLmensualTest pq de momento funciona así!!!!
-        //if (RES_CONTROL.VA=="SI") {InitChartVariacionAnual(RES_CONTROL.datos, RES_CONTROL.localizacion)}
+      else{
         if (RES_CONTROL.VA=="SI") {
           if(resumenFiltros(resumenMAT[RES_CONTROL.posicion].Idgrafico).VA_auto =="SI"){
             TIPO_GRAFICO = "VA_anual";automatizacionRenderVariacionAnual(RES_CONTROL.datos)
@@ -20,7 +15,7 @@ function decisionTipoGrafico(RES_CONTROL){
       }         
     }
     if (RES_CONTROL.BARRAS =="SI"){TIPO_GRAFICO = "BARRAS";renderBARRAS(RES_CONTROL.datos, RES_CONTROL.localizacion)}
-    //if (RES_CONTROL.BARRASnuevas =="SI"){renderBARRAS_test(RES_CONTROL.datos)}
+
     if (RES_CONTROL.BARRASnuevas =="SI"){TIPO_GRAFICO = "BARRAS";renderBARRAS_test2(RES_CONTROL.datos,RES_CONTROL.textoY)}
 
     var NumGraficoActivo = graficoActivo()
@@ -110,9 +105,6 @@ function activar2(nomIdContenedor){
  
  function activar3(NOMIdContenedorVC_ON, NOMIdContenedorVC_OFF,Seguidores,EstadoVentanas){
 
-   //alert("nomIdOn " + NOMIdContenedorVC_ON)
-   //alert("nomIdOff " + NOMIdContenedorVC_OFF)
-   //alert(EstadoVentanas)
 
     if (NOMIdContenedorVC_OFF=="gr4_1"||NOMIdContenedorVC_OFF=="gr4_2"||NOMIdContenedorVC_OFF=="gr4_3"||
         NOMIdContenedorVC_OFF=="gr4_4"||NOMIdContenedorVC_ON=="gr4_1"||NOMIdContenedorVC_ON=="gr4_2"||
@@ -304,103 +296,7 @@ function activarLayout4(layout,nomIdContenedorVC_ON, nomIdContenedorVC_OFF,SEGUI
   //////////////////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////
-/*function activarLayout2(layout,nomIdContenedorVC_ON, nomIdContenedorVC_OFF,SEGUIDORES,estadoVentanas){
-    var activarVentana;
-    activate = "SI"
 
-
-    var ventanaActivaAnterior = "ninguna";
-    for (var i = 0; i < estadoVentanas.length; i++) {
-      if(estadoVentanas[i]=="greenMandon" || estadoVentanas[i]=="red"){
-        ventanaActivaAnterior = "2"+(i+1)  
-      }
-    };
-    ////// si la ventana que voy a activar NO es de vistas combinadas
-    var identificadorGr = miIDgrafico(nomIdContenedorVC_OFF)
-
-   //alert (identificadorGr)
-    var identificadorGrOn = miIDgrafico(nomIdContenedorVC_ON)
-    if (identificadorGr=="noG"&&identificadorGrOn=="noG"){alert("no hay gráfico!!!!!!!")}
-    else{
-      if (nomIdContenedorVC_OFF!=[]) { ////// si la ventana que voy a activar NO es de vistas combinadas
-          var activarVentana = miWorkFrame_fromIDVIP(nomIdContenedorVC_OFF)
-          var identificadorGr = miIDgrafico(nomIdContenedorVC_OFF)
-          myFunctionBotonesCuadradosSimple(ventanaActivaAnterior, activarVentana)
-          
-          var titulo = titulosGraficos(identificadorGr)
-          d3.select("#" + nomIdContenedorVC_OFF).selectAll("h3").remove()
-          d3.select("#" + nomIdContenedorVC_OFF).selectAll("h3").data([1]).enter().append("h3")
-            .text(titulo).attr("align","center").classed("tituloGrafico",true)
-
-          d3.select("#" + nomIdContenedorVC_OFF).selectAll("svg").remove()
-          d3.select("#" + nomIdContenedorVC_OFF).selectAll("svg").data([1]).enter().append("svg")
-            .attr("id","contenedorGr" + activarVentana)
-            .attr("class","chart" + activarVentana)
-            .attr("width", "100%")
-            workFrame = activarVentana;
-          var RESULTADO_noCtrl = renderGlobal(datos,resumenFiltros(identificadorGr), miPosicionResumenMAT_workframe(workFrame))
-          
-          decisionTipoGrafico(RESULTADO_noCtrl)
-      }
-      else
-      { 
-        if(nomIdContenedorVC_ON!=[]) ////// si la ventana que voy a activar SI es de vistas combinadas
-        { 
-          var activarVentana = miWorkFrame_fromIDVIP(nomIdContenedorVC_ON)
-          var identificadorGr = miIDgrafico(nomIdContenedorVC_ON)
-          myFunctionBotonesCuadradosSimple(ventanaActivaAnterior, activarVentana)
-          miColorVentanaActiva(miWorkFrame_fromIDVIP(nomIdContenedorVC_ON))
-
-          var titulo = titulosGraficos(identificadorGr)
-          d3.select("#" + nomIdContenedorVC_ON).selectAll("h3").remove()
-          d3.select("#" + nomIdContenedorVC_ON).selectAll("h3").data([1]).enter().append("h3")
-            .text(titulo).attr("align","center").classed("tituloGrafico",true)
-
-          d3.select("#" + nomIdContenedorVC_ON).selectAll("svg").remove()
-          d3.select("#" + nomIdContenedorVC_ON).selectAll("svg").data([1]).enter().append("svg")
-            .attr("id","contenedorGr" + miWorkFrame_fromIDVIP(nomIdContenedorVC_ON))///
-            .attr("class","chart" + miWorkFrame_fromIDVIP(nomIdContenedorVC_ON))///
-            .attr("width", "100%")
-          workFrame = miWorkFrame_fromIDVIP(nomIdContenedorVC_ON)
-          datos =  window["graphic"+ identificadorGr];
-          var RESULTADO = renderGlobal(datos,resumenFiltros(identificadorGr), miPosicionResumenMAT_workframe(workFrame))
-          
-          
-
-          decisionTipoGrafico(RESULTADO)
-            
-          //////////////////// SI EXISTEN SLAVES
-          if (SEGUIDORES =="#window21" || SEGUIDORES =="#window22") {
-              miColorVentanaSLAVEactivadas(miGraficoActivoAlmoadilla(SEGUIDORES))
- 
-              fromMASTER = miPosicionResumenMAT(nomIdContenedorVC_ON)
-              toSLAVE = miPosicionResumenMAT_workframe(miGraficoActivo_workframe(SEGUIDORES))
-
-              var FILTRADO_COORDINADO = copyFiltradoMaster2(resumenMAT,miGraficoActivo_workframe(SEGUIDORES), fromMASTER,toSLAVE)
-
-              // graficar
-              var titulo = titulosGraficos( miIDgrafico(miGraficoActivo_IDVIP(SEGUIDORES)))
-
-              d3.select("#" + miGraficoActivoAlmoadilla(SEGUIDORES)).selectAll("h3").remove()
-              d3.select("#" + miGraficoActivoAlmoadilla(SEGUIDORES)).selectAll("h3").data([1]).enter().append("h3")
-                .text(titulo).attr("align","center").classed("tituloGrafico",true)
-
-              d3.select("#" + miGraficoActivoAlmoadilla(SEGUIDORES)).selectAll("svg").remove()
-              d3.select("#" + miGraficoActivoAlmoadilla(SEGUIDORES)).selectAll("svg").data([1]).enter().append("svg")
-                .attr("id","contenedorGr" + miGraficoActivo_workframe(SEGUIDORES))
-                .attr("class","chart" + miGraficoActivo_workframe(SEGUIDORES))
-                .attr("width", "100%")
-              datos =  window["graphic" + miIDgrafico(miGraficoActivo_IDVIP(SEGUIDORES))];
-              workFrame = miGraficoActivo_workframe(SEGUIDORES)
-              var summaryResultado = renderGlobal(datos, FILTRADO_COORDINADO, toSLAVE)
-
-
-              decisionTipoGrafico(summaryResultado)
-          };  
-        }
-      }  
-    }
-}*/
 
 function activarLayout2(layout,nomIdContenedorVC_ON, nomIdContenedorVC_OFF,SEGUIDORES,estadoVentanas){
     var activarVentana;

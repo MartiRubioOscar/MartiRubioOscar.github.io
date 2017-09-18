@@ -1,4 +1,4 @@
-  function myFunctionWDesplegablePoblacion(){
+    function myFunctionWDesplegablePoblacion(){
     
     ID_VIP = miVentanaActiva() // cambiará el valor de ID_VIP en caso que sean vistas coordinadas
     workFrame = miWorkFrame_fromIDVIP(ID_VIP) // workFrame acorde al nuevo ID_VIP
@@ -20,18 +20,10 @@
                               };
         if ((posicionNum)==2)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="48";
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic48;loadMenu("48");
-                                /*
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="04";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic04;loadMenu("04");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
+                               
                               };
        if ((posicionNum)==3)   {loadMenu("43");
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="43";
-                                //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr)
-                                //resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Barcelona"
-
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic43;
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
@@ -40,8 +32,6 @@
        
        if ((posicionNum)==4)   {loadMenu("44")
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="44";
-                                //resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Barcelona"
-
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic44;
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
@@ -61,8 +51,7 @@
 function myFunctionWDesplegablePoblacionDistrito(){
     ID_VIP = miVentanaActiva() // cambiará el valor de ID_VIP en caso que sean vistas coordinadas
     workFrame = miWorkFrame_fromIDVIP(ID_VIP) // workFrame acorde al nuevo ID_VIP
-    //alert("dentro despl. población distrito")
-    //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
+
     var inputElements = document.getElementsByClassName('desp2');  
     var posicionNum;
     
@@ -76,90 +65,57 @@ function myFunctionWDesplegablePoblacionDistrito(){
         if ((posicionNum)==1) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Barcelona"
-                                //resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                /*updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
+                                
                               };
         if ((posicionNum)==2) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Ciutat Vella"
-                                ///resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                /*updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
+                                
                               };
         if ((posicionNum)==3) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Eixample"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                        
                               };
         if ((posicionNum)==4) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Sants-Montjuïc"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                      
                               };
         if ((posicionNum)==5) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Les Corts"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                      
                               };                                                                                          
         if ((posicionNum)==6) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Sarrià-Sant Gervasi"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                          
                               };
         if ((posicionNum)==7) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Gràcia"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                         
                               };
         if ((posicionNum)==8) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Horta-Guinardó"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                        
                               };
         if ((posicionNum)==9) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Nou Barris"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                         
                               };
         if ((posicionNum)==10) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Sant Andreu"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                        
                               };
         if ((posicionNum)==11) {
                                 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].FBcnPobDistr ="Sant Martí"
-                                /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; datos = graphic02;loadMenu("02");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/          
+                                        
                               };                                                                                                                                                                                    
         if (workFrame=="41"||workFrame=="42"||
               workFrame=="43"||workFrame=="44"){
@@ -237,11 +193,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
-                                /*  
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="07"; datos = graphic07;loadMenu("07");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
+                                
                               };
         if ((posicionNum)==2)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="50";
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="SI"; datos = graphic50;loadMenu("50");
@@ -253,11 +205,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
 
-                                  /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="08";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic08;loadMenu("08");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
+                                  
                               };
        if ((posicionNum)==3)   {  resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="51";
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="SI"; datos = graphic51;loadMenu("51");
@@ -268,12 +216,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
-                                /*
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="09";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic09;loadMenu("09");
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
+                                
                               };
        
         if (workFrame=="41"||workFrame=="42"||
@@ -338,13 +281,11 @@ function myFunctionWDesplegablePoblacionDistrito(){
            }
        }
         if ((posicionNum)==1)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="12"; datos = graphic12;
-                                  //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear)
-                                  //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+
                                   if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015;resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015;untilYear=2015;fromYear=2015}
                                   if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear==2016){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2015;resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=2015;;untilYear=2015;fromYear=2015}
                                   if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear>resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear;untilYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear;fromYear=untilYear}
-                                  //alert("después desde " + resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear)
-                                  //alert("después hasta " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+ 
                                   loadMenu("12");
                                   updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
@@ -372,11 +313,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                   updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
-                                  /*resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="03";
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic03;loadMenu("03");
-                                  updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                  resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
+                                  
                               };
       
         
@@ -450,8 +387,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic39;loadMenu("39");
                                 console.log(datos)
-                                //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear)
-                                //alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                
                                 if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2009"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2009";fromYear="2009"}
                                 if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear > "2015"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2015";fromYear="2015"}
                                 if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear > "2015" ){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2015";untilYear="2015"}
@@ -496,7 +432,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                     untilYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear
                                     fromYear=resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear
                                   }
-                                //loadMenu("21");
+                                
                                 loadMenu("21");
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                                 
@@ -600,20 +536,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
-                                /*
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="02"; 
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; 
                                 
-                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear < "2012" ||resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear == "2016"){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2012";fromYear="2012"}
-                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear > "2015" || resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear<"2012"){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2015";untilYear="2015"}
-                                
-
-                                datos = graphic02;
-                                loadMenu("02");
-
-                                updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)*/
                               };
         if ((posicionNum)==4)   {
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="27"; 
@@ -686,9 +609,7 @@ function myFunctionWDesplegablePoblacionDistrito(){
            }
        }
 
-        if ((posicionNum)==1)   { //alert("desde " + resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear)
-                                  //alert("entra hasta " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
-
+        if ((posicionNum)==1)   { 
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="25"; datos = graphic12;loadMenu("25");
                                   updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
@@ -702,14 +623,12 @@ function myFunctionWDesplegablePoblacionDistrito(){
                               };
         if ((posicionNum)==3)   { resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="38";
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic38;loadMenu("38");
-                                  //alert("desde " + resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear)
-                                  //alert("hasta " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
-                                  //var guardaHastaYear = resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear
+                                  
                                   updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear = guardaHastaYear
-                                  //alert("hasta salida ferias" + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+                                  
                               };
         
         if (workFrame=="41"||workFrame=="42"||
@@ -746,22 +665,21 @@ function myFunctionWDesplegableTurCultura(){
                               };
         if ((posicionNum)==2)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="32";
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic32;loadMenu("32");
-                                //renderBARRAS_test ("32",datos,"gr4_1")//,NOMCONTENEDOR,COLORES)
+                                
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                               };
         if ((posicionNum)==3)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="33";
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic33;loadMenu("33");
-                                //renderBARRAS_test ("33",datos,"gr4_1")//,NOMCONTENEDOR,COLORES)
+                                
 
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                               };                              
         if ((posicionNum)==4)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="34";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic34;loadMenu("34");
-                                //renderBARRAS_test ("33",datos,"gr4_1")//,NOMCONTENEDOR,COLORES)
+                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic34;loadMenu("34");                    
 
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
@@ -769,24 +687,21 @@ function myFunctionWDesplegableTurCultura(){
                               };                              
 
         if ((posicionNum)==5)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="35";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic35;loadMenu("35");
-                                //renderBARRAS_test ("33",datos,"gr4_1")//,NOMCONTENEDOR,COLORES)
+                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic35;loadMenu("35");                    
 
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                               };
         if ((posicionNum)==6)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="36";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic36;loadMenu("36");
-                                //renderBARRAS_test ("33",datos,"gr4_1")//,NOMCONTENEDOR,COLORES)
+                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic36;loadMenu("36");                                
 
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
                               };
         if ((posicionNum)==7)   {resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="37";
-                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic37;loadMenu("37");
-                                //renderBARRAS_test ("33",datos,"gr4_1")//,NOMCONTENEDOR,COLORES)
+                                resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; datos = graphic37;loadMenu("37");                                
 
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                   resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
@@ -989,7 +904,7 @@ for(var i=0; inputElements[i]; ++i){
    var activar;
    if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear==resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
       {
-        //alert("iguales")
+        
         if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="10" ||
             resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="11" ||
             resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="12" ||
@@ -999,7 +914,7 @@ for(var i=0; inputElements[i]; ++i){
             resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico=="42") {
             MenuVariacionAnual()
             activar="si"
-            //alert("VA " + resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual)
+            
             VARIACIONANUAL = resumenMAT[miPosicionResumenMAT(ID_VIP)].variacionAnual 
             datos = misDatos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
                 
@@ -1316,103 +1231,6 @@ if (Identificador=="gr1"){resumenMAT[0].FTemperatura = filtroTempertatura}
 
 }
 
-/*function myFunctionCheckBoxSexo(){
-
-  // Para que funcione cuando es master
-  Identificador = ID_VIP 
-  if (document.getElementById("window41")!=null){  
-    var element41 = document.getElementById("window41").className
-    var element42 = document.getElementById("window42").className
-    var element43 = document.getElementById("window43").className
-    var element44 = document.getElementById("window44").className 
-    if (element41=="greenMandon") {Identificador = "gr4_1"};
-    if (element42=="greenMandon") {Identificador = "gr4_2"};
-    if (element43=="greenMandon") {Identificador = "gr4_3"};
-    if (element44=="greenMandon") {Identificador = "gr4_4"};
-
-  }
-  if (document.getElementById("window21")!=null){  
-    var element21 = document.getElementById("window21").className
-    var element22 = document.getElementById("window22").className
-    if (element21=="greenMandon") {Identificador = "gr_1"};
-    if (element22=="greenMandon") {Identificador = "gr_2"};
-  }
-  
-  
-
-  // fin para que funcione cuando es master
-
-  var filtroSexo = [];
-  if (document.getElementById("Hombres").checked == true){filtroSexo[0]="hombres"}else{filtroSexo[0]="vacío"}
-  if (document.getElementById("Mujeres").checked == true){filtroSexo[1]="mujeres"}else{filtroSexo[1]="vacío"}
-//alert("filtroAeropuerto " + filtroAeropuerto)
-if (Identificador=="gr4_1"){resumenMAT[3].FTurSexo = filtroSexo}
-if (Identificador=="gr4_2"){resumenMAT[4].FTurSexo = filtroSexo}
-if (Identificador=="gr4_3"){resumenMAT[5].FTurSexo = filtroSexo}
-if (Identificador=="gr4_4"){resumenMAT[6].FTurSexo = filtroSexo}
-
-if (Identificador=="gr_1"){resumenMAT[1].FTurSexo = filtroSexo}
-if (Identificador=="gr_2"){resumenMAT[2].FTurSexo = filtroSexo}
-
-if (Identificador=="gr1"){resumenMAT[0].FTurSexo = filtroSexo}
-
-
-  if (CONTROL_primeraVez =="SI"){
-    var PrimeraVez = "NO"
-    
-    if (Identificador=="gr4_1"){///ambitoGeo41=ambitoGeo;
-        graphicId = resumenMAT[3].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[3].desdeYear,resumenMAT[3].hastaYear,"NO",resumenMAT[3].ordenado,resumenMAT[3].porcentaje,resumenMAT[3].variacionAnual,{FTURSEXO:resumenMAT[3].FTurSexo})
-
-        datos = window["graphic" + resumenMAT[3].Idgrafico];
-      }
-    if (Identificador=="gr4_2"){///ambitoGeo42=ambitoGeo;
-        graphicId = resumenMAT[4].Idgrafico
-
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[4].desdeYear,resumenMAT[4].hastaYear,"NO",resumenMAT[4].ordenado,resumenMAT[4].porcentaje,resumenMAT[4].variacionAnual,{FTURSEXO:resumenMAT[4].FTurSexo})
-        datos = window["graphic" + resumenMAT[4].Idgrafico];
-      }
-    if (Identificador=="gr4_3"){///ambitoGeo43=ambitoGeo;
-        graphicId = resumenMAT[5].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[5].desdeYear,resumenMAT[5].hastaYear,"NO",resumenMAT[5].ordenado,resumenMAT[5].porcentaje,resumenMAT[5].variacionAnual,{FTURSEXO:resumenMAT[5].FTurSexo})
-
-        datos = window["graphic" + resumenMAT[5].Idgrafico];
-      }
-    if (Identificador=="gr4_4"){///ambitoGeo44=ambitoGeo;
-        graphicId = resumenMAT[6].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[6].desdeYear,resumenMAT[6].hastaYear,"NO",resumenMAT[6].ordenado,resumenMAT[6].porcentaje,resumenMAT[6].variacionAnual,{FTURSEXO:resumenMAT[6].FTurSexo})
-
-        datos = window["graphic" + resumenMAT[6].Idgrafico];
-      }
-    if (Identificador=="gr_1"){///ambitoGeo21=ambitoGeo;
-        graphicId = resumenMAT[1].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[1].desdeYear,resumenMAT[1].hastaYear,"NO",resumenMAT[1].ordenado,resumenMAT[1].porcentaje,resumenMAT[1].variacionAnual,{FTURSEXO:resumenMAT[1].FTurSexo})
-
-        datos = window["graphic" + resumenMAT[1].Idgrafico];
-      }
-    if (Identificador=="gr_2"){///ambitoGeo22=ambitoGeo;
-        graphicId = resumenMAT[2].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[2].desdeYear,resumenMAT[2].hastaYear,"NO",resumenMAT[2].ordenado,resumenMAT[2].porcentaje,resumenMAT[2].variacionAnual,{FTURSEXO:resumenMAT[2].FTurSexo})
-        datos = window["graphic" + resumenMAT[2].Idgrafico];
-      }
-    if (Identificador=="gr1"){///ambitoGeo11=ambitoGeo;
-        graphicId = resumenMAT[0].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[0].desdeYear,resumenMAT[0].hastaYear,"NO",resumenMAT[0].ordenado,resumenMAT[0].porcentaje,resumenMAT[0].variacionAnual,{FTURSEXO:resumenMAT[0].FTurSexo})
-        datos = window["graphic" + resumenMAT[0].Idgrafico];
-      }
-    
-  }
-
-  if (workFrame=="41"||workFrame=="42"||
-      workFrame=="43"||workFrame=="44"){
-      seleccionWindow4([], [],CONTROL_primeraVez,workFrame) 
-    }
-  if (workFrame=="21"||workFrame=="22"){
-      seleccionWindow2([], [],CONTROL_primeraVez,workFrame) 
-    }
-  if (workFrame=="1"){activar3("gr1")}
-
-}*/
 
 function myFunctionCheckBoxEdadTurista(){
 
@@ -1920,108 +1738,7 @@ if (Identificador=="gr1"){resumenMAT[0].FTurRepe = filtroRepeT}
 
 }
 
-/*function myFunctionCheckBoxTransporteT(){
 
-  // Para que funcione cuando es master
-  Identificador = ID_VIP 
-  if (document.getElementById("window41")!=null){  
-    var element41 = document.getElementById("window41").className
-    var element42 = document.getElementById("window42").className
-    var element43 = document.getElementById("window43").className
-    var element44 = document.getElementById("window44").className 
-    if (element41=="greenMandon") {Identificador = "gr4_1"};
-    if (element42=="greenMandon") {Identificador = "gr4_2"};
-    if (element43=="greenMandon") {Identificador = "gr4_3"};
-    if (element44=="greenMandon") {Identificador = "gr4_4"};
-
-  }
-  if (document.getElementById("window21")!=null){  
-    var element21 = document.getElementById("window21").className
-    var element22 = document.getElementById("window22").className
-    if (element21=="greenMandon") {Identificador = "gr_1"};
-    if (element22=="greenMandon") {Identificador = "gr_2"};
-  }
-  
-  
-
-  // fin para que funcione cuando es master
-
-  var filtroTransporteT = [];
-  if (document.getElementById("AvionT").checked == true){filtroTransporteT[0]="avion"}else{filtroTransporteT[0]="vacío"}
-  if (document.getElementById("CocheT").checked == true){filtroTransporteT[1]="coche"}else{filtroTransporteT[1]="vacío"}
-  if (document.getElementById("FerrocarrilT").checked == true){filtroTransporteT[2]="ferrocarril"}else{filtroTransporteT[2]="vacío"}
-  if (document.getElementById("AutocarT").checked == true){filtroTransporteT[3]="autocar"}else{filtroTransporteT[3]="vacío"}
-  if (document.getElementById("OtrosT").checked == true){filtroTransporteT[4]="otros"}else{filtroTransporteT[4]="vacío"}
-  
-
-//alert("filtroAeropuerto " + filtroAeropuerto)
-if (Identificador=="gr4_1"){resumenMAT[3].FTurTransporte = filtroTransporteT}
-if (Identificador=="gr4_2"){resumenMAT[4].FTurTransporte = filtroTransporteT}
-if (Identificador=="gr4_3"){resumenMAT[5].FTurTransporte = filtroTransporteT}
-if (Identificador=="gr4_4"){resumenMAT[6].FTurTransporte = filtroTransporteT}
-
-if (Identificador=="gr_1"){resumenMAT[1].FTurTransporte = filtroTransporteT}
-if (Identificador=="gr_2"){resumenMAT[2].FTurTransporte = filtroTransporteT}
-
-if (Identificador=="gr1"){resumenMAT[0].FTurTransporte = filtroTransporteT}
-
-
-  if (CONTROL_primeraVez =="SI"){
-    var PrimeraVez = "NO"
-    
-    if (Identificador=="gr4_1"){///ambitoGeo41=ambitoGeo;
-        graphicId = resumenMAT[3].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[3].desdeYear,resumenMAT[3].hastaYear,"NO",resumenMAT[3].ordenado,resumenMAT[3].porcentaje,resumenMAT[3].variacionAnual,{FTURTRANSPORTE:resumenMAT[3].FTurTransporte})
-
-        datos = window["graphic" + resumenMAT[3].Idgrafico];
-      }
-    if (Identificador=="gr4_2"){///ambitoGeo42=ambitoGeo;
-        graphicId = resumenMAT[4].Idgrafico
-
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[4].desdeYear,resumenMAT[4].hastaYear,"NO",resumenMAT[4].ordenado,resumenMAT[4].porcentaje,resumenMAT[4].variacionAnual,{FTURTRANSPORTE:resumenMAT[4].FTurTransporte})
-        datos = window["graphic" + resumenMAT[4].Idgrafico];
-      }
-    if (Identificador=="gr4_3"){///ambitoGeo43=ambitoGeo;
-        graphicId = resumenMAT[5].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[5].desdeYear,resumenMAT[5].hastaYear,"NO",resumenMAT[5].ordenado,resumenMAT[5].porcentaje,resumenMAT[5].variacionAnual,{FTURTRANSPORTE:resumenMAT[5].FTurTransporte})
-
-        datos = window["graphic" + resumenMAT[5].Idgrafico];
-      }
-    if (Identificador=="gr4_4"){///ambitoGeo44=ambitoGeo;
-        graphicId = resumenMAT[6].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[6].desdeYear,resumenMAT[6].hastaYear,"NO",resumenMAT[6].ordenado,resumenMAT[6].porcentaje,resumenMAT[6].variacionAnual,{FTURTRANSPORTE:resumenMAT[6].FTurTransporte})
-
-        datos = window["graphic" + resumenMAT[6].Idgrafico];
-      }
-    if (Identificador=="gr_1"){///ambitoGeo21=ambitoGeo;
-        graphicId = resumenMAT[1].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[1].desdeYear,resumenMAT[1].hastaYear,"NO",resumenMAT[1].ordenado,resumenMAT[1].porcentaje,resumenMAT[1].variacionAnual,{FTURTRANSPORTE:resumenMAT[1].FTurTransporte})
-
-        datos = window["graphic" + resumenMAT[1].Idgrafico];
-      }
-    if (Identificador=="gr_2"){///ambitoGeo22=ambitoGeo;
-        graphicId = resumenMAT[2].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[2].desdeYear,resumenMAT[2].hastaYear,"NO",resumenMAT[2].ordenado,resumenMAT[2].porcentaje,resumenMAT[2].variacionAnual,{FTURTRANSPORTE:resumenMAT[2].FTurTransporte})
-        datos = window["graphic" + resumenMAT[2].Idgrafico];
-      }
-    if (Identificador=="gr1"){///ambitoGeo11=ambitoGeo;
-        graphicId = resumenMAT[0].Idgrafico
-        updateSeguimientoUnaLinea(Identificador,resumenMAT,workFrame,ambitoGeo,resumenMAT[0].desdeYear,resumenMAT[0].hastaYear,"NO",resumenMAT[0].ordenado,resumenMAT[0].porcentaje,resumenMAT[0].variacionAnual,{FTURTRANSPORTE:resumenMAT[0].FTurTransporte})
-        datos = window["graphic" + resumenMAT[0].Idgrafico];
-      }
-    
-  }
-
-  if (workFrame=="41"||workFrame=="42"||
-      workFrame=="43"||workFrame=="44"){
-      seleccionWindow4([], [],CONTROL_primeraVez,workFrame) 
-    }
-  if (workFrame=="21"||workFrame=="22"){
-      seleccionWindow2([], [],CONTROL_primeraVez,workFrame) 
-    }
-  if (workFrame=="1"){activar3("gr1")}
-
-}*/
 
 
 function myFunctionCheckBoxBcnInfAero(){

@@ -1,48 +1,43 @@
 function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {    
-    var colores = ["#35978f","#80cdc1","#7fbc41","#b8e186","#5aae61","#","#a6dba0","#8073ac",
-                        "#b2abd2","#bf812d","#dfc27d","#de77ae","#f1b6da","#9970ab","#c2a5cf","#d6604d",
-                        "#f45a82","#f46d43","#6799cf"]
-    var colores = ["#3288bd","#d53e4f","#99d594","#fc8d59","#01665e","#8c510a","#5ab4ac",
-                        "#d8b365","#1b7837","#c51b7d","#4d9221","#e9a3c9","#2166ac","#b2182b","#67a9cf",
-                        "#ef8a62","#999999","#6799cf"]
-    var anchoLinea="2px"
-    var radioPunto="3px";
-    var colorPunto="#737373"
-    var radioTooltip="5px"
+  var colores = ["#35978f","#80cdc1","#7fbc41","#b8e186","#5aae61","#","#a6dba0","#8073ac",
+  "#b2abd2","#bf812d","#dfc27d","#de77ae","#f1b6da","#9970ab","#c2a5cf","#d6604d",
+  "#f45a82","#f46d43","#6799cf"]
+  var colores = ["#3288bd","#d53e4f","#99d594","#fc8d59","#01665e","#8c510a","#5ab4ac",
+  "#d8b365","#1b7837","#c51b7d","#4d9221","#e9a3c9","#2166ac","#b2182b","#67a9cf",
+  "#ef8a62","#999999","#6799cf"]
+  var anchoLinea="2px"
+  var radioPunto="3px";
+  var colorPunto="#737373"
+  var radioTooltip="5px"
 
      ///// INTRO
-   ID_VIP = miIDVIP_fromWorkFrame(workFrame)
+     ID_VIP = miIDVIP_fromWorkFrame(workFrame)
 
      data = datos
-    var nomContenedor = "contenedorGr" + workFrame;
-    
-    d3.select("#"+ ID_VIP).selectAll("svg").data([1]).enter().append("svg")
-      .attr("id",nomContenedor)
-      .attr("class","chart" + workFrame)
-      //.attr("width", "100%")
+     var nomContenedor = "contenedorGr" + workFrame;
+     
+     d3.select("#"+ ID_VIP).selectAll("svg").data([1]).enter().append("svg")
+     .attr("id",nomContenedor)
+     .attr("class","chart" + workFrame)
 
 
-    var el = document.getElementById(nomContenedor); var mywidth = el.getBoundingClientRect().width;
-    var myheight = el.getBoundingClientRect().height;
+     var el = document.getElementById(nomContenedor); var mywidth = el.getBoundingClientRect().width;
+     var myheight = el.getBoundingClientRect().height;
 
-    var el = document.getElementById(ID_VIP); var mywidthDIV = el.getBoundingClientRect().width;
+     var el = document.getElementById(ID_VIP); var mywidthDIV = el.getBoundingClientRect().width;
     var myheightDIV = el.getBoundingClientRect().height; // TENGO EL TAMAÑO DEL DIV
 
     d3.select("#"+ ID_VIP).selectAll("svg").attr("width",mywidthDIV-mywidthDIV/10)
     d3.select("#"+ ID_VIP).selectAll("svg").attr("height",myheightDIV-myheightDIV/10)
-   var  WIDTH = mywidthDIV-mywidthDIV/10,
-        HEIGHT = myheightDIV-myheightDIV/10,
-        MARGINS = {
+    var  WIDTH = mywidthDIV-mywidthDIV/10,
+    HEIGHT = myheightDIV-myheightDIV/10,
+    MARGINS = {
             top: myheightDIV/10,//10,
             right: mywidthDIV/7,
             bottom: myheightDIV/10,
             left: mywidthDIV/8
-        }
+          }
      ///// FIN INTRO
-
-
-
-    
 
 
         var start = new Date(FROM, 0, 01) // 0 = enero; 11 = diciembre
@@ -50,751 +45,664 @@ function renderVariacionAnual_Mensual(datos,FROM,UNTIL,POSICION) {
         monthStart = start.getMonth() + 1;
         var end = new Date(UNTIL, 11, 31)
         monthEnd = end.getMonth() + 1;
- 
+        
         monthStart = start.getFullYear();
         monthEnd = end.getFullYear();
 
         var xScale = d3.time.scale().domain([start, end]) // <-B
-            .range([MARGINS.left, WIDTH - MARGINS.right])
+        .range([MARGINS.left, WIDTH - MARGINS.right])
 
-  var grafico = resumenMAT[POSICION].Idgrafico
-  switch(true) {
-    case grafico=="11":
-      var numeroGrafico="11"
-      var CHECKBOX = automaticInput(numeroGrafico)
-      var datosAeropuertoTotal=[]
-      var datosAeropuertoNacional=[]
-      var datosAeropuertoInternacional=[]
-      var MaxTotal=-9999
-      var MaxNacional=-9999
-      var MaxInternacional=-9999
-      var MaximoAeropuerto=[]
-      var MinTotal=9999
-      var MinNacional=9999
-      var MinInternacional=9999
-      var MinimoAeropuerto=[]
-      var formatoFechas = d3.time.format("%b")
-      var valorTooltipFechas=[]
-      
-      if (resumenMAT[POSICION].FAeropuerto[0] == "Total")
-        {
-          datosAeropuertoTotal = datos.filter(function (el) {return el.filtroAeropuerto === "Total"})
+        var grafico = resumenMAT[POSICION].Idgrafico
+        switch(true) {
+          case grafico=="11":
+          var numeroGrafico="11"
+          var CHECKBOX = automaticInput(numeroGrafico)
+          var datosAeropuertoTotal=[]
+          var datosAeropuertoNacional=[]
+          var datosAeropuertoInternacional=[]
+          var MaxTotal=-9999
+          var MaxNacional=-9999
+          var MaxInternacional=-9999
+          var MaximoAeropuerto=[]
+          var MinTotal=9999
+          var MinNacional=9999
+          var MinInternacional=9999
+          var MinimoAeropuerto=[]
+          var formatoFechas = d3.time.format("%b")
+          var valorTooltipFechas=[]
           
-          var MaxTotal = d3.max(datosAeropuertoTotal, function(d) {
+          if (resumenMAT[POSICION].FAeropuerto[0] == "Total")
+          {
+            datosAeropuertoTotal = datos.filter(function (el) {return el.filtroAeropuerto === "Total"})
+            
+            var MaxTotal = d3.max(datosAeropuertoTotal, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
-           });
-          var MinTotal = d3.min(datosAeropuertoTotal, function(d) {
+          });
+            var MinTotal = d3.min(datosAeropuertoTotal, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
-           });
-        }
+          });
+          }
 
 
-        
-      if (resumenMAT[POSICION].FAeropuerto[1] == "Nacional")
-        {
-          datosAeropuertoNacional = datos.filter(function (el) {return el.filtroAeropuerto === "Nacional"})
           
-        
-          var MaxNacional = d3.max(datosAeropuertoNacional, function(d) {
+          if (resumenMAT[POSICION].FAeropuerto[1] == "Nacional")
+          {
+            datosAeropuertoNacional = datos.filter(function (el) {return el.filtroAeropuerto === "Nacional"})
+            
+            
+            var MaxNacional = d3.max(datosAeropuertoNacional, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-          var MinNacional = d3.min(datosAeropuertoNacional, function(d) {
+            var MinNacional = d3.min(datosAeropuertoNacional, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-        }
-        
-        
-      if (resumenMAT[POSICION].FAeropuerto[2] == "Internacional")
-        {
-          datosAeropuertoInternacional = datos.filter(function (el) {return el.filtroAeropuerto === "Internacional"})
+          }
           
-          var MaxInternacional = d3.max(datosAeropuertoInternacional, function(d) {
+          
+          if (resumenMAT[POSICION].FAeropuerto[2] == "Internacional")
+          {
+            datosAeropuertoInternacional = datos.filter(function (el) {return el.filtroAeropuerto === "Internacional"})
+            
+            var MaxInternacional = d3.max(datosAeropuertoInternacional, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-          var MinInternacional = d3.min(datosAeropuertoInternacional, function(d) {
+            var MinInternacional = d3.min(datosAeropuertoInternacional, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-        }
-        
-        MaximoAeropuerto = [MaxTotal,MaxNacional,MaxInternacional]
-        MinimoAeropuerto = [MinTotal,MinNacional,MinInternacional]
-        var MAXIMO = d3.max(MaximoAeropuerto, function(d) {
+          }
+          
+          MaximoAeropuerto = [MaxTotal,MaxNacional,MaxInternacional]
+          MinimoAeropuerto = [MinTotal,MinNacional,MinInternacional]
+          var MAXIMO = d3.max(MaximoAeropuerto, function(d) {
             return parseFloat(d) //References first value in each sub-array
           });
-        var MINIMO = d3.min(MinimoAeropuerto, function(d) {
+          var MINIMO = d3.min(MinimoAeropuerto, function(d) {
          return parseFloat(d) //References first value in each sub-array
-        });
+       });
 
-        var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
-        var xAxis = d3.svg.axis()
-        .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
-        var yAxis = d3.svg.axis()
-        .scale(yScale)
-        .orient("left");
-    
-
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " x axis")
-            //.attr("transform", "translate(0," + posicionEjeCero + ")")
-            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
-            .call(xAxis);
-            
-        
+          var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
+          var xAxis = d3.svg.axis()
+          .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
+          var yAxis = d3.svg.axis()
+          .scale(yScale)
+          .orient("left");
           
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " y axis")
-            //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .call(yAxis);
 
-        var lineGen = d3.svg.line()
-            .x(function(d) {
-                return xScale(d.fecha);
-            })
-            .y(function(d) {
-                return yScale(d.resultado);
-            })
-            .interpolate("linear");
+          d3.select("#" + nomContenedor).append("g")
+          .attr("class", " x axis")
+          .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+          .call(xAxis);
+          
+          
+          
+          d3.select("#" + nomContenedor).append("g")
+          .attr("class", " y axis")
+          .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+          .call(yAxis);
+
+          var lineGen = d3.svg.line()
+          .x(function(d) {
+            return xScale(d.fecha);
+          })
+          .y(function(d) {
+            return yScale(d.resultado);
+          })
+          .interpolate("linear");
         //////////// internacional  
         d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datosAeropuertoInternacional))
-            .attr('stroke', colores[0])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
-            .attr('fill', 'none')
+        .attr('d', lineGen(datosAeropuertoInternacional))
+        .attr('stroke', colores[0])
+        .attr('stroke-width', anchoLinea)
+        .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosAeropuertoInternacional])
             .on("mouseover",function(d){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
+              console.log(d)
+              var coords = d3.mouse(this);
+              var pos = [event.pageX,event.pageY]
+              var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
+              return tooltipEvolucion(valorT,pos)
+            })
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });
-        var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1] + "%";         
+            });
+            var valorTooltip="9999"
+            
             for (var i = 0; i < datosAeropuertoInternacional.length; i++) {
               valorTooltip= datosAeropuertoInternacional[i].resultado
               valorTooltipFechas = [formatoFechas(datosAeropuertoInternacional[i].fecha),datosAeropuertoInternacional[i].resultado]
               d3.select("#" + nomContenedor)
-                .append("circle")
-                    .attr("cx",xScale(datosAeropuertoInternacional[i].fecha))
-                    .attr("cy",yScale(datosAeropuertoInternacional[i].resultado))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
-                    .data([valorTooltipFechas])
-                    .on("mouseover",function(d){
-                          d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //var valorT = d;  
-                          var valorT = d[0] + " "+ d[1] + "%";                          
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+              .append("circle")
+              .attr("cx",xScale(datosAeropuertoInternacional[i].fecha))
+              .attr("cy",yScale(datosAeropuertoInternacional[i].resultado))
+              .attr("r", radioPunto)
+              .attr("fill",colorPunto).attr("fill-opacity","0.2")
+              .data([valorTooltipFechas])
+              .on("mouseover",function(d){
+                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                var coords = d3.mouse(this);
+                var pos = [event.pageX,event.pageY]
+                
+                var valorT = d[0] + " "+ d[1] + "%";                          
+                return tooltipEvolucion(valorT,pos)
+              })
+              .on("mouseout", function() {
+                d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                           //Hide the tooltip
                           d3.select("#tooltipEvolucion").classed("hidden", true);
-                          })
+                        })
             };
-          var ultimoValorSerie = datosAeropuertoInternacional[0]
-                
-          if (ultimoValorSerie!=undefined) {
-                  d3.select("#" + nomContenedor)
-                    .append("text")
+            var ultimoValorSerie = datosAeropuertoInternacional[0]
+            
+            if (ultimoValorSerie!=undefined) {
+              d3.select("#" + nomContenedor)
+              .append("text")
                     .attr("x", xScale(ultimoValorSerie.fecha)+7)//+7
                     .attr("y", yScale(ultimoValorSerie.resultado))
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Internacional");
-          };
+                  };
 
           //////////// total
 
-        d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datosAeropuertoTotal))
-            .attr('stroke', colores[1])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
-            .attr('fill', 'none')
+          d3.select("#" + nomContenedor).append('svg:path')
+          .attr('d', lineGen(datosAeropuertoTotal))
+          .attr('stroke', colores[1])
+          .attr('stroke-width', anchoLinea)
+          .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosAeropuertoTotal])
             .on("mouseover",function(d){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[0]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
+              console.log(d)
+              var coords = d3.mouse(this);
+              var pos = [event.pageX,event.pageY]
+              var valorT = eval("d[0]." + CHECKBOX.filtroDatos);                         
+              return tooltipEvolucion(valorT,pos)
+            })
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });
+            });
             ;
-          var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1] + "%";             
+            var valorTooltip="9999"
+            
             for (var i = 0; i < datosAeropuertoTotal.length; i++) {
               valorTooltip= datosAeropuertoTotal[i].resultado
               valorTooltipFechas = [formatoFechas(datosAeropuertoTotal[i].fecha),datosAeropuertoTotal[i].resultado]
               d3.select("#" + nomContenedor)
-                .append("circle")
-                    .attr("cx",xScale(datosAeropuertoTotal[i].fecha))
-                    .attr("cy",yScale(datosAeropuertoTotal[i].resultado))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
-                    .data([valorTooltipFechas])
-                    .on("mouseover",function(d){
-                          d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //var valorT = d; 
-                          var valorT = d[0] + " "+ d[1] + "%";                        
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+              .append("circle")
+              .attr("cx",xScale(datosAeropuertoTotal[i].fecha))
+              .attr("cy",yScale(datosAeropuertoTotal[i].resultado))
+              .attr("r", radioPunto)
+              .attr("fill",colorPunto).attr("fill-opacity","0.2")
+              .data([valorTooltipFechas])
+              .on("mouseover",function(d){
+                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                var coords = d3.mouse(this);
+                var pos = [event.pageX,event.pageY]
+
+                var valorT = d[0] + " "+ d[1] + "%";                        
+                return tooltipEvolucion(valorT,pos)
+              })
+              .on("mouseout", function() {
+                d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                           //Hide the tooltip
                           d3.select("#tooltipEvolucion").classed("hidden", true);
-                          })
+                        })
             };
-          var ultimoValorSerie = datosAeropuertoTotal[0]
-          
-          //console.log(ultimoValorSerie.fecha)
-                
-          if (ultimoValorSerie!=undefined) {
-                  d3.select("#" + nomContenedor)
-                    .append("text")
+            var ultimoValorSerie = datosAeropuertoTotal[0]
+            
+
+            
+            if (ultimoValorSerie!=undefined) {
+              d3.select("#" + nomContenedor)
+              .append("text")
                     .attr("x", xScale(ultimoValorSerie.fecha)+7)//+7
                     .attr("y", yScale(ultimoValorSerie.resultado))
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Total");
-          };
+                  };
 
           //////////// nacional
-        d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datosAeropuertoNacional))
-            .attr('stroke', colores[2])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
-            .attr('fill', 'none')
+          d3.select("#" + nomContenedor).append('svg:path')
+          .attr('d', lineGen(datosAeropuertoNacional))
+          .attr('stroke', colores[2])
+          .attr('stroke-width', anchoLinea)
+          .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosAeropuertoNacional])
             .on("mouseover",function(d){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[2]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
+              console.log(d)
+              var coords = d3.mouse(this);
+              var pos = [event.pageX,event.pageY]
+              var valorT = eval("d[2]." + CHECKBOX.filtroDatos);                         
+              return tooltipEvolucion(valorT,pos)
+            })
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });;
-          var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1] + "%";           
+            });;
+            var valorTooltip="9999"
+            
             for (var i = 0; i < datosAeropuertoNacional.length; i++) {
               valorTooltip= datosAeropuertoNacional[i].resultado
               valorTooltipFechas = [formatoFechas(datosAeropuertoNacional[i].fecha),datosAeropuertoNacional[i].resultado]
               d3.select("#" + nomContenedor)
-                .append("circle")
-                    .attr("cx",xScale(datosAeropuertoNacional[i].fecha))
-                    .attr("cy",yScale(datosAeropuertoNacional[i].resultado))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
-                    .data([valorTooltipFechas])
-                    .on("mouseover",function(d){
-                          d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //var valorT = d; 
-                          var valorT = d[0] + " "+ d[1] + "%";                         
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+              .append("circle")
+              .attr("cx",xScale(datosAeropuertoNacional[i].fecha))
+              .attr("cy",yScale(datosAeropuertoNacional[i].resultado))
+              .attr("r", radioPunto)
+              .attr("fill",colorPunto).attr("fill-opacity","0.2")
+              .data([valorTooltipFechas])
+              .on("mouseover",function(d){
+                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                var coords = d3.mouse(this);
+                var pos = [event.pageX,event.pageY]
+
+                var valorT = d[0] + " "+ d[1] + "%";                         
+                return tooltipEvolucion(valorT,pos)
+              })
+              .on("mouseout", function() {
+                d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                           //Hide the tooltip
                           d3.select("#tooltipEvolucion").classed("hidden", true);
-                          })
+                        })
             };
             var ultimoValorSerie = datosAeropuertoNacional[0]
-          
-          //console.log(ultimoValorSerie.fecha)
-                
-          if (ultimoValorSerie!=undefined) {
-                  d3.select("#" + nomContenedor)
-                    .append("text")
+            
+            
+            if (ultimoValorSerie!=undefined) {
+              d3.select("#" + nomContenedor)
+              .append("text")
                     .attr("x", xScale(ultimoValorSerie.fecha)+7)//+7
                     .attr("y", yScale(ultimoValorSerie.resultado))
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Nacional");
-          };
+                  };
 
-        break;
-    case grafico=="12":
-      var numeroGrafico="12"
-      var CHECKBOX = automaticInput(numeroGrafico)
-      var datosTemperaturaMedia=[]
-      var datosTemperaturaMinima=[]
-      var datosTemperaturaMaxima=[]
-      var MaxMedia=-9999
-      var MaxMinima=-9999
-      var MaxMaxima=-9999
-      var MaximoTemperaturas=[]
-      var MinMedia=9999
-      var MinMinima=9999
-      var MinMaxima=9999
-      var MinimoTemperaturas=[]
-      var formatoFechas = d3.time.format("%b")
-      var valorTooltipFechas=[]
-      
-      if (resumenMAT[POSICION].FTemperatura[0] == "media")
-        {
-          datosTemperaturaMedia = datos.filter(function (el) {return el.filtroTempertatura === "media"})
-          
-          var MaxMedia = d3.max(datosTemperaturaMedia, function(d) {
-            return parseFloat(d.resultado) //References first value in each sub-array
-           });
-          var MinMedia = d3.min(datosTemperaturaMedia, function(d) {
-            return parseFloat(d.resultado) //References first value in each sub-array
-           });
-        }
-
-
-        
-      if (resumenMAT[POSICION].FTemperatura[1] == "minima")
-        {
-          datosTemperaturaMinima = datos.filter(function (el) {return el.filtroTempertatura === "minima"})
+                  break;
+                  case grafico=="12":
+                  var numeroGrafico="12"
+                  var CHECKBOX = automaticInput(numeroGrafico)
+                  var datosTemperaturaMedia=[]
+                  var datosTemperaturaMinima=[]
+                  var datosTemperaturaMaxima=[]
+                  var MaxMedia=-9999
+                  var MaxMinima=-9999
+                  var MaxMaxima=-9999
+                  var MaximoTemperaturas=[]
+                  var MinMedia=9999
+                  var MinMinima=9999
+                  var MinMaxima=9999
+                  var MinimoTemperaturas=[]
+                  var formatoFechas = d3.time.format("%b")
+                  var valorTooltipFechas=[]
                   
-          var MaxMinima = d3.max(datosTemperaturaMinima, function(d) {
+                  if (resumenMAT[POSICION].FTemperatura[0] == "media")
+                  {
+                    datosTemperaturaMedia = datos.filter(function (el) {return el.filtroTempertatura === "media"})
+                    
+                    var MaxMedia = d3.max(datosTemperaturaMedia, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-          var MinMinima = d3.min(datosTemperaturaMinima, function(d) {
+                    var MinMedia = d3.min(datosTemperaturaMedia, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-        }
-        
-        
-      if (resumenMAT[POSICION].FTemperatura[2] == "maxima")
-        {
-          datosTemperaturaMaxima = datos.filter(function (el) {return el.filtroTempertatura === "maxima"})
-          
-          var MaxMaxima = d3.max(datosTemperaturaMaxima, function(d) {
+                  }
+
+
+                  
+                  if (resumenMAT[POSICION].FTemperatura[1] == "minima")
+                  {
+                    datosTemperaturaMinima = datos.filter(function (el) {return el.filtroTempertatura === "minima"})
+                    
+                    var MaxMinima = d3.max(datosTemperaturaMinima, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-          var MinMaxima = d3.min(datosTemperaturaMaxima, function(d) {
+                    var MinMinima = d3.min(datosTemperaturaMinima, function(d) {
             return parseFloat(d.resultado) //References first value in each sub-array
           });
-        }
-        
-        MaximoTemperaturas = [MaxMedia,MaxMinima,MaxMaxima]
-        MinimoTemperaturas = [MinMedia,MinMinima,MinMaxima]
-        var MAXIMO = d3.max(MaximoTemperaturas, function(d) {
+                  }
+                  
+                  
+                  if (resumenMAT[POSICION].FTemperatura[2] == "maxima")
+                  {
+                    datosTemperaturaMaxima = datos.filter(function (el) {return el.filtroTempertatura === "maxima"})
+                    
+                    var MaxMaxima = d3.max(datosTemperaturaMaxima, function(d) {
+            return parseFloat(d.resultado) //References first value in each sub-array
+          });
+                    var MinMaxima = d3.min(datosTemperaturaMaxima, function(d) {
+            return parseFloat(d.resultado) //References first value in each sub-array
+          });
+                  }
+                  
+                  MaximoTemperaturas = [MaxMedia,MaxMinima,MaxMaxima]
+                  MinimoTemperaturas = [MinMedia,MinMinima,MinMaxima]
+                  var MAXIMO = d3.max(MaximoTemperaturas, function(d) {
             return parseFloat(d) //References first value in each sub-array
           });
-        var MINIMO = d3.min(MinimoTemperaturas, function(d) {
+                  var MINIMO = d3.min(MinimoTemperaturas, function(d) {
             return parseFloat(d) //References first value in each sub-array
           });
-        
-        var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
-        
-        var xAxis = d3.svg.axis()
-        .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
-        var yAxis = d3.svg.axis()
-        .scale(yScale)
-        .orient("left");
-    
+                  
+                  var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
+                  
+                  var xAxis = d3.svg.axis()
+                  .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
+                  var yAxis = d3.svg.axis()
+                  .scale(yScale)
+                  .orient("left");
+                  
 
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " x axis")
-            //.attr("transform", "translate(0," + posicionEjeCero + ")")
-            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
-            .call(xAxis);
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " y axis")
-            //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .call(yAxis);
+                  d3.select("#" + nomContenedor).append("g")
+                  .attr("class", " x axis")
+                  .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+                  .call(xAxis);
+                  d3.select("#" + nomContenedor).append("g")
+                  .attr("class", " y axis")
+                  .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+                  .call(yAxis);
 
 
 
-        var lineGen = d3.svg.line()
-            .x(function(d) {
-                return xScale(d.fecha);
-            })
-            .y(function(d) {
-                return yScale(d.resultado);
-            })
-            .interpolate("linear");
+                  var lineGen = d3.svg.line()
+                  .x(function(d) {
+                    return xScale(d.fecha);
+                  })
+                  .y(function(d) {
+                    return yScale(d.resultado);
+                  })
+                  .interpolate("linear");
         /////////// Mínima
         d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datosTemperaturaMinima))
-            .attr('stroke', colores[0])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
-            .attr('fill', 'none')
+        .attr('d', lineGen(datosTemperaturaMinima))
+        .attr('stroke', colores[0])
+        .attr('stroke-width', anchoLinea)
+        .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosTemperaturaMinima])
             .on("mouseover",function(d){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
+              console.log(d)
+              var coords = d3.mouse(this);
+              var pos = [event.pageX,event.pageY]
+              var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
+              return tooltipEvolucion(valorT,pos)
+            })
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });
+            });
 
-        var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1] + "%";                   
+            var valorTooltip="9999"
+            
             for (var i = 0; i < datosTemperaturaMinima.length; i++) {
               valorTooltip= datosTemperaturaMinima[i].resultado
               valorTooltipFechas = [formatoFechas(datosTemperaturaMinima[i].fecha),datosTemperaturaMinima[i].resultado]
               d3.select("#" + nomContenedor)
-                .append("circle")
-                    .attr("cx",xScale(datosTemperaturaMinima[i].fecha))
-                    .attr("cy",yScale(datosTemperaturaMinima[i].resultado))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
-                    .data([valorTooltipFechas])
-                    .on("mouseover",function(d){
-                          d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //var valorT = d;
-                          var valorT = d[0] + " "+ d[1] + "%";                          
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+              .append("circle")
+              .attr("cx",xScale(datosTemperaturaMinima[i].fecha))
+              .attr("cy",yScale(datosTemperaturaMinima[i].resultado))
+              .attr("r", radioPunto)
+              .attr("fill",colorPunto).attr("fill-opacity","0.2")
+              .data([valorTooltipFechas])
+              .on("mouseover",function(d){
+                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                var coords = d3.mouse(this);
+                var pos = [event.pageX,event.pageY]
+
+                var valorT = d[0] + " "+ d[1] + "%";                          
+                return tooltipEvolucion(valorT,pos)
+              })
+              .on("mouseout", function() {
+                d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                           //Hide the tooltip
                           d3.select("#tooltipEvolucion").classed("hidden", true);
-                          })
+                        })
             };
-          //var ultimoValorSerie = datosTemperaturaMinima[datosTemperaturaMinima.length-1]
-          var ultimoValorSerie = datosTemperaturaMinima[0]
-          if (ultimoValorSerie!=undefined){
-            d3.select("#" + nomContenedor)
-                    .append("text")
+
+            var ultimoValorSerie = datosTemperaturaMinima[0]
+            if (ultimoValorSerie!=undefined){
+              d3.select("#" + nomContenedor)
+              .append("text")
                     .attr("x", xScale(ultimoValorSerie.fecha)+7)//+7
                     .attr("y", yScale(ultimoValorSerie.resultado))
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Mínima");  
-          }
+                  }
         /////////// Máxima
         d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datosTemperaturaMaxima))
-            .attr('stroke', colores[1])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
-            .attr('fill', 'none')
+        .attr('d', lineGen(datosTemperaturaMaxima))
+        .attr('stroke', colores[1])
+        .attr('stroke-width', anchoLinea)
+        .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosTemperaturaMaxima])
             .on("mouseover",function(d){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
+              console.log(d)
+              var coords = d3.mouse(this);
+              var pos = [event.pageX,event.pageY]
+              var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
+              return tooltipEvolucion(valorT,pos)
+            })
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });
+            });
 
-        var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1] + "%";        
+            var valorTooltip="9999"
+            
             for (var i = 0; i < datosTemperaturaMaxima.length; i++) {
               valorTooltip= datosTemperaturaMaxima[i].resultado
               valorTooltipFechas = [formatoFechas(datosTemperaturaMaxima[i].fecha),datosTemperaturaMaxima[i].resultado]
               d3.select("#" + nomContenedor)
-                .append("circle")
-                    .attr("cx",xScale(datosTemperaturaMaxima[i].fecha))
-                    .attr("cy",yScale(datosTemperaturaMaxima[i].resultado))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
-                    .data([valorTooltipFechas])
-                    .on("mouseover",function(d){
-                          d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //var valorT = d;     
-                          var valorT = d[0] + " "+ d[1] + "%";                            
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+              .append("circle")
+              .attr("cx",xScale(datosTemperaturaMaxima[i].fecha))
+              .attr("cy",yScale(datosTemperaturaMaxima[i].resultado))
+              .attr("r", radioPunto)
+              .attr("fill",colorPunto).attr("fill-opacity","0.2")
+              .data([valorTooltipFechas])
+              .on("mouseover",function(d){
+                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                var coords = d3.mouse(this);
+                var pos = [event.pageX,event.pageY]
+
+                var valorT = d[0] + " "+ d[1] + "%";                            
+                return tooltipEvolucion(valorT,pos)
+              })
+              .on("mouseout", function() {
+                d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                           //Hide the tooltip
                           d3.select("#tooltipEvolucion").classed("hidden", true);
-                          })
+                        })
             };
-            //var ultimoValorSerie = datosTemperaturaMinima[datosTemperaturaMinima.length-1]
-          var ultimoValorSerie = datosTemperaturaMaxima[0]
-          if (ultimoValorSerie!=undefined){
-                 d3.select("#" + nomContenedor)
-                        .append("text")
+
+            var ultimoValorSerie = datosTemperaturaMaxima[0]
+            if (ultimoValorSerie!=undefined){
+             d3.select("#" + nomContenedor)
+             .append("text")
                         .attr("x", xScale(ultimoValorSerie.fecha)+7)//+7
                         .attr("y", yScale(ultimoValorSerie.resultado))
                         .attr("fill", "black")
                         .attr("font-size","0.8em")
                         .attr("dy", ".35em")
-                        //.text(TextoLegend)
                         .text("Máxima");
-          }
+                      }
 
         //////////// Media
         d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datosTemperaturaMedia))
-            .attr('stroke', colores[2])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
-            .attr('fill', 'none')
+        .attr('d', lineGen(datosTemperaturaMedia))
+        .attr('stroke', colores[2])
+        .attr('stroke-width', anchoLinea)
+        .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosTemperaturaMedia])
             .on("mouseover",function(d){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
+              console.log(d)
+              var coords = d3.mouse(this);
+              var pos = [event.pageX,event.pageY]
+              var valorT = eval("d[1]." + CHECKBOX.filtroDatos);                         
+              return tooltipEvolucion(valorT,pos)
+            })
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });
+            });
 
-        var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1] + "%";                
+            var valorTooltip="9999"
+            
             for (var i = 0; i < datosTemperaturaMedia.length; i++) {
               valorTooltip= datosTemperaturaMedia[i].resultado
               valorTooltipFechas = [formatoFechas(datosTemperaturaMedia[i].fecha),datosTemperaturaMedia[i].resultado]
               d3.select("#" + nomContenedor)
-                .append("circle")
-                    .attr("cx",xScale(datosTemperaturaMedia[i].fecha))
-                    .attr("cy",yScale(datosTemperaturaMedia[i].resultado))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
-                    .data([valorTooltipFechas])
-                    .on("mouseover",function(d){
-                          d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //var valorT = d;             
-                          var valorT = d[0] + " "+ d[1] + "%";                            
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+              .append("circle")
+              .attr("cx",xScale(datosTemperaturaMedia[i].fecha))
+              .attr("cy",yScale(datosTemperaturaMedia[i].resultado))
+              .attr("r", radioPunto)
+              .attr("fill",colorPunto).attr("fill-opacity","0.2")
+              .data([valorTooltipFechas])
+              .on("mouseover",function(d){
+                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                var coords = d3.mouse(this);
+                var pos = [event.pageX,event.pageY]
+
+                var valorT = d[0] + " "+ d[1] + "%";                            
+                return tooltipEvolucion(valorT,pos)
+              })
+              .on("mouseout", function() {
+                d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                           //Hide the tooltip
                           d3.select("#tooltipEvolucion").classed("hidden", true);
-                          })
+                        })
             };
-          //var ultimoValorSerie = datosTemperaturaMinima[datosTemperaturaMinima.length-1]
-          var ultimoValorSerie = datosTemperaturaMedia[0]
-          
-          //console.log(ultimoValorSerie.fecha)
-                
-          if (ultimoValorSerie!=undefined) {
-                  d3.select("#" + nomContenedor)
-                    .append("text")
+
+            var ultimoValorSerie = datosTemperaturaMedia[0]
+            
+            
+            if (ultimoValorSerie!=undefined) {
+              d3.select("#" + nomContenedor)
+              .append("text")
                     .attr("x", xScale(ultimoValorSerie.fecha)+7)//+7
                     .attr("y", yScale(ultimoValorSerie.resultado))
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Media");
-          };
-        break;
+                  };
+                  break;
 
-    case grafico=="10" || grafico=="42" || grafico=="41" || grafico=="40":
-      //alert("dataset 10")
-        var formatoFechas = d3.time.format("%b")
-        var valorTooltipFechas=[]
+                  case grafico=="10" || grafico=="42" || grafico=="41" || grafico=="40":
 
-        var tituloSerie = d3.scale.ordinal()
-          .domain(["10","13","40","42"])
-          .range(["Puerto","Precipitaciones","Ocupación hotelera","Precio Hoteles"])
+                  var formatoFechas = d3.time.format("%b")
+                  var valorTooltipFechas=[]
 
-        var numeroGrafico=grafico
+                  var tituloSerie = d3.scale.ordinal()
+                  .domain(["10","13","40","42"])
+                  .range(["Puerto","Precipitaciones","Ocupación hotelera","Precio Hoteles"])
 
-        var MAXIMO = d3.max(datos, function(d) {
+                  var numeroGrafico=grafico
+
+                  var MAXIMO = d3.max(datos, function(d) {
          return parseFloat(d.resultado) //References first value in each sub-array
-        });
-        var MINIMO = d3.min(datos, function(d) {
+       });
+                  var MINIMO = d3.min(datos, function(d) {
          return parseFloat(d.resultado) //References first value in each sub-array
-        });
+       });
 
-        var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
-        
-        var xAxis = d3.svg.axis()
-        .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
-        var yAxis = d3.svg.axis()
-        .scale(yScale)
-        .orient("left");
- 
+                  var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO])
+                  
+                  var xAxis = d3.svg.axis()
+                  .scale(xScale).tickFormat(d3.time.format("%b %y")).ticks(6)
+                  var yAxis = d3.svg.axis()
+                  .scale(yScale)
+                  .orient("left");
+                  
 
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " x axis")
-            //.attr("transform", "translate(0," + posicionEjeCero + ")")
-            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
-            .call(xAxis);
-        
-        //d3.select("#" + nomContenedor).selectAll("g").selectAll("text").style("font-size","7px")
+                  d3.select("#" + nomContenedor).append("g")
+                  .attr("class", " x axis")
+                  .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+                  .call(xAxis);
+                  
 
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " y axis")
-            //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .call(yAxis);
+                  d3.select("#" + nomContenedor).append("g")
+                  .attr("class", " y axis")
+                  .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+                  .call(yAxis);
 
-        var lineGen = d3.svg.line()
-            .x(function(d) {
-                return xScale(d.fecha);
-            })
-            .y(function(d) {
-                return yScale(d.resultado);
-            })
-            .interpolate("linear");
-        
-        d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datos))
-            .attr('stroke', colores[0])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
-            .attr('fill', 'none')
+                  var lineGen = d3.svg.line()
+                  .x(function(d) {
+                    return xScale(d.fecha);
+                  })
+                  .y(function(d) {
+                    return yScale(d.resultado);
+                  })
+                  .interpolate("linear");
+                  
+                  d3.select("#" + nomContenedor).append('svg:path')
+                  .attr('d', lineGen(datos))
+                  .attr('stroke', colores[0])
+                  .attr('stroke-width', anchoLinea)
+                  .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datos])
             .on("mouseover",function(d){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  //var valorT = eval("d[0]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(tituloSerie(numeroGrafico),pos)
-                })
+              console.log(d)
+              var coords = d3.mouse(this);
+              var pos = [event.pageX,event.pageY]
+              return tooltipEvolucion(tituloSerie(numeroGrafico),pos)
+            })
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });
-        var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1] + "%"; 
+            });
+            var valorTooltip="9999"
+            
             for (var i = 0; i < datos.length; i++) {
               valorTooltip= datos[i].resultado
               valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
               d3.select("#" + nomContenedor)
-                .append("circle")
-                    .attr("cx",xScale(datos[i].fecha))
-                    .attr("cy",yScale(datos[i].resultado))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.attr("fill","red")
-                    //.data([valorTooltip])
-                    .data([valorTooltipFechas])
-                    .on("mouseover",function(d){
-                          d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //var valorT = d;  
-                          var valorT = d[0] + " "+ d[1] + "%";                       
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                          d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
+              .append("circle")
+              .attr("cx",xScale(datos[i].fecha))
+              .attr("cy",yScale(datos[i].resultado))
+              .attr("r", radioPunto)
+              .attr("fill",colorPunto).attr("fill-opacity","0.2")
+              .data([valorTooltipFechas])
+              .on("mouseover",function(d){
+                d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
+                var coords = d3.mouse(this);
+                var pos = [event.pageX,event.pageY]
+                
+                var valorT = d[0] + " "+ d[1] + "%";                       
+                return tooltipEvolucion(valorT,pos)
+              })
+              .on("mouseout", function() {
+                d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
                           //Hide the tooltip
                           d3.select("#tooltipEvolucion").classed("hidden", true);
-                          })
+                        })
             };
 
-        break;
-    default:
-          alert("default mensual")
-        /*var MAXIMO = d3.max(datos, function(d) {
-         return parseFloat(d.resultado) //References first value in each sub-array
-        });
-        var MINIMO = d3.min(datos, function(d) {
-         return parseFloat(d.resultado) //References first value in each sub-array
-        });
+            break;
+            default:
+            alert("default mensual")
 
-        var yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([MINIMO, MAXIMO]),
-        xAxis = d3.svg.axis()
-        .scale(xScale),
-        yAxis = d3.svg.axis()
-        .scale(yScale)
-        .orient("left");
- 
-
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " x axis")
-            //.attr("transform", "translate(0," + posicionEjeCero + ")")
-            .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
-            .call(xAxis);
-        d3.select("#" + nomContenedor).append("g")
-            .attr("class", " y axis")
-            //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .attr("transform", "translate(" + (MARGINS.left) + ",0)")
-            .call(yAxis);
-
-        var lineGen = d3.svg.line()
-            .x(function(d) {
-                return xScale(d.fecha);
-            })
-            .y(function(d) {
-                return yScale(d.resultado);
-            })
-            .interpolate("linear");
-        
-        d3.select("#" + nomContenedor).append('svg:path')
-            .attr('d', lineGen(datos))
-            .attr('stroke', 'green')
-            .attr('stroke-width', 2)
-            //.attr('fill', 'black')
-            .attr('fill', 'none');*/
-
-
-  }
+          }
   d3.select("#" + nomContenedor).append("text")      // text label for the x axis
-            .attr("x", MARGINS.left/2 )
-            .attr("y",  HEIGHT/10 )
-            .style("text-anchor", "middle")
-            .text(function(){return misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)});
-            //.text("%");
-    d3.select("#" + ID_VIP).select(".tituloGrafico")
-        .text(function(){return titulosGraficos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico) + " (" + equivalenciaTipoGrafico(TIPO_GRAFICO) + ")"})
-        
+  .attr("x", MARGINS.left/2 )
+  .attr("y",  HEIGHT/10 )
+  .style("text-anchor", "middle")
+  .text(function(){return misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)});
+  
+  d3.select("#" + ID_VIP).select(".tituloGrafico")
+  .text(function(){return titulosGraficos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico) + " (" + equivalenciaTipoGrafico(TIPO_GRAFICO) + ")"})
+  
 }

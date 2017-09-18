@@ -1,6 +1,3 @@
-/// OJO QUE CUANDO ACABO EJECUTO UN ACTIVAR2!!! Tener en cuenta a la hora de actualizar filtros...
-
-
 function CreateUnGrafico (){
 			d3.select("#menu41").remove()
 			d3.select("#menu42").remove()
@@ -404,16 +401,6 @@ function CreateCuatroGraficos (){
 			d3.select("#window43").append("span")
 			d3.select("#window44").append("span")
 
-			/*d3.select("#vistas4").append("div").attr("align","right").style("margin","15px")
-				.style("height","15px").style("width","15px").style("margin-top","-30%").style("margin-left","90px")//top right bottom left
-				.style("margin-right","0px")
-				.style("margin-bottom","0px")
-				.style("background-color","black")*/
-			/*d3.select("#vistas4").append("button")
-				.style("margin-top","-30%").style("margin-left","90px")//top right bottom left
-				.style("margin-right","0px")
-				.style("margin-bottom","0px")
-				.text("1 ventana").style("font-size","10px")*/
 
 
 		var elementExists = document.getElementById("contenedorGr1");
@@ -439,7 +426,7 @@ function CuatroGrafico(elementExists, CONTROL21,CONTROL22,CONTROL2) {
 
 
 		if (elementExists!=null){
-				//alert("CASO DE UNA VENTANA LLENA A 4 VENTANAS")
+
 				d3.select("#gr4_1").select("#gr1Close").remove()
 			    d3.select("#gr4_1").append("img").attr("id","gr4_1Close").attr("align","right").attr("src","img/iconTancar.svg").attr("height","10px")
 			    	.attr("onclick","borrarGrafico('gr4_1Close')") // borrarGrafico está en comportamientos.js
@@ -488,7 +475,7 @@ function CuatroGrafico(elementExists, CONTROL21,CONTROL22,CONTROL2) {
 		}
 	
 		if (CONTROL21){
-					//alert("CASO DE 21 llena a 4 VENTANAS")
+
 				d3.select("#gr4_1").select("#gr1Close").remove()
 			    d3.select("#gr4_1").append("img").attr("id","gr4_1Close").attr("align","right").attr("src","img/iconTancar.svg").attr("height","10px")
 			    	.attr("onclick","borrarGrafico('gr4_1Close')") // borrarGrafico está en comportamientos.js
@@ -583,7 +570,7 @@ function CuatroGrafico(elementExists, CONTROL21,CONTROL22,CONTROL2) {
 		}
 
 		if (CONTROL2){
-		//alert("21 y 22 llenas a 4 ventanas")
+
 				d3.select("#gr4_1").select("#gr1Close").remove()
 			    d3.select("#gr4_1").append("img").attr("id","gr4_1Close").attr("align","right").attr("src","img/iconTancar.svg").attr("height","10px")
 			    	.attr("onclick","borrarGrafico('gr4_1Close')") // borrarGrafico está en comportamientos.js

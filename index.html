@@ -3,7 +3,7 @@
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>TFM OMR Visualizador OGD</title>
+	<title>TFM UNIR OMR Visualizador OGD</title>
 	<link href="css/styles.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="d3/d3.v3.js"></script>
 	<script src="d3/d3-time.v1.min.js"></script>
@@ -59,7 +59,7 @@ var colorMasterNoActivo = "d6c7ab"
 var colorMasterActivo = "FFFEF4"//"E1E2FF"//"EEEFFF"
 var colorSinGrafico = "848484"
 var arrastre // control color arrastro de menu
-//var TEST = automaticInput("22")
+
 
 var resumenMATtest
 //var estadoFiltro
@@ -274,9 +274,6 @@ var graphic02;
 		}
 		function drop(ev) {	
 
-			//ev.preventDefault();
-			//document.getElementById(ev.target.id).innerHTML="";
-
 		    d3.select(ev.target).html("") //borra los elementos
 		    var data = ev.dataTransfer.getData("text");
 
@@ -299,7 +296,7 @@ var graphic02;
 			    	d3.select("#gr4_1").select("#Icono_gr4_1").remove()
 			    	d3.select("#gr4_1").append("img").attr("id","gr4_1Close").attr("align","right").attr("src","img/iconTancar.svg").attr("height","10px")
 			    		.attr("onclick","borrarGrafico('gr4_1Close')") // borrarGrafico está en comportamientos.js
-			    	//d3.select("#gr4_1").select("#gr4_1Close").remove()
+			    	
 			    	d3.select("#gr4_1").append("g").attr("id","infoGroup41")
 			    		.append("img").attr("id","Icono_gr4_1").attr("src","img/information.svg").attr("height","20px")
 			    		.attr("align","right").style("margin-right","5px").style("margin-top","5px")
@@ -456,7 +453,7 @@ var graphic02;
 
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 		
 			        break;
 			    case "menuInfraestructuras":
@@ -498,15 +495,12 @@ var graphic02;
 
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 		
 			        break;
 		        	case "menuPoblacion":
 		        		document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-		        		//loadMenu("01")
 		        		
-		        		/*datos = graphic01;
-	   		          	graphicId = "01";*/
 
 						datos = graphic45;
 	   		          	graphicId = "45";
@@ -541,19 +535,18 @@ var graphic02;
 			    		loadMenu("45")
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 		        		
 			        break;
 			    
 			    case "menuVivienda":
 		        		document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-		        		//loadMenu("49")
-		        		//datos = graphic49;
+		        		
 		        		
 
 			    		ambitoGeo = ambitoGeoIni;
 			    		
-	   		          	//graphicId = "07";
+	   		          	
 	   		          	graphicId = "49";
 	   		          	untilYear = "2015"
 	   		          	fromYear = "2015"
@@ -581,7 +574,7 @@ var graphic02;
 							seleccionWindow2([], [],ctrlPrimera,ventanaPrimera)	
 						}
 						if (ventanaPrimera=="1"){
-							//alert("lanzar funcion activar 3")
+							
 							activar3("gr1")	
 						}
 						
@@ -593,12 +586,12 @@ var graphic02;
 
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 		
 			        break;		
 			    case "menuEconomia":
 		        		document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-		        		//alert("cargar Economia")
+		        		
 		        		loadMenu("21")
 		        		
 
@@ -636,7 +629,7 @@ var graphic02;
 
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 
 			        break;		
 
@@ -646,24 +639,7 @@ var graphic02;
 			    		d3.select(rr).selectAll("svg").remove()
 			        break;	    
 			    case "menuTurista":
-		        		/*document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-		        		loadMenu("14")
-
-		        		datos = graphic14;
-			    		ambitoGeo = ambitoGeoIni;
-			    		
-	   		          	graphicId = "14";
-	   		          	untilYear = "2016"
-	   		          	fromYear = "2006"
-	   		          	controlEVOLUTION=false;
-	   		          	SORT="NO"
-	   		          	TANTOPORCIEN = "NO"
-	   		          	var PrimeraVez = "SI"
-	   		          	VARIACIONANUAL = "NO"
-	   		          	resumenMAT[3].Idgrafico= graphicId // ho he de treure després
-	   		          	resumenMAT[3].FTurSexo=["hombres","mujeres"] // ho he de treure després
-	   		          	renderEvolucionAnual(datos,fromYear, untilYear,3) // ho he de treure després
-		        		*/
+		        		
 		        		document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
 		        		datos = graphic14; 
 		        		loadMenu("14")
@@ -704,7 +680,7 @@ var graphic02;
 
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 		
 			        break;	   
 			    case "menuTurAlojamiento":
@@ -749,7 +725,7 @@ var graphic02;
 
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 		
 			        break;	
 			    case "menuTurCultural":
@@ -794,7 +770,7 @@ var graphic02;
 
 		        		//* update filtro: Marco sus opciones de menú
 		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
+		        		
 		
 			        break;				           			        
 
@@ -843,46 +819,7 @@ var graphic02;
 		        		//* registro en resumenMAT[ventana activa] los settings 
 		
 			        break;				           			        
-			        /*case "pruebasMenu2":
-		        		document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-		        		loadMenu("02")
-
-		        		datos = graphic02;
-			    		ambitoGeo = ambitoGeoIni;
-			    		
-	   		          	graphicId = "02";
-	   		          	untilYear = "2015"
-	   		          	fromYear = "2015"
-	   		          	controlEVOLUTION=false;
-	   		          	SORT="NO"
-	   		          	TANTOPORCIEN = "NO"
-	   		          	var PrimeraVez = "SI"
-	   		          	VARIACIONANUAL = "NO"
-   			resumenMAT = updateSeguimientoUnaLinea(ID_VIP,resumenMAT,workFrame,ambitoGeo,fromYear,untilYear,
-   							PrimeraVez,SORT,TANTOPORCIEN,VARIACIONANUAL,{})
-						////////////////////////////////////////////////////////////////////							
-						ctrlPrimera = "SI"
-						ventanaPrimera = workFrame
-						if (ventanaPrimera=="41"||ventanaPrimera=="42"||
-							ventanaPrimera=="43"||ventanaPrimera=="44"){
-							seleccionWindow4([], [],ctrlPrimera,ventanaPrimera)	
-						}
-   						if (ventanaPrimera=="21"||ventanaPrimera=="22"){
-							seleccionWindow2([], [],ctrlPrimera,ventanaPrimera)	
-						}
-						if (ventanaPrimera=="1"){
-							//alert("lanzar funcion activar 3")
-							activar3("gr1")	
-						}
-						////////////////////////////////////////////////////////////////////	
-
-			    		CONTROL_primeraVez="SI";
-
-		        		//* update filtro: Marco sus opciones de menú
-		        		updateFiltroNavegador(ambitoGeo,fromYear, untilYear)
-		        		//* registro en resumenMAT[ventana activa] los settings 
-		        		
-			        break;*/
+			        
 			    default:
 			        console.log("default")
 			}
@@ -892,7 +829,7 @@ var graphic02;
 <script type="text/javascript">
 
 	function BorrarTodo(){
-		//document.getElementById("navegadorDiv").innerHTML=""
+		
 		d3.select("#areaGraficos").selectAll("div").select("h1").remove();
 		d3.select("#areaGraficos").selectAll("div").select("img").remove();
 		d3.select("#areaGraficos").selectAll("div").select("svg").remove();
@@ -975,7 +912,7 @@ var graphic02;
 			<DIV id="enc_bcn">
 				<h1>BARCELONA</h1>
 				<div>
-					<!--<img height="80px" src="img/homer-simpson.svg" align="left"/>-->
+					
 					<SCRIPT TYPE="text/javascript">
 						
 		          		///// Temperaturas
@@ -987,7 +924,7 @@ var graphic02;
 		          				.attr("id","PicMinima")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
+										
 										tooltipsPictografia ("PicMinima")
 			   						})
 		          				.on("mouseout", function() {
@@ -1009,7 +946,7 @@ var graphic02;
 		          				.attr("id","PicMaxima")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
+										
 										tooltipsPictografia ("PicMaxima")
 			   						})
 		          				.on("mouseout", function() {
@@ -1027,7 +964,7 @@ var graphic02;
 		          				.attr("id","PicLluvia")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
+										
 										tooltipsPictografia ("PicLluvia")
 			   						})
 		          				.on("mouseout", function() {
@@ -1039,12 +976,11 @@ var graphic02;
 		          		///// Barcelona
 		          		d3.select("#enc_bcn").append("div").classed("encMapa",true)
 						d3.select(".encMapa").append("g").attr("id","MapaGrupo")
-		          			.append("img").attr("src","img/icona_mapa_bcn-01_ConDatos.svg")
-		          				//.attr("align","left")
+		          			.append("img").attr("src","img/icona_mapa_bcn-01_ConDatos.svg")	          				
 		          				.attr("width","99%")//.classed("mapaBack","true")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
+										
 										tooltipMapaBarcelona ("MapaGrupo")
 			   						})
 		          				.on("mouseout", function() {
@@ -1052,26 +988,23 @@ var graphic02;
 										d3.select("#tooltipMapa").classed("hidden", true);
 			   						})
 		          		
-		          		/*d3.select("#MapaGrupo").selectAll("br").data([1,2,3,4,5,6]).enter()
-		          			.append("br").attr("align","right")*/
+
 		          		d3.select("#enc_bcn").append("div").classed("encInfra",true)
 		          		
 		          		d3.select(".encInfra").append("g").attr("id","iconosInfra")
 		          		
 		          		d3.select("#iconosInfra").append("img").attr("src","img/icona_aeroport-01.svg")
 		          				.attr("id","iAeropuerto")
-		          				//.attr("align","right")
 		          				.attr("width","80%")
 		          				.attr("onmouseover","tooltipsInfraestructuras('iAeropuerto')")
 		          				.on("mouseout", function() {
 									//Hide the tooltip
 										d3.select("#tooltipEncInfraestructuras").classed("hidden", true);
 			   						})
-		          				//.classed("iconosTransporteFront","true")
+
 		          		d3.select("#iconosInfra").append("br")
 		          		d3.select("#iconosInfra").append("img").attr("src","img/icona_bus-01.svg")
 		          				.attr("id","iAutobus")
-		          				//.attr("align","right")
 		          				.attr("width","80%")
 		          				.attr("onmouseover","tooltipsInfraestructuras('iAutobus')")
 		          				.on("mouseout", function() {
@@ -1081,7 +1014,6 @@ var graphic02;
 		          		d3.select("#iconosInfra").append("br")
 		          		d3.select("#iconosInfra").append("img").attr("src","img/icona_tren-01.svg")
 		          				.attr("id","iFerrocarril")
-		          				//.attr("align","right")
 		          				.attr("width","80%")
 		          				.attr("onmouseover","tooltipsInfraestructuras('iFerrocarril')")
 		          				.on("mouseout", function() {
@@ -1091,7 +1023,6 @@ var graphic02;
 		          		d3.select("#iconosInfra").append("br")
 						d3.select("#iconosInfra").append("img").attr("src","img/icona_ports-01.svg")
 		          				.attr("id","iPuerto")
-		          				//.attr("align","right")
 		          				.attr("width","80%")
 		          				.attr("onmouseover","tooltipsInfraestructuras('iPuerto')")
 		          				.on("mouseout", function() {
@@ -1107,7 +1038,7 @@ var graphic02;
 		          				.attr("id","PicPerfilHabitante")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
+
 										tooltipsPictografia ("PicPerfilHabitante")
 			   						})
 		          				.on("mouseout", function() {
@@ -1135,7 +1066,7 @@ var graphic02;
 			</DIV>
 			<DIV id="enc_turismo">
 				<h1>TURISMO</h1>
-				<!--<img height="80px" src="img/Lisa_Simpson_-_Snowball.svg"/> html5 el valor de height and width debe ser en pixels-->
+
 				<script type="text/javascript">
 						///// Turista
 	          		
@@ -1147,7 +1078,7 @@ var graphic02;
 		          				.attr("id","PicPerfilTurista")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
+
 										tooltipsPictografia ("PicPerfilTurista")
 			   						})
 		          				.on("mouseout", function() {
@@ -1171,7 +1102,6 @@ var graphic02;
 		          				.attr("id","PicAlojamiento")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
 										tooltipsPictografia ("PicAlojamiento")
 			   						})
 		          				.on("mouseout", function() {
@@ -1195,7 +1125,6 @@ var graphic02;
 		          				.attr("id","PicSectorHostelería")
 		          				.on("mouseover", function() {
 									//Hide the tooltip
-										//d3.select("#tooltipMapa").classed("hidden", false);
 										tooltipsPictografia ("PicSectorHostelería")
 			   						})
 		          				.on("mouseout", function() {
@@ -1232,15 +1161,6 @@ var graphic02;
 			<h5 id="menuTurCultural" class="subTitleMenu" draggable="true" ondragstart="drag(event)"onmouseover="tooltipMenuPpalShow('menuTurCultural')" onmouseout="tooltipMenuPpalHide('menuTurCultural')">Oferta Cultural</h5>
 
 			<h5 id="menuTurReuniones" class="subTitleMenu" draggable="true" ondragstart="drag(event)"onmouseover="tooltipMenuPpalShow('menuTurReuniones')" onmouseout="tooltipMenuPpalHide('menuTurReuniones')">Turismo de Reuniones</h5>
-			
-
-			<!--<BUTTON onclick="CreateUnGrafico()">1 gráfico</BUTTON>
-			<BUTTON onclick= "CreateDosGraficos()">2 gráficos</BUTTON>
-			<BUTTON onclick="CreateCuatroGraficos ()">4 gráficos</BUTTON>
-			<br>
-			<BUTTON onclick="BorrarTodo()">BORRAR TODO</BUTTON>-->
-
-
 		</div>
 		<div id="areaGraficos">
 			<div id="gr4_1" class="grafico4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -1297,11 +1217,7 @@ var graphic02;
 						d3.select("#window43").append("span")
 						d3.select("#window44").append("span")
 					</script>
-					<!--<button id="window41" class="blue" onmousedown="seleccionWindow4(event,'window41')"><span></span></button>
-					<button id="window42" class="blue" onmousedown="seleccionWindow4(event,'window42')"><span></span></button>
-					<br>
-					<button id="window43" class="blue" onmousedown="seleccionWindow4(event,'window43')"><span></span></button>
-					<button id="window44" class="blue" onmousedown="seleccionWindow4(event,'window44')"><span></span></button>-->
+
 				</div>	
 
 			<div id="navegadorDiv" class="navDiv" >

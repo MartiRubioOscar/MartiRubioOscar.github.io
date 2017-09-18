@@ -14,13 +14,13 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
     ID_VIP = miIDVIP_fromWorkFrame(workFrame)
 
      data = datos
-    // console.log(data)
+    
     var nomContenedor = "contenedorGr" + workFrame;
     
     d3.select("#"+ ID_VIP).selectAll("svg").data([1]).enter().append("svg")
       .attr("id",nomContenedor)
       .attr("class","chart" + workFrame)
-      //.attr("width", "100%")
+      
 
 
     var el = document.getElementById(nomContenedor); 
@@ -33,7 +33,7 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
 
     d3.select("#"+ ID_VIP).selectAll("svg").attr("width",mywidthDIV-mywidthDIV/10)
     d3.select("#"+ ID_VIP).selectAll("svg").attr("height",myheightDIV-myheightDIV/10)
-   var  WIDTH = mywidthDIV-mywidthDIV/10,
+    var  WIDTH = mywidthDIV-mywidthDIV/10,
         HEIGHT = myheightDIV-myheightDIV/10,
         MARGINS = {
             top: myheightDIV/10,//10,
@@ -118,13 +118,11 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
     
 
         d3.select("#" + nomContenedor).append("g")
-            .attr("class", " x axis")
-            //.attr("transform", "translate(0," + posicionEjeCero + ")")
+            .attr("class", " x axis")            
             .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
             .call(xAxis);
         d3.select("#" + nomContenedor).append("g")
-            .attr("class", " y axis")
-            //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
+            .attr("class", " y axis")            
             .attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .call(yAxis);
 
@@ -137,13 +135,12 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
             })
             .interpolate("linear");
         
-        //console.log(datosAeropuertoInternacional)
+        
         ///////////////// internacional
         d3.select("#" + nomContenedor).append('svg:path')
             .attr('d', lineGen(datosAeropuertoInternacional))
             .attr('stroke', colores[0])
-            .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
+            .attr('stroke-width', anchoLinea)            
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosAeropuertoInternacional])
@@ -161,9 +158,7 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
             console.log(datosAeropuertoInternacional.length)
 
             var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1];             
+           
             for (var i = 0; i < datosAeropuertoInternacional.length; i++) {
               valorTooltip= datosAeropuertoInternacional[i].resultado
               valorTooltipFechas = [formatoFechas(datosAeropuertoInternacional[i].fecha),datosAeropuertoInternacional[i].resultado]
@@ -173,13 +168,11 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
                     .attr("cy",yScale(datosAeropuertoInternacional[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
                     .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          //var valorT = d; 
                           var valorT = d[0] + " "+ d[1];                        
                           return tooltipEvolucion(valorT,pos)
                         })
@@ -199,7 +192,6 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Internacional");
           };
             
@@ -208,7 +200,6 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
             .attr('d', lineGen(datosAeropuertoTotal))
             .attr('stroke', colores[1])
             .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosAeropuertoTotal])
@@ -225,9 +216,7 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
               });
             ;
           var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1];            
+         
             for (var i = 0; i < datosAeropuertoTotal.length; i++) {
               valorTooltip= datosAeropuertoTotal[i].resultado
               valorTooltipFechas = [formatoFechas(datosAeropuertoTotal[i].fecha),datosAeropuertoTotal[i].resultado]
@@ -237,7 +226,6 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
                     .attr("cy",yScale(datosAeropuertoTotal[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
                     .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
@@ -254,8 +242,7 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
                           })
             };
           var ultimoValorSerie = datosAeropuertoTotal[0]
-          
-          //console.log(ultimoValorSerie.fecha)
+                    
                 
           if (ultimoValorSerie!=undefined) {
                   d3.select("#" + nomContenedor)
@@ -265,7 +252,6 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Total");
           };
         /////////////// Nacional
@@ -273,7 +259,6 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
             .attr('d', lineGen(datosAeropuertoNacional))
             .attr('stroke', colores[2])
             .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosAeropuertoNacional])
@@ -289,9 +274,7 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
               d3.select("#tooltipEvolucion").classed("hidden", true);
               });;
           var valorTooltip="9999"
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1];  
+ 
             for (var i = 0; i < datosAeropuertoNacional.length; i++) {
               valorTooltip= datosAeropuertoNacional[i].resultado
               valorTooltipFechas = [formatoFechas(datosAeropuertoNacional[i].fecha),datosAeropuertoNacional[i].resultado]
@@ -301,13 +284,11 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
                     .attr("cy",yScale(datosAeropuertoNacional[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
                     .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          //var valorT = d;                         
                           var valorT = d[0] + " "+ d[1];
                           return tooltipEvolucion(valorT,pos)
                         })
@@ -319,7 +300,6 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
             };
             var ultimoValorSerie = datosAeropuertoNacional[0]
           
-          //console.log(ultimoValorSerie.fecha)
                 
           if (ultimoValorSerie!=undefined) {
                   d3.select("#" + nomContenedor)
@@ -329,7 +309,6 @@ function renderEvolucionMensual(datos,FROM, UNTIL,POSICION){
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Nacional");
           };
     
@@ -398,12 +377,10 @@ else {
 
         d3.select("#" + nomContenedor).append("g")
             .attr("class", " x axis")
-            //.attr("transform", "translate(0," + posicionEjeCero + ")")
             .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
             .call(xAxis);
         d3.select("#" + nomContenedor).append("g")
             .attr("class", " y axis")
-            //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .call(yAxis);
 
@@ -420,7 +397,6 @@ else {
             .attr('d', lineGen(datosTemperaturaMinima))
             .attr('stroke', colores[0])
             .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosTemperaturaMinima])
@@ -435,9 +411,7 @@ else {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
               });
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1];  
+
         var valorTooltip="9999"
             for (var i = 0; i < datosTemperaturaMinima.length; i++) {
               valorTooltip= datosTemperaturaMinima[i].resultado
@@ -448,13 +422,11 @@ else {
                     .attr("cy",yScale(datosTemperaturaMinima[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
                     .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          //var valorT = d;  
                           var valorT = d[0] + " "+ d[1];                         
                           return tooltipEvolucion(valorT,pos)
                         })
@@ -464,7 +436,7 @@ else {
                           d3.select("#tooltipEvolucion").classed("hidden", true);
                           })
             };
-          //var ultimoValorSerie = datosTemperaturaMinima[datosTemperaturaMinima.length-1]
+          
           var ultimoValorSerie = datosTemperaturaMinima[0]
           if (ultimoValorSerie!=undefined){
             d3.select("#" + nomContenedor)
@@ -474,10 +446,9 @@ else {
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Mínima");  
           }
-          //alert(ultimoValorSerie==undefined)
+          
           
         ////////////// máxima
         d3.select("#" + nomContenedor).append('svg:path')
@@ -498,10 +469,7 @@ else {
             .on("mouseout", function() {
               //Hide the tooltip
               d3.select("#tooltipEvolucion").classed("hidden", true);
-              });
-//valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
-//.data([valorTooltipFechas])
-//var valorT = d[0] + " "+ d[1];         
+              });         
 
 
         var valorTooltip="9999"
@@ -514,13 +482,11 @@ else {
                     .attr("cy",yScale(datosTemperaturaMaxima[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
                     .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          //var valorT = d;    
                           var valorT = d[0] + " "+ d[1];                     
                           return tooltipEvolucion(valorT,pos)
                         })
@@ -530,7 +496,7 @@ else {
                           d3.select("#tooltipEvolucion").classed("hidden", true);
                           })
             };
-            //var ultimoValorSerie = datosTemperaturaMinima[datosTemperaturaMinima.length-1]
+
           var ultimoValorSerie = datosTemperaturaMaxima[0]
           if (ultimoValorSerie!=undefined){
                  d3.select("#" + nomContenedor)
@@ -540,7 +506,6 @@ else {
                         .attr("fill", "black")
                         .attr("font-size","0.8em")
                         .attr("dy", ".35em")
-                        //.text(TextoLegend)
                         .text("Máxima");
           }
               
@@ -550,7 +515,6 @@ else {
             .attr('d', lineGen(datosTemperaturaMedia))
             .attr('stroke', colores[2])
             .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datosTemperaturaMedia])
@@ -577,14 +541,11 @@ else {
                     .attr("cy",yScale(datosTemperaturaMedia[i].resultado))
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                    //.data([valorTooltip])
                     .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          //alert("dentor hola")
-                          //var valorT = d;                 
+                          var pos = [event.pageX,event.pageY]                                          
                           var valorT = d[0] + " "+ d[1];         
                           return tooltipEvolucion(valorT,pos)
                         })
@@ -594,10 +555,9 @@ else {
                           d3.select("#tooltipEvolucion").classed("hidden", true);
                           })
             };
-          //var ultimoValorSerie = datosTemperaturaMinima[datosTemperaturaMinima.length-1]
+
           var ultimoValorSerie = datosTemperaturaMedia[0]
           
-          //console.log(ultimoValorSerie.fecha)
                 
           if (ultimoValorSerie!=undefined) {
                   d3.select("#" + nomContenedor)
@@ -607,7 +567,6 @@ else {
                     .attr("fill", "black")
                     .attr("font-size","0.8em")
                     .attr("dy", ".35em")
-                    //.text(TextoLegend)
                     .text("Media");
           };
             
@@ -635,12 +594,10 @@ else {
 
         d3.select("#" + nomContenedor).append("g")
             .attr("class", " x axis")
-            //.attr("transform", "translate(0," + posicionEjeCero + ")")
             .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
             .call(xAxis);
         d3.select("#" + nomContenedor).append("g")
             .attr("class", " y axis")
-            //.attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .attr("transform", "translate(" + (MARGINS.left) + ",0)")
             .call(yAxis);
 
@@ -657,7 +614,6 @@ else {
             .attr('d', lineGen(datos))
             .attr('stroke', colores[0])
             .attr('stroke-width', anchoLinea)
-            //.attr('fill', 'black')
             .attr('fill', 'none')
             .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
             .data([datos])
@@ -665,7 +621,6 @@ else {
                     console.log(d)
                   var coords = d3.mouse(this);
                   var pos = [event.pageX,event.pageY]
-                  //var valorT = eval("d[0]." + CHECKBOX.filtroDatos);                         
                   return tooltipEvolucion(tituloSerie(numeroGrafico),pos)
                 })
             .on("mouseout", function() {
@@ -677,7 +632,6 @@ else {
         var formatoFechas = d3.time.format("%b")
 
             for (var i = 0; i < datos.length; i++) {
-              //console.log([formatoFechas(datos[i].fecha),datos[i].resultado])
               valorTooltip= datos[i].resultado
               valorTooltipFechas = [formatoFechas(datos[i].fecha),datos[i].resultado]
 
@@ -688,13 +642,11 @@ else {
                     .attr("r", radioPunto)
                     .attr("fill",colorPunto)
                     .attr("fill-opacity","0.2")                    
-                    //.data([valorTooltip])
                     .data([valorTooltipFechas])
                     .on("mouseover",function(d){
                           d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          //var valorT = d + " ene";
                           var valorT = d[0] + " "+ d[1];                         
                           return tooltipEvolucion(valorT,pos)
                         })
@@ -712,15 +664,13 @@ else {
 
 }
   
-//alert(TIPO_GRAFICO)
-//alert(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)
-//alert(misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico))
+
   d3.select("#" + nomContenedor).append("text")      // text label for the x axis
               .attr("x", MARGINS.left/2 )
               .attr("y",  HEIGHT/10 )
               .style("text-anchor", "middle")
               .text(function(){return misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)});
-              //.text("%");
+              
   d3.select("#" + ID_VIP).select(".tituloGrafico")
       .text(function(){return titulosGraficos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico) + " (" + equivalenciaTipoGrafico(TIPO_GRAFICO) + ")"})
 }

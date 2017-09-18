@@ -1,4 +1,4 @@
-function miVentanaActiva(){
+  function miVentanaActiva(){
           Identificador = ID_VIP 
           if (document.getElementById("window41")!=null){  
             var element41 = document.getElementById("window41").className
@@ -17,7 +17,7 @@ function miVentanaActiva(){
             if (element21=="greenMandon") {Identificador = "gr_1"};
             if (element22=="greenMandon") {Identificador = "gr_2"};
           }
-          //if (document.getElementById("window11")!=null){Identificador="gr1"}
+          
           return Identificador
 
 }
@@ -79,7 +79,7 @@ function miVentanaActiva(){
   function copyFiltradoMaster(resumenMAT,WORKFRAME,windowMASTER,windowSLAVE){ //
     resumenMAT[windowSLAVE].desdeYear = resumenMAT[windowMASTER].desdeYear
     resumenMAT[windowSLAVE].hastaYear = resumenMAT[windowMASTER].hastaYear
-    //////resumenMAT[toDestiny].Idgrafico = resumenMAT[fromOrigin].Idgrafico 
+    
     resumenMAT[windowSLAVE].Seguimiento = WORKFRAME
     resumenMAT[windowSLAVE].PrimeraVez = resumenMAT[windowMASTER].PrimeraVez
     resumenMAT[windowSLAVE].Ventana = WORKFRAME
@@ -417,36 +417,7 @@ function updateFiltroNavegador(AMBITOGEO, FROMYEAR, UNTILYEAR){
                   else {document.getElementById("NSNCT").checked = true;}
                                                                                      
           } 
-          /*/// Transporte turista
-          TransporteT = document.getElementsByClassName("CheckboxTransporteT")
-          if(TransporteT.length!=0){
- 
-                  if (resumenMAT[miPosicionResumenMAT(Identificador)].FTurTransporte[0]=="vacío"){
-                    document.getElementById("AvionT").checked = false;
-                  }
-                  else {document.getElementById("AvionT").checked = true;}
-                
-                
-                  if (resumenMAT[miPosicionResumenMAT(Identificador)].FTurTransporte[1]=="vacío"){
-                    document.getElementById("CocheT").checked = false;
-                  }
-                  else {document.getElementById("CocheT").checked = true;}
-                  
-                  if (resumenMAT[miPosicionResumenMAT(Identificador)].FTurTransporte[2]=="vacío"){
-                    document.getElementById("FerrocarrilT").checked = false;
-                  }
-                  else {document.getElementById("FerrocarrilT").checked = true;}
-                  
-                  if (resumenMAT[miPosicionResumenMAT(Identificador)].FTurTransporte[3]=="vacío"){
-                    document.getElementById("AutocarT").checked = false;
-                  }
-                  else {document.getElementById("AutocarT").checked = true;}
-
-                  if (resumenMAT[miPosicionResumenMAT(Identificador)].FTurTransporte[4]=="vacío"){
-                    document.getElementById("OtrosT").checked = false;
-                  }
-                  else {document.getElementById("OtrosT").checked = true;}                                                                        
-          }*/
+          
           
           /// Turista transporte
           TuristaTransporte = document.getElementsByClassName("checkBoxTurTuriTransport")
@@ -548,11 +519,9 @@ function updateFiltroNavegador(AMBITOGEO, FROMYEAR, UNTILYEAR){
 
 }
   
-//  function updateSeguimientoUnaLinea(id_vip,RESUMENmat,WORKFRAME,AMBITOGEO,FROMYEAR,UNTILYEAR,PRIMERAVEZ,sort,PORCENTAJE,variacionAnual,FAeropuerto,FTemperatura,FTURSEXO,FTUREDAD,FTURGASTO,FTURMOTIVO,FTURALOJAMIENTO,FTURREPE,FTURTRANSPORTE,{FBcnEcoTrabajadoresSector,FBcnEcoSituacionLaboral}){//
+
   function updateSeguimientoUnaLinea(id_vip,RESUMENmat,WORKFRAME,AMBITOGEO,FROMYEAR,UNTILYEAR,PRIMERAVEZ,sort,PORCENTAJE,variacionAnual,{FAeropuerto,FTemperatura,FTurSexo,FTurEdad,FTurGasto,FTurMotivo,FTurAlojamiento,FTurRepe,FTurTransporte,FBcnEcoTrabajadoresSector,FBcnEcoSituacionLaboral,FBcnEcoPIB,FBcnEcoSalariosSector,FTurRNumReunion,FTurRAsisReunion,FTurAloHNumHP,FTurAloHPlazasHP,FTurCultTop,FTurPNacionalidad,FBcnPobEdades,FBcnPobNacion,FBcnPobDistr,FBcnPobTest}){//
-      //alert("dentro updateSeguimientoUnaLinea")
-      //alert(FBcnPobTest)
-    // ojo que le he quitado la protección para ver si funcionaba en vistas coordenadas.
+
         var posicion = miPosicionResumenMAT(id_vip)
         
   

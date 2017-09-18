@@ -24,7 +24,7 @@ function ordenfiltradoVistasCoordinadas(idVip,colores_ventanas){
 
 function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 		if (ctrlPrimera=="SI"){ventanaClicada=miGraficoActivo_WINDOW(ventanaPrimera)}
-		//alert(ventanaClicada)
+
 		function restoVentanas(ventanaClick){
 			restoWindows=[];
 
@@ -162,7 +162,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 							}
 							d3.select("#window41")[0][0].className = "red"
 
-							//console.log(d3.select("#window41")[0][0].className)
+
 						break;
 						case "red":
 							//alert("a azul")
@@ -187,7 +187,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 							d3.select("#window41")[0][0].className="red"
 						break;
 						case "green":
-							//alert("GREEN 41")
+
 							if (d3.select("#window42")[0][0].className == "red"){
 								d3.select("#window42")[0][0].className = "blue"	
 							}
@@ -201,7 +201,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 
 						break;
 						case "paleGreen":
-							//alert("a azul")
+
 							if (d3.select("#window42")[0][0].className == "red"){
 								d3.select("#window42")[0][0].className = "blue"	
 							}
@@ -228,7 +228,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 			    case 'window42':
 			    	switch(d3.select("#window42")[0][0].className) {
 			    		case "blue":
-							//alert("a rojo")
+
 							
 							d3.select("#window42")[0][0].className = "red"
 							if (d3.select("#window41")[0][0].className == "red"){
@@ -253,7 +253,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 
 						break;
 						case "red":
-							//alert("a azul")
+
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -275,7 +275,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 							d3.select("#window42")[0][0].className="red"
 						break;
 						case "green":
-							//alert("todo a azul")
+
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -289,7 +289,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 
 						break;
 						case "paleGreen":
-							//alert("a azul")
+
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -316,7 +316,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 			    case 'window43':
 			    	switch(d3.select("#window43")[0][0].className) {
 			    		case "blue":
-							//alert("a rojo")
+
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -339,7 +339,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 
 						break;
 						case "red":
-							//alert("a azul")
+
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -361,7 +361,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 							d3.select("#window43")[0][0].className="red"
 						break;
 						case "green":
-							//alert("todo a azul")
+
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -375,7 +375,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 
 						break;
 						case "paleGreen":
-							//alert("a azul")
+							
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -402,7 +402,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 			    case 'window44':
 			    	switch(d3.select("#window44")[0][0].className) {
 			    		case "blue":
-							//alert("bla bla bla")
+							
 							if (d3.select("#window41")[0][0].className == "red"){//alert("dentro");
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -425,7 +425,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 
 						break;
 						case "red":
-							//alert("a azul")
+							
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -447,7 +447,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 							d3.select("#window44")[0][0].className="red"
 						break;
 						case "green":
-							//alert("todo a azul")
+							
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -461,7 +461,7 @@ function seleccionWindow4(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 
 						break;
 						case "paleGreen":
-							//alert("a azul")
+							
 							if (d3.select("#window41")[0][0].className == "red"){
 								d3.select("#window41")[0][0].className = "blue"	
 							}
@@ -554,7 +554,7 @@ function seleccionWindow2(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 		if (event.ctrlKey) { 
 		    switch(d3.select("#" + ventanaClicada)[0][0].className) {
 				    case "blue":
-				    	//alert("he clicado ctrl+azul")
+				    	
 				    	if (estadoGreen[0]=="green" || estadoGreenMandon[0]=="greenMandon"){
 				    		d3.select("#" + ventanaClicada)[0][0].className="paleGreen";
 
@@ -600,7 +600,7 @@ function seleccionWindow2(event, ventanaClicada,ctrlPrimera,ventanaPrimera){
 			    
 		}
 		else {
-    		//alert("The CTRL key was NOT pressed!  " + ventanaClicada);
+
     		switch(ventanaClicada) {
 			    case 'window21':
 			    	switch(d3.select("#window21")[0][0].className) {

@@ -10,11 +10,8 @@ function myFunctionBotonesCuadradosSimple(VentanaActivaAnterior,activateVentana)
   var salir;
 //PARA 4 VENTANAS
   // En la ventana activa debo cargar el filtro que tenga y en resumenMAT.primeraVez="NO"
-  //alert("anterior: " + VentanaActivaAnterior + "  activar: " + activateVentana)
-  //alert(VentanaActivaAnterior=="ninguna")
   
   if (VentanaActivaAnterior=="ninguna"&&(activateVentana=="1"||activateVentana=="21"||activateVentana=="22"||activateVentana=="41"||activateVentana=="42"||activateVentana=="43"||activateVentana=="44")) {
-      //alert("dentro")
       miColorVentanaActiva(activateVentana)
   };
   // desde 41
@@ -290,11 +287,7 @@ function myFunctionBotonesCuadradosSimple(VentanaActivaAnterior,activateVentana)
   // coloco el filtro de distrito como estaba
 
   if (VentanaActivaAnterior == "ninguna"){//&&(activateVentana == "42"))
-        //alert("ninguna ventana anterior")
         loadMenu(resumenMAT[miPosicionResumenMAT_workframe(activateVentana)].Idgrafico)
-        //updateFiltroNavegador(resumenMAT[miPosicionResumenMAT_workframe(activateVentana)].filtro,resumenMAT[miPosicionResumenMAT_workframe(activateVentana)].desdeYear, resumenMAT[miPosicionResumenMAT_workframe(activateVentana)].hastaYear)
-        //fromYear=resumenMAT[miPosicionResumenMAT_workframe(activateVentana)].desdeYear
-        //untilYear=resumenMAT[miPosicionResumenMAT_workframe(activateVentana)].hastaYear
   }
 
   updateFiltroNavegador(ambitoGeo, fromYear,untilYear)

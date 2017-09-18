@@ -674,19 +674,16 @@ function automatizacionMenuCheckBox(numeroGrafico){
         .style("display", "inline-block").style("float","left").style("margin","0px 2% 0px 5px")
         .attr("onclick",CHECKBOX.nomMyFunctionCB + "()")
         .attr("id",CHECKBOX.nomIdSquaresCB[i]).property("checked","true")
-//    d3.select("#navegadorDiv").append("br")
 
   };    
 }
 
 function automatizarUpdateFiltro(numeroGrafico,IDENTIFICADOR){
-  //alert(miPosicionResumenMAT(Identificador))
+  
   var CHECKBOX = automaticInput(numeroGrafico)
- //alert(CHECKBOX.titulosSquaresCB.length)
+ 
     for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {            
-      //alert(eval("resumenMAT[miPosicionResumenMAT(IDENTIFICADOR)]." + CHECKBOX.filtroResumenMAT + "[i]=='vacío'"))
-      //alert(CHECKBOX.nomIdSquaresCB[i])
-      //alert(document.getElementById(CHECKBOX.nomIdSquaresCB[i]))
+      
       if (eval("resumenMAT[miPosicionResumenMAT(IDENTIFICADOR)]." + CHECKBOX.filtroResumenMAT + "[i]=='vacío'")){
                     document.getElementById(CHECKBOX.nomIdSquaresCB[i]).checked = false;
                   }
@@ -697,12 +694,10 @@ function automatizarUpdateFiltro(numeroGrafico,IDENTIFICADOR){
 function myFunctionCheckBoxAutomatizar(numeroGrafico){
   var CHECKBOX = automaticInput(numeroGrafico)
   
-  //console.log(CHECKBOX)
+  
   // Para que funcione cuando es master
   Identificador = ID_VIP
-  //alert("entrada" + Identificador)
   
-  //var Identificador = "gr4_1"
   if (document.getElementById("window41")!=null){  
     var element41 = document.getElementById("window41").className
     var element42 = document.getElementById("window42").className
@@ -720,7 +715,7 @@ function myFunctionCheckBoxAutomatizar(numeroGrafico){
     if (element21=="greenMandon") {Identificador = "gr_1"};
     if (element22=="greenMandon") {Identificador = "gr_2"};
   }
-  //alert("salida" + Identificador)
+  
   resumenMAT[miPosicionResumenMAT(Identificador)].Idgrafico=numeroGrafico
 
   // fin para que funcione cuando es master
@@ -729,9 +724,7 @@ function myFunctionCheckBoxAutomatizar(numeroGrafico){
     for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {
       if (document.getElementById(CHECKBOX.nomIdSquaresCB[i]).checked == true){filtroAuto[i]=CHECKBOX.subfiltrosDatos[i]}else{filtroAuto[i]="vacío"}
     }; 
-//alert(filtroAuto)
-//alert("en testAutomatizacio2 myFunctionCheckBoxAutomatizar linea 430")
-//console.log(filtroAuto)
+
 var filtroDistr = []
 if (Identificador=="gr4_1"){eval("resumenMAT[3]." + CHECKBOX.filtroResumenMAT + "= filtroAuto")}
 if (Identificador=="gr4_2"){eval("resumenMAT[4]." + CHECKBOX.filtroResumenMAT + "= filtroAuto")}
@@ -755,10 +748,7 @@ if (CONTROL_primeraVez =="SI"){
 
     if (Identificador=="gr4_1"){
         workFrame="41"
-        //alert(String(CHECKBOX.filtroResumenMAT))
-        //eval("resumenMAT[3]." + CHECKBOX.filtroResumenMAT + "= filtroAuto")
-        //console.log(eval("resumenMAT[3]." + CHECKBOX.filtroResumenMAT))
-        //console.log(CHECKBOX.filtroResumenMAT)
+        
         graphicId = resumenMAT[3].Idgrafico    
         switch(true) {
             case numeroGrafico=="43"|| numeroGrafico=="44":

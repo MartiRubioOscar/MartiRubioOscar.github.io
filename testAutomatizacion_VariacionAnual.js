@@ -10,7 +10,7 @@ function automatizacionRenderVariacionAnual(DATA){
     d3.select("#"+ ID_VIP).selectAll("svg").data([1]).enter().append("svg")
       .attr("id",nomContenedor)
       .attr("class","chart" + workFrame)
-      //.attr("width", "100%")
+      
 
 
     var el = document.getElementById(nomContenedor); 
@@ -152,8 +152,7 @@ function automatizacionRenderVariacionAnual(DATA){
                   var valorT;   
                   if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==27) {valorT = "Licencias VUT"};
                   if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==28) {valorT = "Plazas en VUT"};
-                  //var valorT = eval("d[i]." + CHECKBOX.filtroDatos); 
-                  //var valorT = d
+                  
                   return tooltipEvolucion(valorT,pos)
                 })
             .on("mouseout", function() {
@@ -167,7 +166,7 @@ function automatizacionRenderVariacionAnual(DATA){
         for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {
             datos_Filtrados[i] = DATA.filter(function (el) {  
                     return eval("el." + CHECKBOX.filtroDatos + "=== resumenMAT[POSICION]." + CHECKBOX.filtroResumenMAT + "[i]")
-                    //return eval("el." + CHECKBOX.filtroDatos + "=== CHECKBOX.subfiltrosDatos[i]")
+                    
                 })
             maximoEjeY[i] = d3.max(datos_Filtrados[i], function(d) {
                  return parseFloat(d.resultado) //References first value in each sub-array
@@ -259,14 +258,11 @@ function automatizacionRenderVariacionAnual(DATA){
 
             for (var j = 0; j < datos_Filtrados.length; j++) {
                 centroX = 999
-                centroY = 999
-                //alert(datos_Filtrados[j].length)
+                centroY = 999                
                 sliceDatosFiltrados=datos_Filtrados[j].slice()
                 console.log(sliceDatosFiltrados)
-                //alert(sliceDatosFiltrados.length==0)
-                for (var jj = 0; jj < sliceDatosFiltrados.length; jj++) {
-                    //console.log(sliceDatosFiltrados)
-                    //console.log(sliceDatosFiltrados[jj].resultado)
+                
+                for (var jj = 0; jj < sliceDatosFiltrados.length; jj++) {                                        
                     centroX = sliceDatosFiltrados[jj].year
                     centroY = sliceDatosFiltrados[jj].resultado
                     //CENTRO_Y.push(sliceDatosFiltrados[jj].resultado)
@@ -294,7 +290,7 @@ function automatizacionRenderVariacionAnual(DATA){
 
                 };
                 if(centroX!=999 & centroY!=999){
-                    //alert("debería escribir leyenda")
+                    
                     var TextoLegend = eval("sliceDatosFiltrados[0]." + CHECKBOX.filtroDatos);
                     var maxLegend = d3.max(sliceDatosFiltrados, function(d) {
                              return parseFloat(d.year) //References first value in each sub-array
@@ -303,16 +299,14 @@ function automatizacionRenderVariacionAnual(DATA){
                         return el.year == maxLegend})
                     console.log(ultimoValorSerie[0].resultado)
                     console.log(maxLegend)
-                //}
-                    //alert("debería escribir leyenda " + TextoLegend)
+                
                     d3.select("#" + NOMCONTENEDOR)
                             .append("text")
                             .attr("x", xScale2(ultimoValorSerie[0].year)+7)
                             .attr("y", yScale2(ultimoValorSerie[0].resultado))
                             .attr("fill", "black")
                             .attr("font-size","0.8em")
-                            .attr("dy", ".35em")
-                            //.text(TextoLegend)
+                            .attr("dy", ".35em")                            
                             .text(TextoLegend);
                 }
 
@@ -329,18 +323,13 @@ function automatizacionRenderVariacionAnual(DATA){
         console.log(datos_Filtrados)
         for (var j = 0; j < datos_Filtrados.length; j++) {
             centroX = 999
-            centroY = 999
-            //alert(datos_Filtrados[j].length)
+            centroY = 999            
             sliceDatosFiltrados=datos_Filtrados[j]
             console.log(sliceDatosFiltrados)
-            //alert(sliceDatosFiltrados.length==0)
-            //for (var jj = 0; jj < sliceDatosFiltrados.length; jj++) {
-                //console.log(sliceDatosFiltrados)
-                //console.log(sliceDatosFiltrados[jj].resultado)
+            
                 centroX = sliceDatosFiltrados.year
                 centroY = sliceDatosFiltrados.resultado
-                console.log(xScale2(centroX))
-                //CENTRO_Y.push(sliceDatosFiltrados[jj].resultado)
+                console.log(xScale2(centroX))                
 
                 d3.select("#" + NOMCONTENEDOR)
                     .append("circle")
@@ -364,124 +353,16 @@ function automatizacionRenderVariacionAnual(DATA){
                           })
 
             };
-        //console.log(DATA)
- /*       var datos_Filtrados = DATA 
-        d3.select("#" + NOMCONTENEDOR).append('svg:path')
-            .attr('d', lineGen(datos_Filtrados))
-            .attr('stroke', COLORES)
-            .attr('stroke-width', anchoLinea)
-            .attr('fill', 'none')
-            .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
-            .data([datos_Filtrados[i]])
-            .on("mouseover",function(d,i){
-                    console.log(d)
-                  var coords = d3.mouse(this);
-                  var pos = [event.pageX,event.pageY]
-                  var valorT = eval("d[i]." + CHECKBOX.filtroDatos);                         
-                  return tooltipEvolucion(valorT,pos)
-                })
-            .on("mouseout", function() {
-              //Hide the tooltip
-              d3.select("#tooltipEvolucion").classed("hidden", true);
-              })*/
+
     }
-    else{
-/*        for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {            
+    else{}
 
-                
-                d3.select("#" + NOMCONTENEDOR).append('svg:path')
-                    .attr('d', lineGen(datos_Filtrados[i]))
-                    .attr('stroke', COLORES(i))
-                    .attr('stroke-width', anchoLinea)
-                    .attr('fill', 'none')
-                    .classed("lineGenEv",true) // me permite resaltar la linea on hover (mirar css)
-                    .data([datos_Filtrados[i]])
-                    .on("mouseover",function(d,i){
-                            console.log(d)
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          var valorT = eval("d[i]." + CHECKBOX.filtroDatos);                         
-                          return tooltipEvolucion(valorT,pos)
-                        })
-                    .on("mouseout", function() {
-                      //Hide the tooltip
-                      d3.select("#tooltipEvolucion").classed("hidden", true);
-                      })
-            };*/
-    }
-/*    var sliceDatosFiltrados=[]
-    var centroX =[]
-    var centroY =[]
-    var LegendCentroX = []
-    var LegendCentroY = []
-
-    for (var j = 0; j < datos_Filtrados.length; j++) {
-        centroX = 999
-        centroY = 999
-        //alert(datos_Filtrados[j].length)
-        sliceDatosFiltrados=datos_Filtrados[j].slice()
-        console.log(sliceDatosFiltrados)
-        //alert(sliceDatosFiltrados.length==0)
-        for (var jj = 0; jj < sliceDatosFiltrados.length; jj++) {
-            //console.log(sliceDatosFiltrados)
-            //console.log(sliceDatosFiltrados[jj].resultado)
-            centroX = sliceDatosFiltrados[jj].year
-            centroY = sliceDatosFiltrados[jj].resultado
-            //CENTRO_Y.push(sliceDatosFiltrados[jj].resultado)
-
-            d3.select("#" + NOMCONTENEDOR)
-                .append("circle")
-                    .attr("cx",xScale2(centroX))
-                    .attr("cy",yScale2(centroY))
-                    .attr("r", radioPunto)
-                    .attr("fill",colorPunto).attr("fill-opacity","0.2")
-                .data([centroY])
-                .on("mouseover",function(d,i){
-                            console.log(d)
-                            d3.select(this).attr("r",radioTooltip).attr("fill-opacity","1")
-                          var coords = d3.mouse(this);
-                          var pos = [event.pageX,event.pageY]
-                          var valorT = d;                         
-                          return tooltipVA(valorT,pos)
-                        })
-                .on("mouseout", function() {
-                      //Hide the tooltip
-                      d3.select(this).attr("r",radioPunto).attr("fill-opacity","0.2")
-                      d3.select("#tooltipVA").classed("hidden", true);
-                      })
-
-        };
-        if(centroX!=999 & centroY!=999){
-            //alert("debería escribir leyenda")
-            var TextoLegend = eval("sliceDatosFiltrados[0]." + CHECKBOX.filtroDatos);
-            var maxLegend = d3.max(sliceDatosFiltrados, function(d) {
-                     return parseFloat(d.year) //References first value in each sub-array
-                });
-            var ultimoValorSerie = sliceDatosFiltrados.filter(function (el){
-                return el.year == maxLegend})
-            console.log(ultimoValorSerie[0].resultado)
-            console.log(maxLegend)
-        //}
-            //alert("debería escribir leyenda " + TextoLegend)
-            d3.select("#" + NOMCONTENEDOR)
-                    .append("text")
-                    .attr("x", xScale2(ultimoValorSerie[0].year)+7)
-                    .attr("y", yScale2(ultimoValorSerie[0].resultado))
-                    .attr("fill", "black")
-                    .attr("font-size","0.8em")
-                    .attr("dy", ".35em")
-                    //.text(TextoLegend)
-                    .text(TextoLegend);
-        }
-
-    };   */
-    //console.log(CHECKBOX)
     d3.select("#" + nomContenedor).append("text")      // text label for the x axis
             .attr("x", MARGINS.left/2 )
             .attr("y",  HEIGHT/10 )
             .style("text-anchor", "middle")
             .text(function(){return misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)});
-            //.text("%");
+            
     
 //////////título gráfico
     var aditionalText=""

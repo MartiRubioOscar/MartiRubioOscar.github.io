@@ -1,11 +1,4 @@
 function renderGlobal(DATOS, FILTROsetup,posicion){
-          //alert(posicion)
-          console.log(posicion)
-          console.log(DATOS)
-          console.log(FILTROsetup)
-          // ADAPTO DATOS en caso que sea doble filtro: 43 y 44
-          //if (resumenMAT[posicion]) {};
-
 
           var controlVA = "NO"
           var controlBARRAS = "NO"
@@ -57,21 +50,13 @@ function renderGlobal(DATOS, FILTROsetup,posicion){
                 el.filtroBcnPobLocalizacion === resumenMAT[posicion].FBcnPobTest[8] || el.filtroBcnPobLocalizacion === resumenMAT[posicion].FBcnPobTest[9] || 
                 el.filtroBcnPobLocalizacion === resumenMAT[posicion].FBcnPobTest[10] )});
                 controlNuevoGeo="SI"
-                /*var flags = [], output = [], l = DATOSfiltrados.length, i;
-                for( i=0; i<l; i++) {
-                    if( flags[DATOSfiltrados[i].localizacion]) continue;
-                    flags[DATOSfiltrados[i].localizacion] = true;
-                    output.push(DATOSfiltrados[i].localizacion);
-                }*/
+
           }
 
           var grDobleFiltro = resumenMAT[posicion].Idgrafico
-          //alert(resumenMAT[posicion].Idgrafico=="44")
 
-           //  || resumenMAT[posicion].Idgrafico="44"
           if (/*FILTROsetup.distrito=="SI"*/grDobleFiltro=="43" || grDobleFiltro=="44"){
             // es un poco chapuza lo que he hecho pero funciona!
-            //alert(resumenMAT[posicion].FBcnPobDistr)
             DATOSfiltrados = DATOSfiltrados.filter(function (el){
                 return el.filtroBcnPobDistrito == resumenMAT[posicion].FBcnPobDistr})
           }
@@ -82,8 +67,6 @@ function renderGlobal(DATOS, FILTROsetup,posicion){
                 return el.resultado = el.porcentaje
               });
           }
-          //alert(FILTROsetup.variacionAnual=="SI")
-          //alert(resumenMAT[posicion].variacionAnual == "SI")
 
           if (FILTROsetup.variacionAnual=="SI" && resumenMAT[posicion].variacionAnual == "SI"){
               DATOSfiltrados.resultado = DATOSfiltrados.map(function(el){
@@ -130,7 +113,6 @@ function renderGlobal(DATOS, FILTROsetup,posicion){
 
               }  
             }
-            //alert((FILTROsetup.variacionAnual=="SI" && resumenMAT[posicion].variacionAnual == "SI")==false)
             if (controlEVOL == "NO" && FILTROsetup.sort=="SI" && resumenMAT[posicion].ordenado == "SI" && (FILTROsetup.variacionAnual=="SI" && resumenMAT[posicion].variacionAnual == "SI")==false){
                 DATOSfiltrados = DATOSfiltrados.sort(function(a, b){
                   return a.resultado-b.resultado
@@ -170,14 +152,12 @@ function renderGlobal(DATOS, FILTROsetup,posicion){
                 
                 controlEVOLmensualTest = "SI"
                 controlEVOL = "SI"
-                //console.log(DATOSfiltrados)
             }  
 
 
             var DESDE = resumenMAT[posicion].desdeYear
             var HASTA = resumenMAT[posicion].hastaYear
           
-          //console.log(DATOSfiltrados)
 
           var resultado={datos:DATOSfiltrados, VA:controlVA, EVOL:controlEVOL,
                         EVOLmensual:controlEVOLmensual,BARRAS:controlBARRAS,localizacion:output,desde:DESDE, hasta:HASTA,posicion:posicion,
@@ -205,7 +185,6 @@ function filtradoBarrasNuevas(dades){
   for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {            
 
           if (eval("resumenMAT[miPosicionResumenMAT(ID_VIP)]." + CHECKBOX.filtroResumenMAT + "[i] !='vacío'")){
-            //controlTexto.push(CHECKBOX.titulosSquaresCB[i])  
             controlTexto.push(CHECKBOX.titulosEjeY[i])  
           }
           
@@ -214,7 +193,6 @@ function filtradoBarrasNuevas(dades){
               return eval("el." + CHECKBOX.filtroDatos + "=== resumenMAT[miPosicionResumenMAT(ID_VIP)]." + CHECKBOX.filtroResumenMAT + "[i]")
           })
   };
-  //console.log(datos_Filtrados)
   
   var resultadoFiltradoLimpio=[]
   var n = 0
@@ -226,7 +204,6 @@ function filtradoBarrasNuevas(dades){
     resultadoFiltradoLimpio = dades    
   }
   
-  //console.log(resultadoFiltradoLimpio)
 
 
   controlTexto.push("") 

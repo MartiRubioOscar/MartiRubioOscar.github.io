@@ -123,7 +123,6 @@ bar.append("rect")
     .attr("class", function(d,i) { return ("bar" + ((i % ambitoGeografico.length)+1)); })
     .attr("width", x)
     .attr("height", barHeight - 1)
-//    .attr("fill", function(d,i) { console.log(d); return color(i % ambitoGeografico.length); })
     .data(data.map(function (el) {return el.localizacion}))
     .attr("fill", function(d){return coloresDistritos(d)})
   
@@ -150,7 +149,6 @@ bar.append("text")
 bar.append("text")
 .attr("class", "label")
     .attr("x", function(d) { return - spaceForLabels+5; }) // desplazamiento horizontal del label
-    //.attr("y", groupHeight / 2)
     .attr("y", barHeight / 2)
     .attr("font-size","0.8em")
     .attr("dy", ".35em")
@@ -162,15 +160,11 @@ chart.append("g")
 .attr("class", "y axis")
 .attr("id","YaxisId")
 .attr("transform", "translate(" + spaceForLabels + ", " + gapBetweenGroups/2 + ")")
-//.attr("transform", "translate(" + spaceForLabels + ", 0)")
-//.attr("transform", "translate(" + spaceForLabels + ", " + 1.5*espacioParaEjeX + ")")
 .call(yAxis);
 
 chart.append("g")
   .attr("class", "x axis")
-  //.attr("transform", "translate(" + spaceForLabels + ",0)")
   .attr("transform", "translate(" + spaceForLabels +"," + (chartHeight - 1.5*espacioParaEjeX) + ")")
-  //.attr("transform", "translate(" + spaceForLabels +"," + (groupHeight-20) + ")")
   .call(xAxis);
 
 }
@@ -178,7 +172,7 @@ chart.append("g")
 
 function renderBARRAS (data, ambitoGeografico){ // ESTA FUNCIÓN ES LA QUE SE USA PARA BARRAS POBLACIÓN CON DISTRITO
     alert("DENTRO DE renderBARRAS")
-    //d3.selectAll(".buttonSort").remove()
+
     d3.select(".chart"+ workFrame).selectAll("g").remove()
     var nomContenedor = "contenedorGr" + workFrame;
     var el = document.getElementById(nomContenedor); var mywidth = el.getBoundingClientRect().width;
@@ -227,7 +221,6 @@ function renderBARRAS (data, ambitoGeografico){ // ESTA FUNCIÓN ES LA QUE SE US
   var xAxis = d3.svg.axis()
   .scale(x)
   .orient("bottom")/////////////
-  //.tickValues([0,MAXIMO/2,MAXIMO])
   .ticks(5)
   //.tickFormat(d3.format(",.0f"))
   // .tickFormat("")
@@ -247,7 +240,6 @@ for (var i = 0; i < ambitoGeografico.length; i++) {
 
 var bar = chart.selectAll("g")
 .data(data.map(function (el) {return el.resultado}))
-//.data(data)
 .enter().append("g")
 .attr("transform", function(d, i) {
   return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (1 + Math.floor(i/ambitoGeografico.length))) + ")";
@@ -259,7 +251,6 @@ bar.append("rect")
     .attr("class", function(d,i) { return ("bar" + ((i % ambitoGeografico.length)+1)); })
     .attr("width", x)
     .attr("height", barHeight - 1)
-//    .attr("fill", function(d,i) { console.log(d); return color(i % ambitoGeografico.length); })
     .data(data.map(function (el) {return el.localizacion}))
     .attr("fill", function(d){return coloresDistritos(d)})
   
@@ -286,7 +277,6 @@ bar.append("text")
 bar.append("text")
 .attr("class", "label")
     .attr("x", function(d) { return - spaceForLabels+5; }) // desplazamiento horizontal del label
-    //.attr("y", groupHeight / 2)
     .attr("y", barHeight / 2)
     .attr("font-size","0.8em")
     .attr("dy", ".35em")
@@ -311,11 +301,7 @@ chart.append("g")
 
 function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
   alert("dentro de renderBARRAS_test")
-  console.log(DATA)
-
-  //alert(ID_VIP)
   ID_VIP = miIDVIP_fromWorkFrame(workFrame) // ESTO LO HAGO PARA EL CASO DE VENTANAS COORDINADAS
-  //alert("ha cambiado? " + ID_VIP)
   var data = DATA;
   var numeroGrafico = resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico 
   var IDENTIFICADOR = ID_VIP
@@ -326,8 +312,7 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
   var datos_Filtrados =[]
   var controlTexto = []
   for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {            
-          //alert(CHECKBOX.subfiltrosDatos[i])
-          //alert(eval("el." + CHECKBOX.filtroDatos + "=== CHECKBOX.subfiltrosDatos[i]"))
+
           if (eval("resumenMAT[POSICION]." + CHECKBOX.filtroResumenMAT + "[i] !='vacío'")){
             controlTexto.push(CHECKBOX.titulosSquaresCB[i])  
           }
@@ -335,7 +320,6 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
 
          datos_Filtrados[i] = data.filter(function (el) {  
               return eval("el." + CHECKBOX.filtroDatos + "=== resumenMAT[POSICION]." + CHECKBOX.filtroResumenMAT + "[i]")
-              //return eval("el." + CHECKBOX.filtroDatos + "=== CHECKBOX.subfiltrosDatos[i]")
           })
   };
   console.log(datos_Filtrados)
@@ -350,10 +334,6 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
 
   controlTexto.push("")  
 
-//  console.log(CHECKBOX.titulosSquaresCB)
-
-
-
 
   d3.select(".chart"+ workFrame).selectAll("g").remove()
 
@@ -362,11 +342,9 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
   
   
   var ALTURA_w = document.getElementById(ID_VIP).offsetHeight
-//  alert(ALTURA_w)
-  //alert(parseFloat(d3.select(ID_VIP).select("h3").style("height")))
+
   var restar = parseFloat(d3.select("#" + ID_VIP).select("h3").style("height"))+parseFloat(d3.select("#" + ID_VIP).select("h3").style("margin-top"))+parseFloat(d3.select("#" + ID_VIP).select("h3").style("margin-bottom"))
   
-  //alert()
   var chartHeight = ALTURA_w-restar
    d3.select(".chart"+ workFrame)
   .attr("height", chartHeight);
@@ -375,10 +353,6 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
 
   var widthContenedor = el.getBoundingClientRect().width;
   var heightContenedor = el.getBoundingClientRect().height;
-  //widthContenedor = document.getElementById(nomContenedor).offsetWidth
-  //alert(widthContenedor)
-  //heightContenedor = document.getElementById(nomContenedor).offsetHeight
-  
   
   var escalaGraficoHeight = 0.95//0.95
   var escalaGraficoWidth = 0.8
@@ -386,11 +360,9 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
   heightGrafico = Math.round(heightContenedor*escalaGraficoHeight)
 
   var offsetParaLetrasEjeY = 32
-  //alert(widthGrafico+offsetParaLetrasEjeY) 
+
   var mySvg = d3.select("#" + nomContenedor)
-            .attr("width", widthGrafico)
-            /*.append("svg").attr("class","graficoTest")
-            .attr("height", heightGrafico)*/
+            .attr("width", widthGrafico)            
 
   var Rfiltros = resumenFiltros(numeroGrafico)
   if (Rfiltros.estatico=="SI") {
@@ -401,8 +373,6 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
   var MX = d3.max(data, function(d) {
       return parseFloat(d.resultado); 
     });
-  //alert("ancho gráfico " + widthGrafico)
-  //alert("MAXIMO " + MX)
 
   var controlPosXIni=0.2 //puede depender del tipo de gráfico
   var posicionXini = widthGrafico*controlPosXIni
@@ -414,28 +384,16 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
             .domain([0,MX])
             .range([0,widthGrafico-posicionXini])
 
-  //alert("resultado escala Ejes " + escalaEjeX(MX))
-  //alert("resultado escala Datos " + escalaDatosX(MX))
-
   var stepPadding = 0.15
   var outerPadding =0
   var posicionYini = heightGrafico*0.1
   var offsetParaNumerosEjeX = 10
-  //var offsetParaLetrasEjey = 64
+
   var escalaY = d3.scale.ordinal()
               .domain(d3.range(data.length))
               .rangeBands([posicionYini,(heightGrafico-offsetParaNumerosEjeX)], stepPadding,outerPadding);
-  //alert(escalaY(0) + "  " + posicionYini)
-  //alert((data.length+1)*stepPadding)
-  
-  //alert((data.length+1)*escalaY.rangeBand()+(data.length+1)*stepPadding)
 
   //Create bars
-
-/*  var Rfiltros = resumenFiltros(numeroGrafico)
-  if (Rfiltros.estatico=="SI") {
-    data = data
-  }else{data = resultadoFiltradoLimpio}*/
 
   d3.select("#" + nomContenedor).selectAll("rect")
         .data(data)
@@ -453,8 +411,6 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
   console.log(data)
   //Create axis
   var ejeY = d3.svg.axis().orient("left").tickSize(0).scale(escalaY)
-//  mySvg.append("g").attr("class","axis").call(ejeY).attr("transform","translate(" + posicionXini + "," + (posicionYini-offsetParaNumerosEjeX-(data.length+1)*stepPadding-escalaY.rangeBand()) + ")")
-//  mySvg.append("g").attr("class","axis").call(ejeY).attr("transform","translate(" + posicionXini + "," + (heightGrafico - test + offsetParaNumerosEjeX) + ")")
   mySvg.append("g").attr("class","axis Yaxis").call(ejeY).attr("transform","translate(" + posicionXini + ",0)")
   
   
@@ -469,7 +425,6 @@ function renderBARRAS_test (DATA){//,NOMCONTENEDOR,COLORES){
 
 
 function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
-  //alert("dentro de renderBARRAS_test2")
 
   console.log(textosY)
   var data = DATA;
@@ -490,52 +445,9 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
                                 "#a13143","#942d8b", "#592d94", "#2d6994", "#2d946c"])};
 
   // indico el año en el título:
-  //alert(d3.select("#" + ID_VIP).select(".tituloGrafico").text())
+
   d3.select("#" + ID_VIP).select(".tituloGrafico").text(d3.select("#" + ID_VIP).select(".tituloGrafico").text() + " " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
-  /*console.log(DATA)
 
-  //alert(ID_VIP)
-  ID_VIP = miIDVIP_fromWorkFrame(workFrame) // ESTO LO HAGO PARA EL CASO DE VENTANAS COORDINADAS
-  //alert("ha cambiado? " + ID_VIP)
-  var data = DATA;
-  var numeroGrafico = resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico 
-  var IDENTIFICADOR = ID_VIP
-
-  var CHECKBOX = automaticInput(numeroGrafico)
-  var POSICION = miPosicionResumenMAT(IDENTIFICADOR)
-
-  var datos_Filtrados =[]
-  var controlTexto = []
-  for (var i = 0; i < CHECKBOX.titulosSquaresCB.length; i++) {            
-          //alert(CHECKBOX.subfiltrosDatos[i])
-          //alert(eval("el." + CHECKBOX.filtroDatos + "=== CHECKBOX.subfiltrosDatos[i]"))
-          if (eval("resumenMAT[POSICION]." + CHECKBOX.filtroResumenMAT + "[i] !='vacío'")){
-            controlTexto.push(CHECKBOX.titulosSquaresCB[i])  
-          }
-          
-
-         datos_Filtrados[i] = data.filter(function (el) {  
-              return eval("el." + CHECKBOX.filtroDatos + "=== resumenMAT[POSICION]." + CHECKBOX.filtroResumenMAT + "[i]")
-              //return eval("el." + CHECKBOX.filtroDatos + "=== CHECKBOX.subfiltrosDatos[i]")
-          })
-  };
-  console.log(datos_Filtrados)
-  
-  var resultadoFiltradoLimpio=[]
-  var n = 0
-  for (var i = 0; i < datos_Filtrados.length; i++) {
-    if (datos_Filtrados[i].length != 0) {resultadoFiltradoLimpio[n] = datos_Filtrados[i][0]; n = n + 1};
-  };
-  console.log(resultadoFiltradoLimpio)
-
-
-  controlTexto.push("")  
-
-//  console.log(CHECKBOX.titulosSquaresCB)
-
-
-
-*/
   d3.select(".chart"+ workFrame).selectAll("g").remove()
 
 
@@ -543,11 +455,9 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
   
   
   var ALTURA_w = document.getElementById(ID_VIP).offsetHeight
-//  alert(ALTURA_w)
-  //alert(parseFloat(d3.select(ID_VIP).select("h3").style("height")))
+
   var restar = parseFloat(d3.select("#" + ID_VIP).select("h3").style("height"))+parseFloat(d3.select("#" + ID_VIP).select("h3").style("margin-top"))+parseFloat(d3.select("#" + ID_VIP).select("h3").style("margin-bottom"))
   
-  //alert()
   var chartHeight = ALTURA_w-restar
    d3.select(".chart"+ workFrame)
   .attr("height", chartHeight);
@@ -556,11 +466,7 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
 
   var widthContenedor = el.getBoundingClientRect().width;
   var heightContenedor = el.getBoundingClientRect().height;
-  //widthContenedor = document.getElementById(nomContenedor).offsetWidth
-  //alert(widthContenedor)
-  //heightContenedor = document.getElementById(nomContenedor).offsetHeight
-  
-  //alert("hey")
+
   var escalaGraficoHeight = 0.9 //0.95
   var escalaGraficoWidth = 0.85 //0.97
   var margenDerecho = 0.1
@@ -568,30 +474,15 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
   heightGrafico = Math.round(heightContenedor*escalaGraficoHeight)
   var widthGraficoSVG = 1.1*widthGrafico
   var offsetParaLetrasEjeY = 32
-  //alert(widthGrafico+offsetParaLetrasEjeY) 
   var mySvg = d3.select("#" + nomContenedor)
-            //.attr("width", widthGrafico)
             .attr("width", widthGraficoSVG)
-            /*.append("svg").attr("class","graficoTest")
-            .attr("height", heightGrafico)*/
 
   
-
-
-  /*var Rfiltros = resumenFiltros(numeroGrafico)
-  if (Rfiltros.estatico=="SI") {
-    data = data
-  }else{data = resultadoFiltradoLimpio}*/
-
   
   var MX = d3.max(data, function(d) {
       return parseFloat(d.resultado); 
     });
 
-
-
-  //alert("ancho gráfico " + widthGrafico)
-  //alert("MAXIMO " + MX)
 
   var controlPosXIni=0.2 //puede depender del tipo de gráfico
   var posicionXini = widthGrafico*controlPosXIni
@@ -603,30 +494,15 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
             .domain([0,MX])
             .range([0,widthGrafico-posicionXini])
 
-  //alert("resultado escala Ejes " + escalaEjeX(MX))
-  //alert("resultado escala Datos " + escalaDatosX(MX))
 
   var stepPadding = 0.15
   var outerPadding =0
   var posicionYini = heightGrafico*0.1
   var offsetParaNumerosEjeX = 10
-  //var offsetParaLetrasEjey = 64
   var escalaY = d3.scale.ordinal()
               .domain(d3.range(data.length))
               .rangeBands([posicionYini,(heightGrafico-offsetParaNumerosEjeX)], stepPadding,outerPadding);
-  //alert(escalaY(0) + "  " + posicionYini)
-  //alert((data.length+1)*stepPadding)
-  
-  //alert((data.length+1)*escalaY.rangeBand()+(data.length+1)*stepPadding)
-
   //Create bars
-
-/*  var Rfiltros = resumenFiltros(numeroGrafico)
-  if (Rfiltros.estatico=="SI") {
-    data = data
-  }else{data = resultadoFiltradoLimpio}*/
-
-  
 
 
   d3.select("#" + nomContenedor).selectAll("rect")
@@ -648,21 +524,13 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
           else
             {colorDefinitivo=COLORES2(textosY[i])}
           return colorDefinitivo})
-        //.attr("fill", "red")
+
         .on("mouseover",function(d,i){
                           var coords = d3.mouse(this);
                           var pos = [event.pageX,event.pageY]
-                          console.log(pos)
-                          //var valorT = Number(d3.select(this).attr("x")) + escalaDatosX(d.resultado);
+
                           var valorT = d.resultado;
-                          //var id_temp = "rect" + i
-                          //console.log(id_temp)
-                          //var posicionBarra = findPos(eval(id_temp))[0]
-                          //console.log(findPos("rect2"))
-                          //console.log(posicionBarra)
-                          //tooltipBarras(valorT,coords)
-                          
-                          //tooltipBarras(valorT,posicionBarra)
+
                           return tooltipBarras(valorT,pos)
                         })
         .on("mouseout", function() {
@@ -670,32 +538,27 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
               d3.select("#tooltipBarra").classed("hidden", true);
               })
 
-  console.log(data)
   //Create axis
   var ejeY = d3.svg.axis().orient("left").tickSize(0).scale(escalaY)
-//  mySvg.append("g").attr("class","axis").call(ejeY).attr("transform","translate(" + posicionXini + "," + (posicionYini-offsetParaNumerosEjeX-(data.length+1)*stepPadding-escalaY.rangeBand()) + ")")
-//  mySvg.append("g").attr("class","axis").call(ejeY).attr("transform","translate(" + posicionXini + "," + (heightGrafico - test + offsetParaNumerosEjeX) + ")")
+
   mySvg.append("g").attr("class","axis Yaxis").call(ejeY).attr("transform","translate(" + posicionXini + ",0)")
   
-  console.log(textosY)
+
   d3.select("#"+ID_VIP).selectAll("svg").selectAll(".Yaxis").selectAll("text").data(textosY).text(function(d){console.log(d);return d})
 
   var ejeX = d3.svg.axis().orient("bottom").ticks(4).scale(escalaEjeX)
   
   mySvg.append("g").attr("class","axis Xaxis").attr("transform","translate(0," + (heightGrafico-offsetParaNumerosEjeX) + ")").call(ejeX)
+
 //////////////// unidades eje x
 
-
-
-
     d3.select("#" + nomContenedor).append("text")      // text label for the x axis
-            //.attr("x", MARGINS.left/2 )
+
             .attr("x", widthContenedor-60)//widthContenedor*0
-            //.attr("y",  HEIGHT/10 )
             .attr("y",  heightContenedor - 15 )
             .style("text-anchor", "middle")
             .text(function(){return misUnidades(TIPO_GRAFICO, resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)});
-            //.text("uds eje X");
+          
 
 //título gráfico
     var aditionalText=""
@@ -705,4 +568,4 @@ function renderBARRAS_test2 (DATA,textosY){//,NOMCONTENEDOR,COLORES){
     if (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico==47 || (resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico>31 & resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico<39)) {resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear=2016};
     d3.select("#" + ID_VIP).select(".tituloGrafico")
         .text(function(){return titulosGraficos(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico) + " " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear + aditionalText})
-}
+  }

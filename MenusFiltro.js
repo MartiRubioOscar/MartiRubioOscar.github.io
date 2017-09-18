@@ -25,12 +25,10 @@ function MenuVentana2(nombreDesplegable,opcionesDesplegable,seleccionada){
 
 
 function MenuRanking(){
-	//d3.select("#navegadorDiv").append("button").attr("class","buttonSort").attr("id","buttonOriginal").attr("onclick","myFunctionSort('NO')").text("original")
-	//d3.select("#navegadorDiv").append("button").attr("class","buttonSort").attr("id","buttonRanking").attr("onclick","myFunctionSort('SI')").text("ranking")
-
+	
 	d3.select("#espacioBotones").append("button").attr("id","rankingOff").attr("onclick","myFunctionSort('NO')").text("Defecto")
 	d3.select("#espacioBotones").append("button").attr("id","rankingOn").attr("onclick","myFunctionSort('SI')").text("Ordenado")
-	//d3.select("#espacioBotones").append("br")
+	
 }
 function MenuVariacionAnual(){
 	d3.select("#variacionAnualOff").remove()
@@ -564,20 +562,20 @@ function MenuEvolucion(){
 		.attr("onclick","myFunctionEvolution()").attr("id", "IDevolution").text("EVOLUCION")
 }
 function myFunctionEvolution(){
-	//alert("dentro de myFunctionEvolution: " + ID_VIP)
+	
 	controlEVOLUTION=true;
 	activar2(ID_VIP)
-	//InitChart()
+	
 }
-////////////////// DATASET 01
+
 function loadMenu(datasetActivo){ 
 	var identificadorGr = miVentanaActiva()
-	//alert(identificadorGr)
+	
 
 	switch(datasetActivo) {
 	    case "01": // graphic01 POBLACIÓN HABITANTES
 	        document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Poblacion"
 			var opDesplegable = ["Habitantes", "Densidad de poblacion","Población por Edades","Población por Nacionalidad"]
 			var posVentana = 0
@@ -586,17 +584,11 @@ function loadMenu(datasetActivo){
 
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
 
-			// botones de valor absoluto o porcentaje
-			//var identificadorGr = miVentanaActiva()
 			
-			/*if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
-                    {MenuRanking()}*/
             MenuPorcentaje()
             MenuRanking()
 			
-			// botones de ranking y original
-			//MenuRanking()			
-			// DESDE y hasta
+			
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
 			
@@ -613,7 +605,7 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "02": // graphic02 PLAZAS DE HOTEL por distrito
 	        document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 2
@@ -636,10 +628,8 @@ function loadMenu(datasetActivo){
 	        break;			    
 	    case "03": // graphic03 SUPERFICIE DE LOS DISTRITOS DE BCN
 	    	document.getElementById("navegadorDiv").innerHTML=""; 
-	    	// borro todo el contenido del div del navegador
-			//document.getElementById("IDhasta").innerHTML="";
-			//document.getElementById("IDdesde").innerHTML="";
-				// Ventana desplegable Población
+	    	
+			// Ventana desplegable
 			var nomDesplegable = "Clima"
 			var opDesplegable = ["Temperaturas", "Precipitaciones","Superfície"]
 			var posVentana = 2
@@ -658,7 +648,7 @@ function loadMenu(datasetActivo){
 	   		break;
 	    case "04": // graphic04 DENSIDAD DE POBLACIÓN habitantes/km^2
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Poblacion"
 			var opDesplegable = ["Habitantes", "Densidad de poblacion","Población por Edades","Población por Nacionalidad"]
 			var posVentana = 1
@@ -676,28 +666,10 @@ function loadMenu(datasetActivo){
 			// Check box localización
 			MenuCheckBoxLocalizacion()
 	        break;
-/*	    case "06": // graphic06 VARIACIÓN ANUAL POBLACIÓN
-			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
-			var nomDesplegable = "Poblacion"
-			var opDesplegable = ["Habitantes", "Densidad de poblacion","Población por Edades","Población por Nacionalidad"]
-			var posVentana = 2
 
-			MenuVentana(nomDesplegable,opDesplegable,posVentana)
-			// botones de valor absoluto o porcentaje
-			//MenuPorcentaje("NO")
-			// botones de ranking y original
-			MenuRanking();
-			// DESDE y hasta
-			MenuDesde(2006, 2016)
-			MenuHasta(2006, 2016)
-			// Check box localización
-			MenuCheckBoxLocalizacion()
-			MenuVariacionAnual()
-	        break;*/
 	    case "07": // Precio Vivienda nueva
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Vivienda"
 			var opDesplegable = ["Vivienda Nueva", "Vivienda Segunda mano","Vivienda de alquiler"]
 			var posVentana = 0
@@ -720,7 +692,7 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "08": // graphic06 VARIACIÓN ANUAL POBLACIÓN
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Vivienda"
 			var opDesplegable = ["Vivienda Nueva", "Vivienda Segunda mano","Vivienda de alquiler"]
 			var posVentana = 1
@@ -743,7 +715,7 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "09": // graphic06 VARIACIÓN ANUAL POBLACIÓN
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Vivienda"
 			var opDesplegable = ["Vivienda Nueva", "Vivienda Segunda mano","Vivienda de alquiler"]
 			var posVentana = 2
@@ -765,7 +737,7 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "10": // graphic10 Puerto
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Infraestructuras"
 			var opDesplegable = ["Pasajeros Puerto", "Pasajeros Aeropuerto"]
 			var posVentana = 0
@@ -785,7 +757,7 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "11": // graphic06 VARIACIÓN ANUAL POBLACIÓN
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Infraestructuras"
 			var opDesplegable = ["Pasajeros Puerto", "Pasajeros Aeropuerto"]
 			var posVentana = 1
@@ -807,7 +779,7 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "12": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Clima"
 			var opDesplegable = ["Temperaturas", "Precipitaciones","Superfície"]
 			var posVentana = 0
@@ -830,7 +802,7 @@ function loadMenu(datasetActivo){
 
 	    case "13": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Clima"
 			var opDesplegable = ["Temperaturas", "Precipitaciones","Superfície"]
 			var posVentana = 1
@@ -850,7 +822,7 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "14": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 0
@@ -865,22 +837,20 @@ function loadMenu(datasetActivo){
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
 			
-			// Check box sexo
-			//MenuCheckBoxSexo()
+			// Check box género
+			
 			MenuCheckBoxTurTuriGenero()
-			//alert("desde " + resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear)
-			//alert("hasta " + resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+			
 			var lanzado="no sé"
 			if(resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==6666 & resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear==3333){lanzado=true}
 			else{lanzado=false}			
 			if (lanzado==true || resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
             
-			//MenuVariacionAnual()
 	        break;
 	    case "15": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 1
@@ -900,11 +870,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriEdad()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	     
 	    case "16": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 2
@@ -924,11 +893,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriGasto()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;
 	    case "17": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 3
@@ -947,11 +915,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriMotivo()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	        	       
 	    case "18": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 4
@@ -970,11 +937,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriDiasAlo()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	        
 	    case "19": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 5
@@ -993,11 +959,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriRepe()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	        
 	    case "20": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 6
@@ -1016,11 +981,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriTransport()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	        
 	    case "21": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Economia"
 			var opDesplegable = ["Trabajadores Sector", "Situación Laboral","PIB","Salarios Sectores"]
 			var posVentana = 0
@@ -1038,12 +1002,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTrabajadoresSector()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-
-			//MenuVariacionAnual()
 	        break;	        
 	    case "22": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Economia"
 			var opDesplegable = ["Trabajador Sector", "Situación Laboral","PIB","Salarios Sectores"]
 			var posVentana = 1
@@ -1061,12 +1023,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxSituacionLaboral()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-
-	        //MenuVariacionAnual()
 	        break;
 	    case "23": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Economia"
 			var opDesplegable = ["Trabajador Sector", "Situación Laboral","PIB","Salarios Sectores"]
 			var posVentana = 2
@@ -1084,12 +1044,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnEcoPIB()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-
-	        //MenuVariacionAnual()
 	        break;
 	    case "24": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Economia"
 			var opDesplegable = ["Trabajador Sector", "Situación Laboral","PIB","Salarios Sectores"]
 			var posVentana = 3
@@ -1107,12 +1065,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnEcoSalariosSector()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-
-	        //MenuVariacionAnual()
 	        break;	
 	    case "25": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurReuniones"
 			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales"]
 			var posVentana = 0
@@ -1123,20 +1079,19 @@ function loadMenu(datasetActivo){
 			// botones de ranking y original
 			//MenuRanking();
 			// DESDE y hasta
-			//alert("hasta antes desde hasta: " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+			
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
-			//alert("después antes desde hasta: " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
+			
 			// Check box sexo
 			MenuCheckBoxTurRNumReunion()
 			//alert("después checkbox: " + resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear)
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
-                    {MenuVariacionAnual()}
-			//MenuVariacionAnual()
+                    {MenuVariacionAnual()}			
 	        break;	 
 	    case "26": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurReuniones"
 			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales"]
 			var posVentana = 1
@@ -1154,11 +1109,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurRAsisReunion()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	 	                       
 	   	case "27": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 3
@@ -1176,11 +1130,10 @@ function loadMenu(datasetActivo){
 			//MenuCheckBoxBcnEcoSalariosSector()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	       
 	   	case "28": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 4
@@ -1198,11 +1151,10 @@ function loadMenu(datasetActivo){
 			//MenuCheckBoxBcnEcoSalariosSector()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	
 	    case "29": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 0
@@ -1221,11 +1173,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurAloNumHP()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	
 	    case "30": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 1
@@ -1245,11 +1196,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurAloPlazasHP()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	  
 	    case "31": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurCultura"
 			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 0
@@ -1269,140 +1219,77 @@ function loadMenu(datasetActivo){
 	        break;
 	    case "32": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurCultura"
 			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 1
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
-			//MenuRanking();
-			// DESDE y hasta
-			//MenuDesde(2010, 2015)
-			//MenuHasta(2010, 2015)
-			
-			// Check box sexo
-			//MenuCheckBoxTurCultTop()
 	        break;
 	    case "33": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurCultura"
 			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 2
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
-			//MenuRanking();
-			// DESDE y hasta
-			//MenuDesde(2010, 2015)
-			//MenuHasta(2010, 2015)
-			
-			// Check box sexo
-			//MenuCheckBoxTurCultTop()
 	        break;
 	    case "34": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurCultura"
 			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 3
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
-			//MenuRanking();
-			// DESDE y hasta
-			//MenuDesde(2010, 2015)
-			//MenuHasta(2010, 2015)
-			
-			// Check box sexo
-			//MenuCheckBoxTurCultTop()
 	        break;
 	    case "35": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurCultura"
 			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 4
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
-			//MenuRanking();
-			// DESDE y hasta
-			//MenuDesde(2010, 2015)
-			//MenuHasta(2010, 2015)
-			
-			// Check box sexo
-			//MenuCheckBoxTurCultTop()
 	        break;	        	        	        	        
 	    case "36": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurCultura"
 			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 5
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
-			//MenuRanking();
-			// DESDE y hasta
-			//MenuDesde(2010, 2015)
-			//MenuHasta(2010, 2015)
-			
-			// Check box sexo
-			//MenuCheckBoxTurCultTop()
 	        break;
 	    case "37": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurCultura"
 			var opDesplegable = ["Top lugares de interés","Espacios de ocio","Interés arquitectónico","Centros de exposiciones","Museos y Colecciones","Transportes singulares","Resumen Lugares Interés"]
 			var posVentana = 6
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
-			//MenuRanking();
-			// DESDE y hasta
-			//MenuDesde(2010, 2015)
-			//MenuHasta(2010, 2015)
-			
-			// Check box sexo
-			//MenuCheckBoxTurCultTop()
 	        break;
 	    case "38": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurReuniones"
 			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales"]
 			var posVentana = 2
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
-			//MenuRanking();
-			// DESDE y hasta
-			//MenuDesde(2010, 2015)
-			//MenuHasta(2010, 2015)
-			
-			// Check box sexo
-			//MenuCheckBoxTurCultTop()
 	        break;	        	        	        
 	    case "39": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "PerfilTurista"
 			var opDesplegable = ["Género", "Edad","Gasto","Motivos","Días Alojamiento","Repetibilidad","Transporte","Nacionalidad"]
 			var posVentana = 7
@@ -1416,8 +1303,6 @@ function loadMenu(datasetActivo){
 			MenuDesde(2009, 2015)
 			MenuHasta(2009, 2015)
 			
-			//alert("desde " + resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear)
-			//alert("hasta " + resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
 			// Check box sexo
 			MenuCheckBoxTurPerfilNacionalidad()
 
@@ -1426,17 +1311,15 @@ function loadMenu(datasetActivo){
 
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	
 	    case "40": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 5
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
 			//MenuRanking();
@@ -1445,33 +1328,27 @@ function loadMenu(datasetActivo){
 			MenuHasta(2006, 2016)
 			
 			// Check box sexo
-			//MenuCheckBoxTurAloOcupacion()
 			MenuVariacionAnual()
 	        break;
 	    case "41": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 6
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
-			// botones de valor absoluto o porcentaje
 			
-			// botones de ranking y original
 			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
 			
-			// Check box sexo
-			//MenuCheckBoxTurAloOcupacion()
-			//alert("en 41")
 	        MenuVariacionAnual()
 	        break;	        
 	    case "42": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 7
@@ -1485,13 +1362,11 @@ function loadMenu(datasetActivo){
 			MenuDesde(2009, 2016)
 			MenuHasta(2009, 2016)
 			
-			// Check box sexo
-			//MenuCheckBoxTurAloOcupacion()
 			MenuVariacionAnual()
 	        break;	        
 	    case "43": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Poblacion"
 			var opDesplegable = ["Habitantes", "Densidad de poblacion","Población por Edades","Población por Nacionalidad"]
 			var posVentana = 2
@@ -1527,11 +1402,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnPobEdades()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;
 	    case "44": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			var nomDesplegable = "Poblacion"
 			var opDesplegable = ["Habitantes", "Densidad de poblacion","Población por Edades","Población por Nacionalidad"]
 			var posVentana = 3
@@ -1570,20 +1444,15 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnPobNacionalidad()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        break;	
 	    case "45": 
-	    	//alert("en Menu 45 test")
+	    	
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
+			// Ventana desplegable
 			
 			var nomDesplegable = "Poblacion"
 			var opDesplegable = ["Habitantes", "Densidad de poblacion","Población por Edades","Población por Nacionalidad"]
 			var posVentana = 0
-
-			/*var nomDesplegable = "TurReuniones"
-			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales","TEST","Plazas por distrito","Superfície","Densidad","Vivienda Nueva","Vivienda 2a mano","Vivienda alquiler"]
-			var posVentana = 3*/
 
 			MenuVentana(nomDesplegable,opDesplegable,posVentana)
 			d3.select("#navegadorDiv").append("div").attr("id","espacioBotones").classed("botonesNav",true)
@@ -1602,12 +1471,10 @@ function loadMenu(datasetActivo){
                     {MenuVariacionAnual()}
 	        break;	     	    
 	    case "46": // Plazas hotel y distrito
-	    	//alert("en Menu 45 test")
+	    	
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
-			/*var nomDesplegable = "TurReuniones"
-			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales","TEST","Plazas por distrito","Superfície","Densidad","Vivienda Nueva","Vivienda 2a mano","Vivienda alquiler"]
-			var posVentana = 4*/
+			// Ventana desplegable
+			
 			var nomDesplegable = "TurAlojamiento"
 			var opDesplegable = ["Número de hoteles","Plazas en hoteles","Plazas hotel por distrito","Licencias VUT","Plazas VUT","Ocupación hotelera","Empleados en hoteles","Precio hoteles"]
 			var posVentana = 2
@@ -1628,12 +1495,10 @@ function loadMenu(datasetActivo){
                     {MenuVariacionAnual()}
 	        break;
 	    case "47": 
-	    	//alert("en Menu 45 test")
+	    	
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
-			/*var nomDesplegable = "TurReuniones"
-			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales","TEST","Plazas por distrito","Superfície","Densidad","Vivienda Nueva","Vivienda 2a mano","Vivienda alquiler"]
-			var posVentana = 5*/
+			// Ventana desplegable
+			
 			var nomDesplegable = "Clima"
 			var opDesplegable = ["Temperaturas", "Precipitaciones","Superfície"]
 			var posVentana = 2
@@ -1651,15 +1516,13 @@ function loadMenu(datasetActivo){
 			
 			// Check box sexo
 			MenuCheckBoxBcnSuperficie()
-			//MenuVariacionAnual()
+			
 	        break;
 	    case "48": 
-	    	//alert("en Menu 45 test")
+	    	
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
-			/*var nomDesplegable = "TurReuniones"
-			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales","TEST","Plazas por distrito","Superfície","Densidad","Vivienda Nueva","Vivienda 2a mano","Vivienda alquiler"]
-			var posVentana = 6*/
+			// Ventana desplegable
+			
 			var nomDesplegable = "Poblacion"
 			var opDesplegable = ["Habitantes", "Densidad de poblacion","Población por Edades","Población por Nacionalidad"]
 			var posVentana = 1
@@ -1679,16 +1542,13 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnPobDensidadTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        
 	        break;
 	    case "49": 
-	    	//alert("en Menu 45 test")
+	    	
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
-			/*var nomDesplegable = "TurReuniones"
-			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales","TEST","Plazas por distrito","Superfície","Densidad","Vivienda Nueva","Vivienda 2a mano","Vivienda alquiler"]
-			var posVentana = 7*/
+			// Ventana desplegable
+			
 			var nomDesplegable = "Vivienda"
 			var opDesplegable = ["Vivienda Nueva", "Vivienda Segunda mano","Vivienda de alquiler"]
 			var posVentana = 0
@@ -1709,16 +1569,12 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnVivNuevaTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        
 	        break;
 	    case "50": 
-	    	//alert("en Menu 45 test")
+	    	
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
-			/*var nomDesplegable = "TurReuniones"
-			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales","TEST","Plazas por distrito","Superfície","Densidad","Vivienda Nueva","Vivienda 2a mano","Vivienda alquiler"]
-			var posVentana = 8*/
+			// Ventana desplegable
 
 			var nomDesplegable = "Vivienda"
 			var opDesplegable = ["Vivienda Nueva", "Vivienda Segunda mano","Vivienda de alquiler"]
@@ -1743,12 +1599,10 @@ function loadMenu(datasetActivo){
 	        
 	        break;
 	    case "51": 
-	    	//alert("en Menu 45 test")
+	    	
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
-			// Ventana desplegable Población
-			/*var nomDesplegable = "TurReuniones"
-			var opDesplegable = ["Número de Reuniones", "Asistentes a Reuniones","Ferias principales","TEST","Plazas por distrito","Superfície","Densidad","Vivienda Nueva","Vivienda 2a mano","Vivienda alquiler"]
-			var posVentana = 9*/
+			// Ventana desplegable
+			
 			var nomDesplegable = "Vivienda"
 			var opDesplegable = ["Vivienda Nueva", "Vivienda Segunda mano","Vivienda de alquiler"]
 			var posVentana = 2
@@ -1769,7 +1623,6 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnVivAlquilerTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
-			//MenuVariacionAnual()
 	        
 	        break;	     	        	     	        
 	    default:
