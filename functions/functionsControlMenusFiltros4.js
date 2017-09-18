@@ -578,6 +578,9 @@ function myFunctionWDesplegablePoblacionDistrito(){
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico="42"; 
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].porcentaje="NO"; 
                                 datos = graphic42;
+
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear<2009){resumenMAT[miPosicionResumenMAT(ID_VIP)].hastaYear="2009";untilYear="2009"}
+                                if (resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear<2009){resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear="2009";fromYear="2009"}
                                 loadMenu("42");
                                 updateFiltroNavegador(resumenMAT[miPosicionResumenMAT(ID_VIP)].filtro,
                                 resumenMAT[miPosicionResumenMAT(ID_VIP)].desdeYear,
