@@ -1,4 +1,5 @@
 function CreateUnGrafico (){
+	//document.getElementById("navegadorDiv").innerHTML=""
 			d3.select("#menu41").remove()
 			d3.select("#menu42").remove()
 			d3.select("#menu43").remove()
@@ -73,16 +74,17 @@ function UnGrafico(CONTROL21,CONTROL41,CONTROLADORunGrafico) {
           		
           		activar2(ID_VIP)
           		// cargo menu
+          		
           		loadMenu(resumenMAT[0].Idgrafico) 
           		
-          		if (controlEVOLUTION==true){
+          		/*if (controlEVOLUTION==true){
           		// si estoy en un gráfico de evolución temporal, entonces miro si tiene variación anual 
           		// para ponerle el menú
 	          		if (miExisteVariacionAnual(resumenMAT[miPosicionResumenMAT(ID_VIP)].Idgrafico)=="SI"){
 	          			// si viene de un gráfico que tiene variación anual, cargo esta parte del menú.
 	          			MenuVariacionAnual()
 	          		}	
-          		}
+          		}*/
 				 	// update filtro
 				updateFiltroNavegador(ambitoGeo, fromYear,untilYear)
 				//miColorVentanaActiva("1")
@@ -175,7 +177,9 @@ function DosGrafico(elementExists, CONTROL11,CONTROL12,CONTROL2) {
 				
 
           		// cargo menu
-          		loadMenu(resumenMAT[1].Idgrafico)
+          		
+          		//loadMenu(resumenMAT[1].Idgrafico)
+				
 				if (controlEVOLUTION==true){
           		// si estoy en un gráfico de evolución temporal, entonces miro si tiene variación anual 
           		// para ponerle el menú
@@ -227,6 +231,7 @@ function DosGrafico(elementExists, CONTROL11,CONTROL12,CONTROL2) {
           		
           		activar2(ID_VIP)
           		// cargo menu
+          		
           		loadMenu(resumenMAT[1].Idgrafico)
           		if (controlEVOLUTION==true){
           		// si estoy en un gráfico de evolución temporal, entonces miro si tiene variación anual 
@@ -276,6 +281,7 @@ function DosGrafico(elementExists, CONTROL11,CONTROL12,CONTROL2) {
           		activar2(ID_VIP)
 			    // cargo menu
           		loadMenu(resumenMAT[2].Idgrafico)
+          		
           		if (controlEVOLUTION==true){
           		// si estoy en un gráfico de evolución temporal, entonces miro si tiene variación anual 
           		// para ponerle el menú
@@ -350,7 +356,9 @@ function DosGrafico(elementExists, CONTROL11,CONTROL12,CONTROL2) {
           		
           		activar2(ID_VIP)
           		// cargo menu
+          		
           		loadMenu(resumenMAT[1].Idgrafico)
+          		
           		if (controlEVOLUTION==true){
           		// si estoy en un gráfico de evolución temporal, entonces miro si tiene variación anual 
           		// para ponerle el menú

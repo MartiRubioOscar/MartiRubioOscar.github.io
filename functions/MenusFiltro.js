@@ -586,7 +586,7 @@ function loadMenu(datasetActivo){
 
 			
             MenuPorcentaje()
-            MenuRanking()
+            //MenuRanking()
 			
 			
 			MenuDesde(2006, 2016)
@@ -600,6 +600,10 @@ function loadMenu(datasetActivo){
 	        
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual();d3.select(".buttonSort").remove()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 
 
 	        break;
@@ -860,7 +864,7 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -870,6 +874,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriEdad()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	     
 	    case "16": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -883,7 +891,7 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -893,6 +901,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriGasto()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;
 	    case "17": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -905,7 +917,7 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -915,6 +927,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriMotivo()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	        	       
 	    case "18": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -949,7 +965,7 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -959,6 +975,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriRepe()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	        
 	    case "20": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -971,7 +991,7 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -981,6 +1001,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurTuriTransport()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	        
 	    case "21": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -993,15 +1017,23 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			MenuPorcentaje()
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
+			/*if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear=resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuRanking();}*/
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
 			
 			// Check box sexo
 			MenuCheckBoxTrabajadoresSector()
+
+			//alert("desde " + resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear + " hasta " + resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	        
 	    case "22": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1014,7 +1046,7 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			MenuPorcentaje()
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2015)
 			MenuHasta(2006, 2015)
@@ -1023,6 +1055,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxSituacionLaboral()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;
 	    case "23": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1044,6 +1080,7 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnEcoPIB()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+
 	        break;
 	    case "24": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1056,7 +1093,7 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2010, 2015)
 			MenuHasta(2010, 2015)
@@ -1065,6 +1102,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnEcoSalariosSector()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	
 	    case "25": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1164,7 +1205,7 @@ function loadMenu(datasetActivo){
 			MenuPorcentaje();
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2015)
 			MenuHasta(2006, 2015)
@@ -1173,6 +1214,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurAloNumHP()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	
 	    case "30": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1187,7 +1232,7 @@ function loadMenu(datasetActivo){
 			MenuPorcentaje();
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2015)
 			MenuHasta(2006, 2015)
@@ -1196,6 +1241,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxTurAloPlazasHP()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	  
 	    case "31": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1208,14 +1257,20 @@ function loadMenu(datasetActivo){
 			// botones de valor absoluto o porcentaje
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2010, 2015)
 			MenuHasta(2010, 2015)
 			
 			// Check box sexo
 			MenuCheckBoxTurCultTop()
-			MenuVariacionAnual()
+			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                    {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
+			//MenuVariacionAnual()
 	        break;
 	    case "32": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1393,7 +1448,7 @@ function loadMenu(datasetActivo){
 			MenuPorcentaje()
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -1402,6 +1457,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnPobEdades()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;
 	    case "44": 
 			document.getElementById("navegadorDiv").innerHTML=""; // borro todo el contenido del div del navegador
@@ -1434,7 +1493,7 @@ function loadMenu(datasetActivo){
 			MenuPorcentaje()
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -1444,6 +1503,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnPobNacionalidad()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	
 	    case "45": 
 	    	
@@ -1460,7 +1523,7 @@ function loadMenu(datasetActivo){
 			MenuPorcentaje();
 			
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -1469,6 +1532,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnPobTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        break;	     	    
 	    case "46": // Plazas hotel y distrito
 	    	
@@ -1533,7 +1600,7 @@ function loadMenu(datasetActivo){
 			
 
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -1542,6 +1609,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnPobDensidadTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        
 	        break;
 	    case "49": 
@@ -1560,7 +1631,7 @@ function loadMenu(datasetActivo){
 			
 
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2015)
 			MenuHasta(2006, 2015)
@@ -1569,6 +1640,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnVivNuevaTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        
 	        break;
 	    case "50": 
@@ -1586,7 +1661,7 @@ function loadMenu(datasetActivo){
 			
 
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -1595,6 +1670,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnVivSegundaManoTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 			//MenuVariacionAnual()
 	        
 	        break;
@@ -1614,7 +1693,7 @@ function loadMenu(datasetActivo){
 			
 
 			// botones de ranking y original
-			MenuRanking();
+			//MenuRanking();
 			// DESDE y hasta
 			MenuDesde(2006, 2016)
 			MenuHasta(2006, 2016)
@@ -1623,6 +1702,10 @@ function loadMenu(datasetActivo){
 			MenuCheckBoxBcnVivAlquilerTest()
 			if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear<resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
                     {MenuVariacionAnual()}
+                else{
+                	if (resumenMAT[miPosicionResumenMAT(identificadorGr)].desdeYear==resumenMAT[miPosicionResumenMAT(identificadorGr)].hastaYear)
+                	{MenuRanking();}
+                	}
 	        
 	        break;	     	        	     	        
 	    default:
