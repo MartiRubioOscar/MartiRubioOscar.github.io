@@ -1,5 +1,5 @@
 function CreateUnGrafico (){
-	//document.getElementById("navegadorDiv").innerHTML=""
+	
 			d3.select("#menu41").remove()
 			d3.select("#menu42").remove()
 			d3.select("#menu43").remove()
@@ -18,6 +18,8 @@ function CreateUnGrafico (){
 
 		var elementExists2 = document.getElementById("contenedorGr21");
 		var elementExists4 = document.getElementById("contenedorGr41");
+		var elementExists1 = document.getElementById("contenedorGr1");
+		alert(elementExists1)
 		d3.selectAll(".grafico4").remove()
 		d3.selectAll(".grafico2").remove()
 		d3.select("#areaGraficos").selectAll("div").data(["1"]).enter().append("div")
@@ -27,11 +29,16 @@ function CreateUnGrafico (){
 						.attr("ondragover", "allowDrop(event)");
 		var c2 = (elementExists2!=null)
 		var c4 = (elementExists4!=null)
+		var c1 = (elementExists1==null)
+
 		var controladorUnGrafico
 		if (c2){controladorUnGrafico="21"}
 		if (c4){controladorUnGrafico="41"}			
 		if (!c4 && !c2){controladorUnGrafico = "00"}
-		UnGrafico(c2, c4, controladorUnGrafico);
+		if(c1){document.getElementById("navegadorDiv").innerHTML=""; UnGrafico(c2, c4, controladorUnGrafico);}
+		
+		
+		
 	}
 function UnGrafico(CONTROL21,CONTROL41,CONTROLADORunGrafico) {
 			d3.select("#gr_1").select("#gr1Close").remove()

@@ -21,7 +21,7 @@ function borrarGrafico(ID_boton){
 
   	
   	var activoGrafico=PosicionGraficoActivo()
-  	
+  	if (ID=="gr1"){document.getElementById("navegadorDiv").innerHTML="";}
   	if (ID!="gr1") {
   		if (activoGrafico=="00") {document.getElementById("navegadorDiv").innerHTML="";};
   	
