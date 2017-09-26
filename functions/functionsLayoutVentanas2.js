@@ -19,7 +19,6 @@ function CreateUnGrafico (){
 		var elementExists2 = document.getElementById("contenedorGr21");
 		var elementExists4 = document.getElementById("contenedorGr41");
 		var elementExists1 = document.getElementById("contenedorGr1");
-		alert(elementExists1)
 		d3.selectAll(".grafico4").remove()
 		d3.selectAll(".grafico2").remove()
 		d3.select("#areaGraficos").selectAll("div").data(["1"]).enter().append("div")
